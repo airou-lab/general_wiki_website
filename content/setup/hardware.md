@@ -4,6 +4,7 @@ Type:
 Labs:
   - AIROU
 ---
+# Hardware build and specs guide
 ## Onboard Hardware  Specs
 ARCPro Main Components: 
 - Intel NUC Processor
@@ -28,3 +29,7 @@ ARCPro Main Components:
 2.  Unplug the NUC cable
 3. Unplug the NUC batter
 4. Unplug the VESC battery 
+
+
+Next steps:
+[[VESC aka FSEC]]

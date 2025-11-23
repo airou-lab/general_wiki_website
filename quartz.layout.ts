@@ -8,8 +8,8 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      GitHub: "https://github.com/airou-lab/arcpro_ros2_website",
+      "Website": "https://airou.cs.ou.edu/airou/",
     },
   }),
 }
@@ -66,3 +66,30 @@ export const defaultListPageLayout: PageLayout = {
   ],
   right: [],
 }
+
+Component.Graph({
+  localGraph: {
+    drag: true, // whether to allow panning the view around
+    zoom: true, // whether to allow zooming in and out
+    depth: 1, // how many hops of notes to display
+    scale: 1, // default view scale
+    repelForce: 0.6, // how much nodes should repel each other
+    centerForce: 0.3, // how much force to use when trying to center the nodes
+    linkDistance: 50, // how long should the links be by default?
+    fontSize: 0.3, // what size should the node labels be?
+    opacityScale: 2, // how quickly do we fade out the labels when zooming out?
+    enableRadial: false, // whether to constrain the graph, similar to Obsidian
+  },
+  globalGraph: {
+    drag: true,
+    zoom: true,
+    depth: -1,
+    scale: 0.9,
+    repelForce: 0.5,
+    centerForce: 0.3,
+    linkDistance: 30,
+    fontSize: 0.6,
+    opacityScale: 2,
+    enableRadial: true, // whether to constrain the graph, similar to Obsidian
+  },
+})

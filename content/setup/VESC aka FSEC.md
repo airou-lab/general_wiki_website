@@ -4,6 +4,8 @@ Type:
 Labs:
   - AIROU
 ---
+# VESC Setup and unbricking
+
 - VESC type: [Mini FSESC4.20 50A base on VESC® 4.12 with Aluminum Anodized Heat Sink](https://www.flipskyo.com/products/mini-fsesc4-20-50a-with-anodized-heat-sink)
 - Github vesc page: [vedderb/bldc: The VESC motor control firmware](https://github.com/vedderb/bldc)
 
@@ -35,3 +37,6 @@ We also tried the following settings:
 	1) In this case, `NC` =  DO NOT USE, `-` = GRND
 	2) the 3.3V in was not used
 4) Connect using the STM32 cubeprog and reflash
+
+Next steps:
+[[YDLidar X4 Pro and 435i realsense]]

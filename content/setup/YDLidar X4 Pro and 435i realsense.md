@@ -10,7 +10,7 @@ Labs:
 > [!Warning] Port issues
 > Note that some ports in these docs may have been manually defined, and as such should be accounted for with lsbusb
 
-
+# Setting up YDLidar X4 Pro and 435i realsense
 # Realsense
 ```bash
 sudo apt update  
@@ -51,3 +51,5 @@ Run below, will grab the SDK and the ros2 code.
 git clone git@github.com:YDLIDAR/YDLidar-SDK.git
 ```
 
+Next steps:
+[[Pairing]]
