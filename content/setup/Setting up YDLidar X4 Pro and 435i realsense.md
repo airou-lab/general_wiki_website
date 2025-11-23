@@ -5,10 +5,10 @@ Labs:
   - AIROU
 ---
 > [!NOTE] Running from our repo directly?
-    > If you cloned our repo and followed the build steps, skip to [[arcpro run commands]]
+> If you cloned our repo and followed the build steps, skip to [[arcpro run commands]]
 
 > [!Warning] Port issues
-    > Note that some ports in these docs may have been manually defined, and as such should be accounted for with lsbusb
+> Note that some ports in these docs may have been manually defined, and as such should be accounted for with lsbusb
 
 
 # Realsense

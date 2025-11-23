@@ -4,8 +4,9 @@ Type:
 Labs:
   - AIROU
 ---
-> [!Warning] Running ROS1?
-    > Please see our deprecated repo [here](https://airou-lab.github.io/docs/intro.html)
+> [!Warning] 
+> Running ROS1?
+> Please see our deprecated repo [here](https://airou-lab.github.io/docs/intro.html)
 
 
 ## ARCPro Overview:
