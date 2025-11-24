@@ -3,6 +3,7 @@ Type:
   - arcProDocs
 Labs:
   - AIROU
+slug: index
 ---
 
 > [!Warning] 
