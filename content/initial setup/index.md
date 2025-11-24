@@ -2,8 +2,7 @@
 title: Setup
 slug: setup
 ---
-
-# First time Setup guide:
+## Hardware/firmware
 - [[hardware]] (start here)
 - [[VESC aka FSEC]]
 ## Software setup:

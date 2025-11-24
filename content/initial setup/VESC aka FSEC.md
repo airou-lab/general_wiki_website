@@ -28,7 +28,9 @@ We also tried the following settings:
 > [!Warning] Old board setup
     > - For current limit, select general -> voltage, cut start at 8.4, cutoff end at 6v. 
     > - We used to have to erase the registers for the bootloader (certain values), but with a complete earase 
-# Unbricking
+# Unbricking (Red AND blue light flashing)
+> [!warning] Red flashing LED vesc
+> Under volt error, copy the settings from one of the other robots onto this one..
 ## Connecting
 1) Use the ST Link looks like [this](https://www.adafruit.com/product/2548) 
 2) Download the [following](https://www.st.com/en/development-tools/stm32cubeprog.html) and open

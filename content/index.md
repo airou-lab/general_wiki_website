@@ -6,6 +6,7 @@ Labs:
 slug: index
 title: ARCPro Docs Home
 ---
+Our robotic car is designed and built to autonomously navigate unknown areas and create accurate 2D/3D maps. Also, the vehicles are capable of intra-vehicular and vehicle-to-infrastructure communication. In this tutorial, we will go through the hardware design of ARCPro first. Then the instruction to turn on the cars and hardware setup is explained step-by-step. Lastly, we instruct you to use ARCPro software to launch different sensors (e.g., LiDAR, depth camera).
 
 > [!Warning] 
 > Running ROS1?
@@ -13,27 +14,20 @@ title: ARCPro Docs Home
 
 > [!Warning]
 > This site is still under construction, and as such some page links may be missing or hidden
-
-## ARCPro Overview:
-Our robotic car is designed and built to autonomously navigate unknown areas and create accurate 2D/3D maps. Also, the vehicles are capable of intra-vehicular and vehicle-to-infrastructure communication. In this tutorial, we will go through the hardware design of ARCPro first. Then the instruction to turn on the cars and hardware setup is explained step-by-step. Lastly, we instruct you to use ARCPro software to launch different sensors (e.g., LiDAR, depth camera).
-
-# First time Setup guide:
+## First time Setup guide:
 - [[hardware]] (start here)
 - [[VESC aka FSEC]]
-## Software setup:
+### Software:
 - [[YDLidar X4 Pro and 435i realsense]] 
 - [[Calibrating your car]]
 - [[Fusing sensors with robot_localization]]
 - [[Pairing]]
-## Runing the example software
-- [[Using nav2 with slamtoolbox]]
-- [[arcpro run commands]]
-- [[arcpro waypointer example run]]
-
-
-## Waypointer Repo File layout
+### Runing the example software
+- [[arcpro run commands | Sensor and motor drive commands]]
+- [[arcpro waypointer example run | Example waypointing run commands]]
+## Repository File layout
 All folders below are inside the `src` folder:
-- `bridge` : A custom bridge node from ackermann drive to ackermann driveStamped (may or may not be needed)
+- `bridge` : A custom bridge node from ackermann drive to ackermann driveStamped 
 - `f1tenth_system`: Onboard drivers built for the f1tenth race cars. The primary tools we used in the repo are:
 	- `f1tenth_stack`: The main file we use for main drive commands and motor control
 		- `vsec.yaml` had several changes for configuration
@@ -45,14 +39,13 @@ All folders below are inside the `src` folder:
 - `ylidar`: Lidar launch folder
 	- we edited the folder to account for our lidar version, 
 	- Additionally houses the tf2 publisher 
-	- Responsible for all 
+
+> [!NOTE] Waypoint example
+> For the waypointing example, we use the `merger` folder
 # Examples
-- [[arcpro waypointer example run]] : Example waypointing in sim and irl 
-
-Based on the following [car](https://f1tenth.readthedocs.io/en/foxy_test/getting_started/intro.html) 
-
+- [[arcpro waypointer example run | waypointer]] : Example waypointing in sim and irl
+- [[passive reinforcement learning/index| Passive RGB Reinforcement Learning]]: Example of a reinforcement learning model using only the camera
 # Credits 
-
 Regarding hardware and software information for the ARC system, most information and tutorials can be found on the [MuSHR website](https://mushr.io/) which is the project ARC is derived from.
 
 For any questions or concerns, feel free to reach out to us at:
@@ -60,8 +53,6 @@ For any questions or concerns, feel free to reach out to us at:
 arikak@ou.edu (Software) and dvargas88@ou.edu (Hardware & MiniCity)**.
 
 There is also a forum for MuSHR issues located in their [GitHub organization discussions](https://github.com/prl-mushr/mushr/discussions).
-
-
 ## Outside Resources
 Regarding the software for the MuSHR/ARC system, most information and tutorials can be found on the [MuSHR](https://mushr.io/) website or [f1tenth](https://roboracer.ai/build) site.
 

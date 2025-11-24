@@ -32,14 +32,6 @@ ros2 run nav2_map_server map_saver_cli -f ~/my_new_map
 
 See [[Slam Toolbox]] about some issues I ran into when attempting to run (due to odom configs)
 
-
-# arc_pro issues
-> [!Warning] Not turning
-> I ran into this weird issue where the robot would turn when I first started teleop, but fail later to have any turn commands. It turns out I just need to manually adjust the wheels, or have the back wheels against a wall, and have them jam up. This seems to have fixed the issue, but not sure what the real cause was
-    
-> [!warning] Red flashing LED vesc
-> Under volt error, copy the settings from one of the other robots onto this one..
-
 # Slam settings adjusted:
 - Relative path settings: `src/merger/config/slam_toolbox_params.yaml`
 
@@ -65,11 +57,3 @@ The package [[robot_localization]] was used to create our fused odom topic, whic
       max_num_iterations: 50  
       num_threads: 1
 ```
-
-# Why Jazzy?
-- Foxy no longer LTS, Jazzy ends LTS May 31, 2029
-- a few packages that only supported on jazzy
-- c++ 20 support 
-- Better lifecycle node support ()
-- async / multi node progress 
-- Gazebo Harmonic supported 

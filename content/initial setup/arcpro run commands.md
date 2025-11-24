@@ -7,6 +7,10 @@ Labs:
 > [!NOTE] Looking to run the example?
 > Check out [[arcpro waypointer example run]]
 
+# arc_pro issues
+> [!Warning] Not turning
+> I ran into this weird issue where the robot would turn when I first started teleop, but fail later to have any turn commands. It turns out I just need to manually adjust the wheels, or have the back wheels against a wall, and have them jam up. This seems to have fixed the issue, but not sure what the real cause was
+
 The following commands assume you've built either our basic arcpro repo, or our waypointing repo. Keep in mind both repos are built for Jazzy, and as such may need modifcation if not using Jazzy. 
 
 ```bash
