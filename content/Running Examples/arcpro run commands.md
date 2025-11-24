@@ -5,7 +5,7 @@ Labs:
   - AIROU
 ---
 > [!NOTE] Looking to run the example?
-    > Check out [[arcpro waypointer example run]]
+> Check out [[arcpro waypointer example run]]
 
 The following commands assume you've built either our basic arcpro repo, or our waypointing repo. Keep in mind both repos are built for Jazzy, and as such may need modifcation if not using Jazzy. 
 

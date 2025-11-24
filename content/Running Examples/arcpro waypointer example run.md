@@ -1,16 +1,16 @@
 # Run commands
 ## Run with map
-- cbfr
-- bridge
-- lidar
+- `colcon build + source`
+- `bridge`
+- `lidar`
 
 Lidar currently cant be brought up due to race condition (i think). Check nav2.yaml for the current map being used, they should be stored in the /res folder.
 
 ## Run SLAM
 We bringup in isolation, to build the lidar map we have:
-- vesc
-- lidar
-- joy
+- `vesc`
+- `lidar`
+- `joy`
 ```bash
 ros2 bag record -o name --topics /scan /tf /tf_static /odom
 ```
@@ -35,10 +35,10 @@ See [[Slam Toolbox]] about some issues I ran into when attempting to run (due to
 
 # arc_pro issues
 > [!Warning] Not turning
-    > I ran into this weird issue where the robot would turn when I first started teleop, but fail later to have any turn commands. It turns out I just need to manually adjust the wheels, or have the back wheels against a wall, and have them jam up. This seems to have fixed the issue, but not sure what the real cause was
+> I ran into this weird issue where the robot would turn when I first started teleop, but fail later to have any turn commands. It turns out I just need to manually adjust the wheels, or have the back wheels against a wall, and have them jam up. This seems to have fixed the issue, but not sure what the real cause was
     
 > [!warning] Red flashing LED vesc
-    > Under volt error, copy the settings from one of the other robots onto this one..
+> Under volt error, copy the settings from one of the other robots onto this one..
 
 # Slam settings adjusted:
 - Relative path settings: `src/merger/config/slam_toolbox_params.yaml`

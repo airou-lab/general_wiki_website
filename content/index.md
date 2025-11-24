@@ -4,12 +4,16 @@ Type:
 Labs:
   - AIROU
 slug: index
+title: ARCPro Docs Home
 ---
 
 > [!Warning] 
 > Running ROS1?
-> Please see our deprecated repo [here](https://airou-lab.github.io/docs/intro.html)
-> 
+> Please see our deprecated ROS 1 Documentation [here](https://airou-lab.github.io/docs/intro.html)
+
+> [!Warning]
+> This site is still under construction, and as such some page links may be missing or hidden
+
 ## ARCPro Overview:
 Our robotic car is designed and built to autonomously navigate unknown areas and create accurate 2D/3D maps. Also, the vehicles are capable of intra-vehicular and vehicle-to-infrastructure communication. In this tutorial, we will go through the hardware design of ARCPro first. Then the instruction to turn on the cars and hardware setup is explained step-by-step. Lastly, we instruct you to use ARCPro software to launch different sensors (e.g., LiDAR, depth camera).
 

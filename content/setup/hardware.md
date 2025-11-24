@@ -4,6 +4,7 @@ Type:
 Labs:
   - AIROU
 ---
+For building the files, see the [[setup/building your bot/index|STL folder]]
 # Hardware build and specs guide
 ## Onboard Hardware  Specs
 ARCPro Main Components: 
