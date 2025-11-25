@@ -126,8 +126,11 @@ sudo usermod -aG video $USER
   
   
 # Launch command for 435i (old):  
-```  
 ros2 launch realsense2_camera rs_launch.py device_type:=d435i enable_color:=true enable_depth:=true pointcloud.enable:=true align_depth:=true rgb_camera.profile:=1280x720x30 depth_module.profile:=1280x720x30  
+```  
+
+
+
 ```  
   
 # Launch command for 435i:  
