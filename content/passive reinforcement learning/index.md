@@ -15,3 +15,8 @@ title: ARCPro Docs Home
 # Passive Camera only RL navigation
 Train and evaluate a recurrent policy (RecurrentPPO with CNN+LSTM) that learns autonomous maneuvers from RGB frames only streaming from a Unity mini‑city. No semantic masks, optical flow, handcrafted path planners, or action blending — purely passive visual navigation.
 
+To run the example run the following script:
+```bash
+./arcpro_rl.sh
+```
+

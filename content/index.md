@@ -27,24 +27,13 @@ Our robotic car is designed and built to autonomously navigate unknown areas and
 - [[arcpro waypointer example run | Example waypointing run commands]]
 ## Repository File layout
 All folders below are inside the `src` folder:
-- `bridge` : A custom bridge node from ackermann drive to ackermann driveStamped 
-- `f1tenth_system`: Onboard drivers built for the f1tenth race cars. The primary tools we used in the repo are:
-	- `f1tenth_stack`: The main file we use for main drive commands and motor control
-		- `vsec.yaml` had several changes for configuration
-		- `no_lidar_bringup_launch` was used since we have our custom ydlidar
-	- `Ackermann_mux` for drive messages
-	- `teleop_tools`
-- `merger`: Houses nav2 stack configs and main launch file that calls all other sub-launch files
-- `twist_to_ackermann`: Translates our twist messages from f1tenth_stack to ackermann messages for nav2 to use
-- `ylidar`: Lidar launch folder
-	- we edited the folder to account for our lidar version, 
-	- Additionally houses the tf2 publisher 
-
-> [!NOTE] Waypoint example
-> For the waypointing example, we use the `merger` folder
-# Examples
-- [[arcpro waypointer example run | waypointer]] : Example waypointing in sim and irl
-- [[passive reinforcement learning/index| Passive RGB Reinforcement Learning]]: Example of a reinforcement learning model using only the camera
+- `base` Houses all code esential for driving the robot, running the lidar, and twist command conversion
+	- `YDLidar`: Lidar code
+	- `f1tenth_to_arcpro`: A forked repo of [f1tenth](https://github.com/f1tenth/f1tenth_system/tree/humble-devel#) repo 
+	- `twist_to_ackermann`: A forked repo of the repo's name. Used to convert message types
+- `examples` Houses all example projects completed on this car
+	- `arc_rl_interface`: Reinforcement learning repo [[Running the Sim and sim2real]]
+	- `waypointer`: - [[arcpro waypointer example run | waypointer]] : Example waypointing in sim and irl
 # Credits 
 Regarding hardware and software information for the ARC system, most information and tutorials can be found on the [MuSHR website](https://mushr.io/) which is the project ARC is derived from.
 
