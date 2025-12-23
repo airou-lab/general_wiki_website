@@ -7,12 +7,11 @@ I recommend using [Obsidian](https://obsidian.md/) to edit this vault as [quartz
 - see the quartz4 docs for more info!
 
 # Deploying
-
 Deploy locally:
 ```bash
 npx quartz build --serve
 ```
-Deploy to prod (required to be member of repo):
+Deploy to prod (required to have push permissions):
 ```bash
 npx quartz sync
 ```
