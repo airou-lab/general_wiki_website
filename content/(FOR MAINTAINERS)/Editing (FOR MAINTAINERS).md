@@ -15,3 +15,4 @@ Deploy to prod (required to have push permissions):
 ```bash
 npx quartz sync
 ```
+However, if you'er using the obsidan vault, you can manually push and commit via the command pallet (crntl +p -> "Git: Push"). 

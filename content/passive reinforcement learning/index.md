@@ -3,7 +3,6 @@ Type:
   - arcProDocs
 Labs:
   - AIROU
-slug: 
 title: arcpro_rl
 ---
 > [!Warning] Content still under development!
