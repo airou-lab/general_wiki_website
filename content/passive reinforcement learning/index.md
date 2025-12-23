@@ -3,8 +3,8 @@ Type:
   - arcProDocs
 Labs:
   - AIROU
-slug: index
-title: ARCPro Docs Home
+slug: 
+title: arcpro_rl
 ---
 > [!Warning] Content still under development!
   > Try at your own risk! 
