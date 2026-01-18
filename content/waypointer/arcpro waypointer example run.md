@@ -1,13 +1,17 @@
 # Run commands
+Run commands per sensor (and full examples) are located in 2 folders from content root:
+- `drive_scripts`: 
+- `hardware_launch_scripts`:
+
 ## Run with map
-- `colcon build + source`
-- `bridge`
-- `lidar`
+Each in a seperate terminal run the following:
+- `colcon build` and sorce 
+- `./lidar.sh` (in the hardware folder)
 
 Lidar currently cant be brought up due to race condition (i think). Check nav2.yaml for the current map being used, they should be stored in the /res folder.
 
 ## Run SLAM
-We bringup in isolation, to build the lidar map we have:
+We bringup in isolation, to build the lidar map we have the following all in the `hardware` folder:
 - `vesc`
 - `lidar`
 - `joy`
@@ -33,7 +37,9 @@ ros2 run nav2_map_server map_saver_cli -f ~/my_new_map
 See [[Slam Toolbox]] about some issues I ran into when attempting to run (due to odom configs)
 
 # Slam settings adjusted:
-- Relative path settings: `src/merger/config/slam_toolbox_params.yaml`
+For the arcpro robots, I had to adjust the loop closure 
+
+- file name: `slam_toolbox_params.yaml`
 
 We use [[ceres_scan_matcher]] to match scans to map with slamtoolbox to create our initial map. We adjusted the settings to distrust the odometry as there was much issue with turning and keeping the same estimated pose (the graph would fracture like in [[Slam Toolbox]]).. We also vastly increased the occupied space weight so localizing within the /scan topic weight was increased. Loop closure was decreased slightly, but the minimum travel distance and orientation was vastly decresed to match the faulty  odom topic. Given we were brute forcing the laser scan localization, we set these distances to be very short, and throttle scans to be quite low (at 2)
 

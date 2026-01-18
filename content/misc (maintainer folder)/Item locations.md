@@ -1,0 +1,9 @@
+- Arcpros are in B4 REPF Cabinet. 
+	- cabinet no.3:
+		- Arcpros for class
+		- Batteries
+		- Battery chargers
+	- cabinet no.4:
+		- Maintaince items (spare lidar/vesc reflasher) 
+		- jetson orion (not agx)  
+- Drone in Carson lab

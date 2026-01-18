@@ -1,6 +1,0 @@
----
-Type:
-  - arcProDocs
-Labs:
-  - AIROU
----
