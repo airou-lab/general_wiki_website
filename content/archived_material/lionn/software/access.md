@@ -4,7 +4,7 @@
 
 ModalAI provides a [Developer Bootcamp for the VOXL](https://docs.modalai.com/voxl-developer-bootcamp/) which contains lots of useful information and the basic setup steps we used.
 
-Developers may connect to the VOXL in one of the following ways, but [Wireless via DEV Network](#wireless-ssh-via-dev-network) is currently configured.
+Developers may connect to the VOXL in one of the following ways, but [[#wireless-ssh-via-dev-network | Wireless via DEV Network]] is currently configured.
 
 ### Wired via microUSB using ADB
 

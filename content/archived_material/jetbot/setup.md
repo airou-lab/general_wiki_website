@@ -24,9 +24,8 @@ Next, you need to connect your JetBot to your network in one of the following wa
 
 ### Accessing the Shell - Monitor and Keyboard (preferred)
 
-<div class="warning">
-As a note, you can come to the Project Office hours and utilize our monitor/keyboards or access the CS computer lab (Devon Energy Hall 115) if you have contacted the CS department for keycard access.
-</div>
+> [!WARNING]
+> As a note, you can come to the Project Office hours and utilize our monitor/keyboards or access the CS computer lab (Devon Energy Hall 115) if you have contacted the CS department for keycard access.
 
 If you have access to an external monitor and keyboard, you can use it to configure the JetBot to connect to your development network. Simply turn on your JetBot and connect the peripherals to the ports on the robot. This will allow you to access the headless UI (just a console).
 
@@ -50,4 +49,4 @@ Then, you can proceed through some of the Notebooks to get used to utilizing the
 
 You can find these notebooks in `~/Notebooks/`, namely `basic_motion.ipynb` and `teleoperation.ipynb`.
 
-Once you are comfortable with the environment, continue to [Machine Learning](ML.html).
+Once you are comfortable with the environment, continue to [[ML | Machine Learning]].

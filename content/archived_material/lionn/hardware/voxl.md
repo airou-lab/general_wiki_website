@@ -3,7 +3,7 @@
 We use an all-in-one dev kit provided by ModalAI called the [VOXL Flight Deck](https://docs.modalai.com/flight-deck/).
 
 
-![Flight Deck CAD Model](../photos/flight-deck-cad.png)
+![[flight-deck-cad.png]]
 
 The main board is the [Voxl-Flight](https://docs.modalai.com/voxl-flight/) which contains 2 modules working in tandum:
 * VOXL:

@@ -4,7 +4,8 @@ RVIZ is a tool in ROS that can be used to visualize the information coming from 
 
 In this section, I’ll go over how to visualize information from the LiDAR and real sense camera: 
 
-> Note: Make sure you’ve configured your ROS environment variables in your .bashrc file which allow you to receive information from the ARC robot 
+> [!NOTE]
+> Make sure you’ve configured your ROS environment variables in your .bashrc file which allow you to receive information from the ARC robot 
 > 
 > **ROS_MASTER_URI=http://10.42.0.1:11311**
 > 
@@ -32,10 +33,10 @@ rviz
 ```
 
 You should now see something like this: 
-![rviz on real car](../photos/rviz_on_realcar.jpg)  
+![[rviz_on_realcar.jpg]]  
 
-> NOTE: 
-> If you do not, see the same type of map as seen in the picture then you may not have the default mushr rviz configuration. In which case, go to [software install setup](initial.md) and make sure to add rviz.default.
+> [!NOTE]
+> If you do not, see the same type of map as seen in the picture then you may not have the default mushr rviz configuration. In which case, go to [[initial | software install setup]] and make sure to add rviz.default.
 
 3. **Add a topic: Real Sense d435i RGB camera image and depthcloud**
 
@@ -43,7 +44,7 @@ Click on the add button in the bottom left corner.
 
 This should load a new window which looks like this: 
 
-![add_rviz_topics](../photos/add_rviz_topic.jpg)
+![[add_rviz_topic.jpg]]
  
 
  
@@ -55,8 +56,8 @@ You’ll want to select:
 
 After which, you should be able to see the camera feed in the bottom left and a depth cloud originating at the car model: 
 
-![depth stream](../photos/depth_stream.jpg)
+![[depth_stream.jpg]]
 
 This picture shows the depth camera rgb and depth image topics: 
-![rgb and depth image](../photos/rgb_and_depth-image.png)
+![[rgb_and_depth-image.png]]
 

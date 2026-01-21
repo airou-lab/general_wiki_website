@@ -31,10 +31,11 @@ From a separate terminal (either in your base computer or SSH’d into the robot
     rostopic list 
 
 And you should see a series of topics relating to the sensors. 
-![rostopics](../photos/rostopic_list.png)
+![[rostopic_list.png]]
  
 
-> **Note on Sensor topics:**
+> [!NOTE]
+> on Sensor topics:**
 >
 > To get any information from the depth camera, look at the topics that contain ../camera/.. 
 >
@@ -42,17 +43,18 @@ And you should see a series of topics relating to the sensors.
 
 Now if you were to open RVIZ from your base computer, you should see a list of topics that you can add which relate to the sensors onboard the robot 
 
-> **Note on Sensors in RVIZ:**
+> [!NOTE]
+> on Sensors in RVIZ:**
 >
 > You may not be able to visualize the LiDAR information; in the example below, I show the rgb and depth information from the depth camera. 
 
-![rviz-sensors](../photos/rviz_depth_rgb.png)
+![[rviz_depth_rgb.png]]
 
 ## Explaining sensors.launch 
 
 With your text editor of choice, open sensors.launch  located in .../mushr_hardware/launch/racecar-uw-nano/: 
 
-![Sensors file](../photos/sensors.png)
+![[sensors.png]]
  
 
 **Lines 4-6:** we define variables for the roslaunch file
@@ -71,7 +73,8 @@ With your text editor of choice, open sensors.launch  located in .../mushr_hardw
 
 **Line 20:** launches the push_button on the front of the car. As of right now, the push button has no functionality. 
 
->**Note on single sensor testing:**
+> [!NOTE]
+> on single sensor testing:**
 >
 > If you want to just launch one sensor, you can refer to the hardware ROS packages.
 >

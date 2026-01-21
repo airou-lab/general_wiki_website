@@ -7,27 +7,27 @@ This involves plugging in the batteries, connecting to the robot's network, and 
 
 1. **Plugin The Main Battery:**
 
-![Plugin Main Battery](../photos/cpu_plug_in.png)
+![[cpu_plug_in.png]]
 
 2. **Plugin The VESC Battery:**
 
-![Plugin Vesc Battery](../photos/vesc_plug_in.png)
+![[vesc_plug_in.png]]
 
 (Front wheels should “lock” when VESC is plugged in) 
 
 3. **Connect to Robot Wi-Fi Network:**
 
 Connect to the network named "Robot AP ***robot number***" (Example: Robot AP 3)
-![Wi-Fi](../photos/wifi.png)
-> NOTE:
+![[wifi.png]]
+> [!NOTE]
 > 
 > It may take up to 30 seconds for the network to appear as a possible connection 
 
 4. **SSH Into The Car:**
 If using WSL, open the Ubuntu 18.04 Terminal
-* [Here's how to download Ubuntu if you're using Windows](../misc/wslInstall.md)
+* [[wslInstall | Here's how to download Ubuntu if you're using Windows]]
 
-![windows ubuntu terminal](../photos/ubuntu_on_windows.png)
+![[ubuntu_on_windows.png]]
 
 Or if you're already using a linux OS, just open the bash terminal
 
@@ -36,14 +36,14 @@ In the terminal, enter the command:
     ssh robot@10.42.0.1 
 
 You should see something like this:
-![ssh example](../photos/ssh_example.png)
+![[ssh_example.png]]
 
 5. **Connecting The Bluetooth Controller:**
 
 Press the center button on the PS4 controller to pair
-* If it does not connect, [see here](../misc/bluetoothController.md)
+* If it does not connect, [[bluetoothController | see here]]
 
-![Connecting Bluetooth Controller](../photos/bluetooth_controller.png)
+![[bluetooth_controller.png]]
 
 6. **Starting Teleoperation:**
 

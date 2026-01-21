@@ -5,7 +5,7 @@ This document details the steps to implement the setup for the LIONN platform on
 
 The [VOXL Developer Bootcamp](https://docs.modalai.com/voxl-developer-bootcamp/) from ModalAI was used to setup the VOXL.
 
-The latest VOXL image was loaded (see [Software](../software/README.md#operating-systems)) and the `voxl-configure-mpa` script to configure the different services on the VOXL based on the hardware shipped with the VOXL Flight Deck (see [voxl-configure-mpa](https://docs.modalai.com/voxl-configure-mpa/))
+The latest VOXL image was loaded (see [[README#operating-systems | Software]]) and the `voxl-configure-mpa` script to configure the different services on the VOXL based on the hardware shipped with the VOXL Flight Deck (see [voxl-configure-mpa](https://docs.modalai.com/voxl-configure-mpa/))
 
 ## Testing VOXL Motor connections
 
@@ -15,7 +15,7 @@ Two methods were used to test if the VOXL was able to control the propeller moto
 
 ### Generate a PWM signal
 
-The main method to test connections is using QGroundControl. Once connected (see [Software Starter Guide < QGroundControl](../software/starter.md#qgroundcontrol)) the QGroundControl app provides configuration for the drone. In the Motor tab, a test slider can be used to power up the motors.
+The main method to test connections is using QGroundControl. Once connected (see [[starter#qgroundcontrol | Software Starter Guide < QGroundControl]]) the QGroundControl app provides configuration for the drone. In the Motor tab, a test slider can be used to power up the motors.
 
 Secondly, when unable to connect the VOXL to QGC, ModalAI provides a [Flight Core PWM ESC Calibration script](https://docs.modalai.com/flight-core-pwm-esc-calibration/) that can be used to bypass QGC.
 
@@ -50,4 +50,4 @@ Using these, the VOXL can connect to the NUC and vice versa.
 To test the connection between the two, run `ping` using the appropriate IP for each client set above.
 
 ---
-Next, [set up ROS on the VOXL and NUC](ros.md).
+Next, [[ros | set up ROS on the VOXL and NUC]].

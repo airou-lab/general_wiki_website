@@ -1,10 +1,10 @@
 # System Overview
 
-![System Diagram](../photos/overview.png)
+![[overview.png]]
 
 The main takeaway from this diagram should be that creating your own controller (catkin package) is as simple as subscribing to sensor nodes and publishing to Mux 
 
-> **NOTE:**
+> [!NOTE]
 > 
 > For the Ackermann steering commands, there are 4 levels: 
 > * Safety

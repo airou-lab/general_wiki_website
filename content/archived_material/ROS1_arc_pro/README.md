@@ -4,7 +4,7 @@
 
 Our robotic car is designed and built to autonomously navigate unknown areas and create accurate 2D/3D maps. Also, the vehicles are capable of intra-vehicular and vehicle-to-infrastructure communication. In this tutorial, we will go through the hardware design of ARCPro first. Then the instruction to turn on the cars and hardware setup is explained step-by-step. Lastly, we instruct you to use ARCPro software to launch different sensors (e.g., LiDAR, depth camera).
 
-![ARCPro Lineup](photos/arcpro.png)
+![[arcpro.png]]
 
 
 ## Onboard Hardware  Specs
@@ -27,7 +27,8 @@ Turn on the intel NUC by pushing the power button on the front. The NUC will tur
 - After you connect the batteries:
 
  
-Note: if the intel NUC does not turn on, please let the class staff know immediately.
+> [!NOTE]
+> if the intel NUC does not turn on, please let the class staff know immediately.
 
 ## Using Car:
 You can connect to the car in three different ways: direct access, remote access using ssh, remote access using Remote Desktop
@@ -72,7 +73,7 @@ Shutdown process is complete.
 
 # AirOU Race Cars (ARC)
 
-![ARC Lineup](photos/arc_lineup.jpg)
+![[arc_lineup.jpg]]
 
 Regarding hardware and software information for the ARC system, most information and tutorials can be found on the [MuSHR website](https://mushr.io/) which is the project ARC is derived from.
 
