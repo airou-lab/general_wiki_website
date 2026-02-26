@@ -238,6 +238,8 @@ a {
 
     & .sidebar.right {
       grid-area: grid-sidebar-right;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
       margin-right: 0;
       flex-direction: column;
       @media all and ($mobile) {
