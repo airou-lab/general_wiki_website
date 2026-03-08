@@ -263,6 +263,20 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
                       type: "html",
                       value: `<iframe src="${url}" class="pdf"></iframe>`,
                     }
+                  } else if ([".stl"].includes(ext)) {
+                    const githubBase = "https://github.com/airou-lab/general_wiki_website/blob/main/content/"
+                    const githubUrl = githubBase + fp
+                    return {
+                      type: "html",
+                      value: `
+                        <div class="file-embed">
+                          <div class="file-links">
+                            <a href="${url}" target="_blank">Download ${path.basename(fp)}</a> | 
+                            <a href="${githubUrl}" target="_blank">View on GitHub</a>
+                          </div>
+                        </div>
+                      `,
+                    }
                   } else {
                     const block = anchor
                     return {
