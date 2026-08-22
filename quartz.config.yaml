@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: quartz.jzhao.xyz
+  baseUrl: airou-lab.github.io/general_wiki_website
   ignorePatterns:
     - private
     - templates
