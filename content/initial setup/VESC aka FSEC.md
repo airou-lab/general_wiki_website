@@ -41,4 +41,4 @@ We also tried the following settings:
 4) Connect using the STM32 cubeprog and reflash
 
 Next steps:
-[YDLidar X4 Pro and 435i realsense](YDLidar%20X4%20Pro%20and%20435i%20realsense.md)
+[[YDLidar X4 Pro and 435i realsense]]

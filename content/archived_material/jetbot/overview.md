@@ -14,4 +14,4 @@ For hardware questions, contact Phong Nguyen ([phong.t.nguyen-1@ou.edu](mailto:d
 
 For the Final Project of CS 5013 in Spring 2024 at the University of Oklahoma, graduate students will utilize this hardware plaform to implement a machine learning algorithm on their JetBot. They will utilize computer vision to navigate the JetBot via its wide-angle camera.
 
-For setup instructions for students of CS 5013, continue to [Setup](setup.md).
+For setup instructions for students of CS 5013, continue to [[setup | Setup]].

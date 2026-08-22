@@ -1,7 +1,7 @@
 # Hardware
 ## Table of Contents
-1. [Initial Bootup](../software/initial.md)
-2. [Hardware Specifications](onboardHardware.md)
+1. [[initial | Initial Bootup]]
+2. [[onboardHardware | Hardware Specifications]]
 
 ## Introduction
 In this section, we talk about how to plugin in the car batteries and how to run teleoperation as well as provide general information pertaining to the hardware on the cars.

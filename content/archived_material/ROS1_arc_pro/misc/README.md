@@ -1,7 +1,7 @@
 # Misc
 ## Table of Contents
-1. [WSL2 Installation](wslInstall.md)
-2. [Pairing Bluetooth Controller](./bluetoothController.md)
+1. [[wslInstall | WSL2 Installation]]
+2. [[bluetoothController | Pairing Bluetooth Controller]]
 
 
 ## Introduction

@@ -49,4 +49,4 @@ Then, you can proceed through some of the Notebooks to get used to utilizing the
 
 You can find these notebooks in `~/Notebooks/`, namely `basic_motion.ipynb` and `teleoperation.ipynb`.
 
-Once you are comfortable with the environment, continue to [Machine Learning](ML.md).
+Once you are comfortable with the environment, continue to [[ML | Machine Learning]].

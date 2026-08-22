@@ -5,7 +5,7 @@ Throughout development, the Bluetooth controllers have been notorious for not co
 
 ## Steps:
 
-1. Connect to the robot Wi-Fi and SSH into the robot (see [Initial Boot-Up](../software/initial.md)) 
+1. Connect to the robot Wi-Fi and SSH into the robot (see [[initial | Initial Boot-Up]]) 
 
 Next run, the command: 
 

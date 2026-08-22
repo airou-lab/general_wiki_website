@@ -25,7 +25,7 @@ Connect to the network named "Robot AP ***robot number***" (Example: Robot AP 3)
 
 4. **SSH Into The Car:**
 If using WSL, open the Ubuntu 18.04 Terminal
-* [Here's how to download Ubuntu if you're using Windows](../misc/wslInstall.md)
+* [[wslInstall | Here's how to download Ubuntu if you're using Windows]]
 
 ![[ubuntu_on_windows.png]]
 
@@ -41,7 +41,7 @@ You should see something like this:
 5. **Connecting The Bluetooth Controller:**
 
 Press the center button on the PS4 controller to pair
-* If it does not connect, [see here](../misc/bluetoothController.md)
+* If it does not connect, [[bluetoothController | see here]]
 
 ![[bluetooth_controller.png]]
 

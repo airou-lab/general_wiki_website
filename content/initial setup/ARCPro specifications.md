@@ -1,4 +1,4 @@
-Provided for anyone who wishes. We used this in our [RL Project](../passive%20reinforcement%20learning/index.md). 
+Provided for anyone who wishes. We used this in our [[passive reinforcement learning/index| RL Project]]. 
 
 # Basic Measurements
 

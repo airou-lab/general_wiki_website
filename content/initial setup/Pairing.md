@@ -42,5 +42,5 @@ sudo apt install -y ros-jazzy-asio-cmake-module ros-jazzy-io-context ros-jazzy-s
 ```
 
 If you wish to run some of the examples you can find them here:
-- [Waypointing example](../waypointer/arcpro%20waypointer%20example%20run.md)
-- [Basic sensor and drive commands](arcpro%20run%20commands.md) 
+- [[arcpro waypointer example run| Waypointing example]]
+- [[arcpro run commands |Basic sensor and drive commands]] 

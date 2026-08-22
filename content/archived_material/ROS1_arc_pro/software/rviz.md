@@ -36,7 +36,7 @@ You should now see something like this:
 ![[rviz_on_realcar.jpg]]  
 
 > [!NOTE]
-> If you do not, see the same type of map as seen in the picture then you may not have the default mushr rviz configuration. In which case, go to [software install setup](initial.md) and make sure to add rviz.default.
+> If you do not, see the same type of map as seen in the picture then you may not have the default mushr rviz configuration. In which case, go to [[initial | software install setup]] and make sure to add rviz.default.
 
 3. **Add a topic: Real Sense d435i RGB camera image and depthcloud**
 

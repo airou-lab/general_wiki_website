@@ -9,10 +9,10 @@ Labs:
 slug: index
 ---
 %% Begin Waypoint %%
-- [building your bot](building%20your%20bot.md)
+- [[building your bot]]
 - **car2-11**
 
-- [index](../../passive%20reinforcement%20learning/index.md)
+- [[index]]
 - **platform1_and_2**
 
 

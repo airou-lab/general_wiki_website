@@ -6,7 +6,7 @@ In this tutorial, we’ll go over the bare necessities you’ll need on your bas
 **Perquisites:**
 
 * Ubuntu 18.04 dual booted on your machine or Ubuntu 18.04 installed on WSL2 on your Windows Computer.  
-    * **Note:** Instructions to [Install WSL2](../misc/wslInstall.md)
+    * **Note:** Instructions to [[wslInstall | Install WSL2]]
 
     * **Note:** WSL1 will be more difficult to use since you have to [setup graphics rendering](https://ripon-banik.medium.com/run-x-display-from-wsl-f94791795376).
 

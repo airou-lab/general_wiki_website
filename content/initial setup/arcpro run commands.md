@@ -5,7 +5,7 @@ Labs:
   - AIROU
 ---
 > [!NOTE] Looking to run the example?
-> Check out [arcpro waypointer example run](../waypointer/arcpro%20waypointer%20example%20run.md)
+> Check out [[arcpro waypointer example run]]
 
 # arc_pro issues
 > [!Warning] Not turning

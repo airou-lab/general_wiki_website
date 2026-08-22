@@ -5,7 +5,7 @@ Labs:
   - AIROU
 ---
 > [!NOTE] Running from our repo directly?
-> If you cloned our repo and followed the build steps, skip to [arcpro run commands](arcpro%20run%20commands.md)
+> If you cloned our repo and followed the build steps, skip to [[arcpro run commands]]
 
 > [!Warning] Port issues
 > Note that some ports in these docs may have been manually defined, and as such should be accounted for with lsbusb
@@ -52,4 +52,4 @@ git clone git@github.com:YDLIDAR/YDLidar-SDK.git
 ```
 
 Next steps:
-[Pairing](Pairing.md)
+[[Pairing]]

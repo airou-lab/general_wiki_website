@@ -50,4 +50,4 @@ Using these, the VOXL can connect to the NUC and vice versa.
 To test the connection between the two, run `ping` using the appropriate IP for each client set above.
 
 ---
-Next, [set up ROS on the VOXL and NUC](ros.md).
+Next, [[ros | set up ROS on the VOXL and NUC]].
