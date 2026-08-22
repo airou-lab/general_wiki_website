@@ -237,11 +237,11 @@ If you created the repository in your personal account instead of OU*VNAV2025*yo
 1. On GitHub, navigate to the main page of the repository.
 2. Under your repository name, click**Settings**.
 
-![TransferOwnershipStep1.png](https://airou-lab.github.io/general_wiki_website/SP2026-VNAV-CourseContent/Uploaded%20Media/TransferOwnershipStep1.png)
+![TransferOwnershipStep1.png](https://airou-lab.github.io/general_wiki_website/sp2026-vnav-coursecontent/uploaded-media/transferownershipstep1.png)
 3. Scroll down until your reach the**Danger Zone**, then click**Transfer**.
 
-![TransferOwnershipStep2.png](https://airou-lab.github.io/general_wiki_website/SP2026-VNAV-CourseContent/Uploaded%20Media/TransferOwnershipStep2.png)
+![TransferOwnershipStep2.png](https://airou-lab.github.io/general_wiki_website/sp2026-vnav-coursecontent/uploaded-media/transferownershipstep2.png)
 4. Type the name of your repository in the first row and  OUVNAV2025-submissionsin the second, then click**I understand, transfer this repository**.
 
-![TransferOwnershipStep3.png](https://airou-lab.github.io/general_wiki_website/SP2026-VNAV-CourseContent/Uploaded%20Media/TransferOwnershipStep3.png)
+![TransferOwnershipStep3.png](https://airou-lab.github.io/general_wiki_website/sp2026-vnav-coursecontent/uploaded-media/transferownershipstep3.png)
 5. Done!

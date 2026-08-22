@@ -255,7 +255,7 @@ We will now use the optimization in GTSAM that we just learned about
 in order to calculate both the poses of a camera and the positions of 
 the landmarks observed from these cameras via bundle adjustment.
 
-![bundle_adjustment.png](https://airou-lab.github.io/general_wiki_website/SP2026-VNAV-CourseContent/Uploaded%20Media/bundle_adjustment.png)
+![bundle_adjustment.png](https://airou-lab.github.io/general_wiki_website/sp2026-vnav-coursecontent/uploaded-media/bundle_adjustment.png)
 
  ([Source](https://www.researchgate.net/publication/312606599_Photographic_three-dimensional_superimposition_with_uncertainty_analysis_Applications_in_cranio-facial_superimposition/figures?lo=1&utm_source=google&utm_medium=organic))
 

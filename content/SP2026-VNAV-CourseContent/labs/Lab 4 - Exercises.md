@@ -343,7 +343,7 @@ helps later for comparing with the ground truth. Measure the rectangle
 with the ruler, which you will use it as a baseline to compare with your
  estimation.
 
-![square.png](https://airou-lab.github.io/general_wiki_website/SP2026-VNAV-CourseContent/Uploaded%20Media/square.png)
+![square.png](https://airou-lab.github.io/general_wiki_website/sp2026-vnav-coursecontent/uploaded-media/square.png)
 
 In order to collect a suitable rosbag, you must follow these steps inside the car:
 

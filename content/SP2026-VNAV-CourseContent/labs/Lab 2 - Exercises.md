@@ -69,7 +69,7 @@ Launch the two-drone static scenario:
 ros2 launch two_drones_pkg two_drones.launch.yaml static:=True
 ```
 
-![rViz.png](https://airou-lab.github.io/general_wiki_website/SP2026-VNAV-CourseContent/Uploaded%20Media/rViz.png)
+![rViz.png](https://airou-lab.github.io/general_wiki_website/sp2026-vnav-coursecontent/uploaded-media/rviz.png)
 
 This window is **rViz**, the ROS visualizer! Like most ROS nodes, rViz subscribes to topics and displays 3D graphics of the robotic system.
 
@@ -87,7 +87,7 @@ We consider two aerial vehicles, **AV1** (blue) and **AV2** (red), following dif
 - **AV1 body frame:** centered at $O_1$ with axes $(x_1, y_1, z_1)$
 - **AV2 body frame:** centered at $O_2$ with axes $(x_2, y_2, z_2)$
 
-![two-drones-refs.png](https://airou-lab.github.io/general_wiki_website/SP2026-VNAV-CourseContent/Uploaded%20Media/two-drones-refs.png)
+![two-drones-refs.png](https://airou-lab.github.io/general_wiki_website/sp2026-vnav-coursecontent/uploaded-media/two-drones-refs.png)
 
 > [!note] Trajectory Equations (Positions)
 > In the world frame, the origins of AV1 and AV2 are given as functions of time $t$:
@@ -178,7 +178,7 @@ every time you compile the package by running calcon build**
 > [!success] What to Expect
 > You should see both drones moving in rViz along their respective circular and parabolic paths!
 >
-> ![two_drones_rviz.gif](https://airou-lab.github.io/general_wiki_website/SP2026-VNAV-CourseContent/Uploaded%20Media/two_drones_rviz.gif)
+> ![two_drones_rviz.gif](https://airou-lab.github.io/general_wiki_website/sp2026-vnav-coursecontent/uploaded-media/two_drones_rviz.gif)
 
 ```bash
 
@@ -275,7 +275,7 @@ $R_1$   90° around  $xR_2$  180° around  $yR_3$  -30° around  $x$
 
 The sequence of rotations is applied with respect to a fixed frame of reference (the world frame), as follows:
 
-![guitar-01.png](https://airou-lab.github.io/general_wiki_website/SP2026-VNAV-CourseContent/Uploaded%20Media/guitar-01.png)
+![guitar-01.png](https://airou-lab.github.io/general_wiki_website/sp2026-vnav-coursecontent/uploaded-media/guitar-01.png)
 
 *Note*: the body axes are unlabeled, but represented in red ( $x_b$ ), green ( $y_b$ ), green ( $z_b$ ),
 
@@ -283,7 +283,7 @@ The sequence of rotations is applied with respect to a fixed frame of reference 
 
 The sequence of rotations is applied in*reverse order*with respect to a frame of reference attached to the object (the body frame), as follows:
 
-![guitar-02.png](https://airou-lab.github.io/general_wiki_website/SP2026-VNAV-CourseContent/Uploaded%20Media/guitar-02.png)
+![guitar-02.png](https://airou-lab.github.io/general_wiki_website/sp2026-vnav-coursecontent/uploaded-media/guitar-02.png)
 
 **Note that the final orientation of the object is the same in both cases!**
 

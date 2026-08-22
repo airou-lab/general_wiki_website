@@ -218,7 +218,7 @@ Your code should be able to plot a figure like the one below
 (keypoints you detected should not necessarily coincide with the ones in
  the figure):
 
-![greece1.png](https://airou-lab.github.io/general_wiki_website/SP2026-VNAV-CourseContent/Uploaded%20Media/greece1.png)
+![greece1.png](https://airou-lab.github.io/general_wiki_website/sp2026-vnav-coursecontent/uploaded-media/greece1.png)
 
 Now that we have detected keypoints in each image, we need to find a 
 way to uniquely identify these to subsequently match features from frame
@@ -277,7 +277,7 @@ whether some matches are considered outliers.
 
 1. Using the function we gave you in`feature_tracker.cpp`, compute and plot the inlier and outlier matches, such as in the following figure:
 
-![greece2.png](https://airou-lab.github.io/general_wiki_website/SP2026-VNAV-CourseContent/Uploaded%20Media/greece2.png)
+![greece2.png](https://airou-lab.github.io/general_wiki_website/sp2026-vnav-coursecontent/uploaded-media/greece2.png)
   - Hint: Note that`FeatureTracker::inlierMaskComputation`computes an inlier mask of type`std::vector<uchar>`, but for`cv::drawMatches`you will need a`std::vector<char>`. You can go from one to the other by using:
 `std::vector<char> char_inlier_mask{inlier_mask.begin(), inlier_mask.end()};`
   - Hint: You will need to call the`cv::drawMatches`function twice, first to plot the everything in red (using`cv::Scalar(0,0,255)`as the color), and then again to plot inliers in green (using the inlier mask and`cv::Scalar(0,255,0)`). The second time, you will need to use the`DrawMatchesFlags::DRAW_OVER_OUTIMG`flag to draw on top of the first output. To combine flags for the`cv::drawMatches`function, use the bitwise-or operator:`DrawMatchesFlags::NOT_DRAW_SINGLE_POINTS | DrawMatchesFlags::DRAW_OVER_OUTIMG`
@@ -408,7 +408,7 @@ frame to frame. We will now use the most well-known differential feature
 
 1. Using[OpenCV’s documentation](https://docs.opencv.org/4.5.4/d4/dee/tutorial_optical_flow.html)and the[C++ API for the LK tracker](https://docs.opencv.org/4.5.4/dc/d6b/group__video__track.html#ga473e4b886d0bcc6b65831eb88ed93323), track features for the video sequences we provided you by using the[Harris corner detector](https://docs.opencv.org/4.5.4/dc/d0d/tutorial_py_features_harris.html)(like[here](https://www.dropbox.com/s/zodssejrdl9vqdb/jpl_cave.mp4?dl%3D0)). Show the feature tracks at a given frame extracted when using the Harris corners, such as this:
 
-![lk_tracker.png](https://airou-lab.github.io/general_wiki_website/SP2026-VNAV-CourseContent/Uploaded%20Media/lk_tracker.png)
+![lk_tracker.png](https://airou-lab.github.io/general_wiki_website/sp2026-vnav-coursecontent/uploaded-media/lk_tracker.png)
 2. Add an extra entry to the table used in**Deliverable 6.**using the Harris + LK tracker that you implemented.
 3. What assumption about the features does the LK tracker rely on?
 4. Comment on the different results you observe between the table in this section and the one you computed in the other sections.

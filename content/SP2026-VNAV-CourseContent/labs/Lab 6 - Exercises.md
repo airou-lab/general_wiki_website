@@ -253,7 +253,7 @@ ros2 launch ultralytics_ros tracker.launch.xml debug:=true input_topic:=/camera/
 Note that`input_topic:=/camera/rgb/image_color`is telling YOLO to process data on that bag topic. By default, YOLO will send processed frames to the`/yolo_image`topic.
 2. Open up`rviz`or`rqt`to confirm YOLO is running. Confirm you can see something like this:
 
-![yolo-running.png](https://airou-lab.github.io/general_wiki_website/SP2026-VNAV-CourseContent/Uploaded%20Media/yolo-running.png)
+![yolo-running.png](https://airou-lab.github.io/general_wiki_website/sp2026-vnav-coursecontent/uploaded-media/yolo-running.png)
 
 Note: Depending on your computer hardware, YOLO may not run at the same framerate as the original video.
 3. Run the starter C++ code with:
@@ -293,7 +293,7 @@ information, so you might want to this as priors instead of as odometry.*Tip: If
 trajectory of the camera, and (iii) which frames got a good detection of
  the teddy bear. For instance, your`rviz`should look something like this:
 
-![deliverable_2.png](https://airou-lab.github.io/general_wiki_website/SP2026-VNAV-CourseContent/Uploaded%20Media/deliverable_2.png)
+![deliverable_2.png](https://airou-lab.github.io/general_wiki_website/sp2026-vnav-coursecontent/uploaded-media/deliverable_2.png)
 
 where the green line is (i), purple sphere is (ii), and the red arrows are (iii).
 
