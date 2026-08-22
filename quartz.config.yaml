@@ -268,17 +268,14 @@ layout:
       positions:
         beforeBody: []
         left: []
-        right: []
     content: {}
     folder:
       exclude:
         - reader-mode
       positions:
-        right: []
     tag:
       exclude:
         - reader-mode
       positions:
-        right: []
     canvas: {}
     bases: {}
