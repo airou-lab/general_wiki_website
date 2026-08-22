@@ -1,9 +1,9 @@
 ---
-title: 23-SLAM1-formulationsAndSparsity-notes.pdf
+title: "23 - SLAM 1 Formulations & Sparsity Notes (Part 2)"
 ---
 
-# 23-SLAM1-formulationsAndSparsity-notes.pdf
+# 23 - SLAM 1 Formulations & Sparsity Notes (Part 2)
 
-[23-SLAM1-formulationsAndSparsity-notes.pdf](/general_wiki_website/sp2026-vnav-coursecontent/notes/23-slam1-formulationsandsparsity-notes.pdf) (Download / Open)
+[23-SLAM1-formulationsAndSparsity-notes.pdf](/sp2026-vnav-coursecontent/notes/23-slam1-formulationsandsparsity-notes.pdf) (Download / Open)
 
-<iframe src="/general_wiki_website/sp2026-vnav-coursecontent/notes/23-slam1-formulationsandsparsity-notes.pdf" width="100%" height="800px" style="border: none;"></iframe>
+<iframe src="/sp2026-vnav-coursecontent/notes/23-slam1-formulationsandsparsity-notes.pdf" width="100%" height="800px" style="border: none;"></iframe>

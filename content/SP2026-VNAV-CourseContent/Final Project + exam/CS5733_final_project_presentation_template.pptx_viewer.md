@@ -1,8 +1,8 @@
 ---
-title: CS5733_final_project_presentation_template.pptx
+title: "Final Project Presentation Template"
 ---
 
-# CS5733_final_project_presentation_template.pptx
+# Final Project Presentation Template
 
-[CS5733_final_project_presentation_template.pptx](/general_wiki_website/sp2026-vnav-coursecontent/final-project-exam/cs5733_final_project_presentation_template.pptx) (Download / Open)
+[CS5733_final_project_presentation_template.pptx](/sp2026-vnav-coursecontent/final-project-exam/cs5733_final_project_presentation_template.pptx) (Download / Open)
 

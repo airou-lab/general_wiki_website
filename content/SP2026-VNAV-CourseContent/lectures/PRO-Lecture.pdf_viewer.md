@@ -1,9 +1,9 @@
 ---
-title: PRO-Lecture.pdf
+title: "PRO Lecture"
 ---
 
-# PRO-Lecture.pdf
+# PRO Lecture
 
-[PRO-Lecture.pdf](/general_wiki_website/sp2026-vnav-coursecontent/lectures/pro-lecture.pdf) (Download / Open)
+[PRO-Lecture.pdf](/sp2026-vnav-coursecontent/lectures/pro-lecture.pdf) (Download / Open)
 
-<iframe src="/general_wiki_website/sp2026-vnav-coursecontent/lectures/pro-lecture.pdf" width="100%" height="800px" style="border: none;"></iframe>
+<iframe src="/sp2026-vnav-coursecontent/lectures/pro-lecture.pdf" width="100%" height="800px" style="border: none;"></iframe>

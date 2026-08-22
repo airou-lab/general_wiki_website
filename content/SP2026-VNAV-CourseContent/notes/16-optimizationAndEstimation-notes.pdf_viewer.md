@@ -1,9 +1,9 @@
 ---
-title: 16-optimizationAndEstimation-notes.pdf
+title: "16 - Optimization & Estimation Notes (Part 2)"
 ---
 
-# 16-optimizationAndEstimation-notes.pdf
+# 16 - Optimization & Estimation Notes (Part 2)
 
-[16-optimizationAndEstimation-notes.pdf](/general_wiki_website/sp2026-vnav-coursecontent/notes/16-optimizationandestimation-notes.pdf) (Download / Open)
+[16-optimizationAndEstimation-notes.pdf](/sp2026-vnav-coursecontent/notes/16-optimizationandestimation-notes.pdf) (Download / Open)
 
-<iframe src="/general_wiki_website/sp2026-vnav-coursecontent/notes/16-optimizationandestimation-notes.pdf" width="100%" height="800px" style="border: none;"></iframe>
+<iframe src="/sp2026-vnav-coursecontent/notes/16-optimizationandestimation-notes.pdf" width="100%" height="800px" style="border: none;"></iframe>
