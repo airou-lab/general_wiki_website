@@ -7,6 +7,14 @@ tags:
 
 # Lab 5 - Exercises
 
+> [!info] Related Lectures & Notes
+> - [[CS4733_5733_F25_W8_9_Estimation.pdf_viewer|Lectures 8-9 - Estimation]]
+> - [[CS4733_5733_W11_12_13_Pose_Graph_Optimization.pdf_viewer|Lectures 11-13 - Pose Graph Optimization]]
+> - [[CS4733_5733_F2025_3D_reconstruction_and_review.pdf_viewer|3D Reconstruction and Review]]
+> - [[16-optimizationAndEstimation-notes (2).pdf_viewer|16 Optimization & Estimation Notes]]
+> - [[17-18-NonLinearLeastSquares-notes.pdf_viewer|17-18 Non-Linear Least Squares Notes]]
+> - [[18-19-OptimizationOnManifold-notes.pdf_viewer|18-19 Optimization on Manifold Notes]]
+
 > [!important] Submission Requirements
 > - **Individual Part:** Create a folder called `lab5` in your personal repo and push your PDF answers.
 > - **Team Part:** Push the entire package source code and a PDF containing discussion & plots to `lab5` in the team repo.
@@ -363,3 +371,7 @@ landmarks and poses, as well as images of your RViZ visualizations
 6. (Optional) For Team Deliverable 5, provide initial and final values 
 for the rotation. You will be graded mostly on your implementation of 
 the Frobenius Norm Factor.
+
+---
+
+**Previous**: [[Lab 4 - Exercises|⬅ Lab 4: Relative Pose Estimation]] | **Next**: [[Lab 6 - Exercises|Lab 6: Object Detection & YOLO ➔]]

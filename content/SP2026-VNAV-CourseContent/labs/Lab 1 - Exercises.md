@@ -7,6 +7,10 @@ tags:
 
 # Lab 1 - Exercises
 
+> [!info] Related Lectures & Notes
+> - [[CS4733_5733_F25_lecture1_Introduction.pdf_viewer|Lecture 1 - Introduction]]
+> - [[CS4733_5733_Fall2025_Syllabus.pdf_viewer|Course Syllabus]]
+
 > [!important] Submission Repository Requirement
 > To submit your solutions, you are required to create a repository in the **OUVNAV2025** organization (this is your first exercise).
 >
@@ -245,3 +249,7 @@ If you created the repository in your personal account instead of OU*VNAV2025*yo
 
 ![TransferOwnershipStep3.png](https://airou-lab.github.io/general_wiki_website/sp2026-vnav-coursecontent/uploaded-media/transferownershipstep3.png)
 5. Done!
+
+---
+
+**Next**: [[Lab 2 - Exercises|Lab 2: ROS 2 Basics, Coordinate Frames & TF ➔]]

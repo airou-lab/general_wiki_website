@@ -7,6 +7,13 @@ tags:
 
 # Lab 4 - Exercises
 
+> [!info] Related Lectures & Notes
+> - [[CS4733_5733_F25_W4_5_2view_GeometryII.pdf_viewer|Lectures 4-5 - 2-View Geometry II]]
+> - [[CS4733_5733_F25_W6_7_Ransac_correspondance.pdf_viewer|Lectures 6-7 - RANSAC Correspondence]]
+> - [[Eight_Point_Algorithm_Explanation.pdf_viewer|Eight-Point Algorithm Explanation]]
+> - [[14-2viewGeometry-notes.pdf_viewer|14 2-View Geometry Notes]]
+> - [[15-RANSAC-notes (2).pdf_viewer|15 RANSAC Notes]]
+
 > [!important] Submission Guidelines
 > - **Individual Part:** Upload solutions in the `lab4` folder of your individual repository.
 > - **Team Part:** Upload solutions in the `lab4` folder of your team repository.
@@ -438,3 +445,7 @@ is required, while without RANSAC is optional).
 minicity, plot the trajectory of the car/camera in 3D. overlay the
  estimated trajectory vs the ground truth you measure in the minicity 
 (uptoscale)
+
+---
+
+**Previous**: [[Lab 3 - Exercises|⬅ Lab 3: Perspective Projection & Features]] | **Next**: [[Lab 5 - Exercises|Lab 5: Bundle Adjustment & Factor Graphs ➔]]

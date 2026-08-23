@@ -7,6 +7,13 @@ tags:
 
 # Lab 7 - Exercises
 
+> [!info] Related Lectures & Notes
+> - [[CS4733_5733_F25_W14_Quadrotor_Dynamics.pdf_viewer|Lecture 14 - Quadrotor Dynamics]]
+> - [[CS4733_5733_F25_Quadrotor_Control_Planning.pdf_viewer|Quadrotor Control & Planning]]
+> - [[Geometric_controller_steps.pdf_viewer|Geometric Controller Steps]]
+> - [[06-Control1-notes.pdf_viewer|06 Control 1 Notes]]
+> - [[09-TrajectoryOptimization1-notes.pdf_viewer|09 Trajectory Optimization 1 Notes]]
+
 > [!important] Lab Structure
 > - **Part 1 (Transformations & Quadrotor Dynamics):** Individual analysis and derivations.
 > - **Part 2 (Trajectory Tracking Controller):** Implementation and gain tuning in the TESSE UAV flight simulator.
@@ -358,3 +365,7 @@ If your controller is working reasonably well we expect to see something like th
 1. Lee, Taeyoung, Melvin Leoky, N. Harris McClamroch. “Geometric 
 tracking control of a quadrotor UAV on SE (3).” Decision and Control 
 (CDC), 49th IEEE Conference on. IEEE, 2010[Link](http://math.ucsd.edu/~mleok/pdf/LeLeMc2010_quadrotor.pdf)
+
+---
+
+**Previous**: [[Lab 6 - Exercises|⬅ Lab 6: Object Detection]] | **Next**: [[Final Project + exam/index|Final Project & Exam ➔]]

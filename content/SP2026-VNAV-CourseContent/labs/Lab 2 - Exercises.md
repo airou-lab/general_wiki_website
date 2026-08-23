@@ -7,6 +7,11 @@ tags:
 
 # Lab 2 - Exercises
 
+> [!info] Related Lectures & Notes
+> - [[CS4733_CS5733_F24_W1_lecture2_Coordinate_frame_Geometry.pdf_viewer|Lecture 2 - Coordinate Frame Geometry]]
+> - [[CS4733_CS5733_F25_lecture3_3DGeometry.pdf_viewer|Lecture 3 - 3D Geometry]]
+> - [[02-03-basic3Dgeometry-notes.pdf_viewer|02-03 Basic 3D Geometry Notes]]
+
 > [!important] Submission Requirements (Individual)
 > **This lab must be completed individually.**
 > - **Part 1 (Code Deliverables):** Push your entire package folder to your individual repository under the `lab2` directory. Make sure code compiles cleanly before pushing.
@@ -292,3 +297,7 @@ axes and angles of the rotations and for any number of rotations in the
 sequence.
 
 Could you prove this formally?
+
+---
+
+**Previous**: [[Lab 1 - Exercises|⬅ Lab 1: Git & Environment Setup]] | **Next**: [[Lab 3 - Exercises|Lab 3: Perspective Projection & Harris Corners ➔]]

@@ -7,6 +7,12 @@ tags:
 
 # Lab 3 - Exercises
 
+> [!info] Related Lectures & Notes
+> - [[CS4733_5733_F25__lecture5_Image_Formation_Feature_Detection.pdf_viewer|Lecture 5 - Image Formation & Feature Detection]]
+> - [[CS4733_CS5733_F25_lecture3_and_4_3DGeometry.pdf_viewer|Lectures 3-4 - 3D Geometry]]
+> - [[11-ImageFormation-notes.pdf_viewer|11 Image Formation Notes]]
+> - [[12-13-featureDetectionAndTracking-notes.pdf_viewer|12-13 Feature Detection & Tracking Notes]]
+
 > [!important] Submission Instructions
 > - **Part 1 (Theory - Individual):** Create a folder called `lab3` in your personal repository and push your typed PDF answers.
 > - **Part 2 (Team):** Create a repository called `TEAM_<N>` (e.g. `TEAM_2`). Push the package source code and discussion PDF into the `lab3` folder.
@@ -443,3 +449,7 @@ as well.
 ### **Deliverable 11: team assignment [5 points]**
 
 Describe how you managed to work together. Share the task assignment within your team.
+
+---
+
+**Previous**: [[Lab 2 - Exercises|⬅ Lab 2: ROS 2 Basics & TF]] | **Next**: [[Lab 4 - Exercises|Lab 4: Relative Pose & 5-Point Algorithm ➔]]

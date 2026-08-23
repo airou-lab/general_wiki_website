@@ -7,6 +7,10 @@ tags:
 
 # Lab 6 - Exercises
 
+> [!info] Related Lectures & Notes
+> - [[CS4733_5733_Object_detection_3D_construction.pdf_viewer|Object Detection & 3D Reconstruction]]
+> - [[CS4733_5733_beyond_cameras.pdf_viewer|Beyond Cameras]]
+
 > [!warning] Submission Deadline
 > This lab will be cloned from both individual and team repos on **November 14th at 11:59 PM**. Submit files in a folder called `lab6`.
 
@@ -334,3 +338,7 @@ All together this writeup should be at least 250 words.
 ```bash
 
 ```
+
+---
+
+**Previous**: [[Lab 5 - Exercises|⬅ Lab 5: Bundle Adjustment]] | **Next**: [[Lab 7 - Exercises|Lab 7: Quadrotor Control & Trajectory Tracking ➔]]
