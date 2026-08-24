@@ -20,7 +20,7 @@ tags:
 > - **Team Part:** Push the entire package source code and a PDF containing discussion & plots to `lab5` in the team repo.
 
 > [!warning] Submission Deadline
-> Repositories will be cloned on **October 24th at midnight**.
+> Repositories will be cloned at the scheduled submission deadline. Please refer to Canvas / the course syllabus for exact due dates.
 
 > [!info] GTSAM Resources
 > Refer to Frank Dellaert's primers:

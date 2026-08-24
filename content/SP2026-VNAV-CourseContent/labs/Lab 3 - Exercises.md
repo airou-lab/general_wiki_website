@@ -18,16 +18,7 @@ tags:
 > - **Part 2 (Team):** Create a repository called `TEAM_<N>` (e.g. `TEAM_2`). Push the package source code and discussion PDF into the `lab3` folder.
 
 > [!warning] Submission Deadline
-> Course staff will clone repositories on **September 29th, 11:59 PM**.
-
----
-title: "Lab 3 - Exercises"
-tags:
-  - vnav
-  - labs
----
-
-# Lab 3 - Exercises
+> Course staff will clone repositories at the scheduled submission deadline. Please refer to Canvas / the course syllabus for exact due dates.
 
 This lab has two parts:
 
@@ -42,7 +33,7 @@ submission.
 
 Create a new repository in called `TEAM_<N>`, replacing `<N>` with your team number. For example, team 2 will create the repository `TEAM_2`. Please check the spreadsheet to find your team number. Please push the source code for the entire package to the folder `lab3` of the team repository. For the tables and discussion questions, please push a PDF to the `lab3` folder of your team repository.
 
-**Submission deadline:** the course staff will clone your repositories on **September 29th, 11:59 PM**.
+**Submission deadline:** The course staff will clone your repositories at the scheduled deadline (refer to Canvas/syllabus).
 
 ## Part 1: Theory section
 
@@ -435,7 +426,7 @@ the whole image. Try to calculate your[own optical flow](https://www.dropbox.com
 
 ### Deliverable 10 - Run the ArcPro Car [10 Points]
 
-The robot release tutorial session will be held on Tuesday September 23rd, 11:30-1.
+The robot release tutorial session schedule and details will be announced on Canvas.
 
 We expect at least one member from a team attends the tutorial and 
 complete the setup. If you cannot join, your team should run the car by 

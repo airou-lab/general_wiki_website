@@ -20,7 +20,7 @@ tags:
 > - **Deliverable 5:** Create a dedicated folder `lab4_deliverable5` and push code and results there.
 
 > [!warning] Submission Deadline
-> Staff will clone all repositories on **October 14th, 11:59 PM**.
+> Staff will clone all repositories at the scheduled submission deadline. Please refer to Canvas / the course syllabus for exact due dates.
 
 **Part 1: Individual section**
 

@@ -18,7 +18,7 @@ tags:
 > - **Part 2 (Theory / Math Deliverables):** Submit typed solutions in PDF format (LaTeX or Word) under `lab2`.
 
 > [!warning] Submission Deadline
-> Your repository will be cloned at midnight **Friday, September 12, 2025**.
+> Your repository will be cloned at the scheduled submission deadline. Please refer to Canvas / the course syllabus for exact due dates.
 > If you need to submit your solution after the deadline, notify the instructor beforehand.
 
 ## Setup Workspace

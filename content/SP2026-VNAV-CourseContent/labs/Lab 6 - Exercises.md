@@ -12,7 +12,7 @@ tags:
 > - [[CS4733_5733_beyond_cameras.pdf_viewer|Beyond Cameras]]
 
 > [!warning] Submission Deadline
-> This lab will be cloned from both individual and team repos on **November 14th at 11:59 PM**. Submit files in a folder called `lab6`.
+> This lab will be cloned from both individual and team repos at the scheduled submission deadline. Submit files in a folder called `lab6`. Please refer to Canvas / the course syllabus for exact due dates.
 
 > [!info] Overview: YOLO & Factor Graph Estimation
 > In this lab, we use **YOLO** as a front-end object detector and solve for the 3D position of target objects using **GTSAM** factor graphs.

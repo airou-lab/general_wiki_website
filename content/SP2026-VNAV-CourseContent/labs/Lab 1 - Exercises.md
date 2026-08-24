@@ -17,7 +17,7 @@ tags:
 > **Important:** Ensure you create a **Private** repository for your submission in the **OUVNAV2025** organization. Otherwise, your submission will be visible to everyone.
 
 > [!warning] Submission Deadline
-> VNAV staff will clone your repository on **Sept 3rd, 11:59 PM CST** to grade your submission.
+> VNAV staff will clone your repository at the scheduled submission deadline to grade your submission. Please refer to Canvas / the course syllabus for exact due dates.
 >
 > **Late Submission:** We will assume your repository is ready to be graded at the deadline. Please email the staff if you need to submit after the deadline.
 
