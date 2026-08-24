@@ -31,6 +31,13 @@ git clone -j8 --recurse-submodules=':!src/examples' https://github.com/airou-lab
 > [!tip] Submodule Flag
 > The flag `--recurse-submodules=':!src/examples'` clones all core robotics packages (VESC drivers, teleop, YDLidar SDK, Ackermann mux) while omitting large optional simulation examples.
 
+> [!info] Repository & Submodule Architecture
+> The core robot hardware drivers and bringup launch files are maintained in the [`airou-lab/f1tenth_to_arcpro`](https://github.com/airou-lab/f1tenth_to_arcpro) repository, included as a git submodule under `src/base/f1tenth_to_arcpro`. This submodule provides:
+> - **`f1tenth_stack`**: Main bringup launch files and configuration parameters (`config/vesc.yaml`).
+> - **`vesc`**: VESC motor controller driver and odometry node.
+> - **`f1tenth_teleop`**: Gamepad joystick teleoperation node.
+> - **`ackermann_mux`**: Command priority multiplexer.
+
 ---
 
 ## 2. Resolving Dependencies & Building
@@ -151,8 +158,7 @@ ros2 topic pub /drive_stamped ackermann_msgs/msg/AckermannDriveStamped \
 
 ## 5. Next Steps
 
-Now that your software stack and sensors are operational, proceed to tune your car's physical steering trim, speed multiplier, and odometry:
+Now that your software stack and sensors are operational, proceed to tune your car's physical steering trim, speed multiplier, and odometry, then proceed with the course lab exercises:
 
 - 🏎️ **Next Step**: [[Tuning Guide|ARCPro Tuning Guide (Steering & Speed Calibration)]]
-- 🗺️ **SLAM & Navigation**: [[Using nav2 with slamtoolbox|Mapping & Navigation with Nav2]]
-- 🎯 **Waypointing**: [[arcpro waypointer example run|Autonomous Waypoint Following]]
+- 📚 **Course Curriculum**: [[SP2026-VNAV-CourseContent/labs/index|VNAV Lab Exercises (Labs 1–7)]]

@@ -32,7 +32,7 @@ $$\text{erpm} = \text{speed\_to\_erpm\_gain} \cdot v + \text{speed\_to\_erpm\_of
 
 ### Configuration File Location
 
-All tuning parameters are located in your `arcpro_system` workspace at:
+All tuning parameters are located in the [`f1tenth_to_arcpro`](https://github.com/airou-lab/f1tenth_to_arcpro) submodule inside your `arcpro_system` workspace at:
 
 ```text
 ~/arcpro_system/src/base/f1tenth_to_arcpro/f1tenth_stack/config/vesc.yaml
@@ -148,6 +148,6 @@ Once tuning is complete:
    colcon build --symlink-install --packages-select f1tenth_stack
    ```
 2. Commit your car's tuned configuration to your team's branch or repository.
-3. Test your tuned vehicle in full autonomous operation:
-   - [[Using nav2 with slamtoolbox|SLAM & Nav2 Navigation]]
-   - [[arcpro waypointer example run|Waypointer Path Following]]
+3. Test your tuned vehicle in teleoperation and proceed with your lab deliverables:
+   - [[SP2026-VNAV-CourseContent/labs/index|VNAV Lab Exercises]]
+   - [[SP2026-VNAV-CourseContent/labs/Lab 7 - Exercises|Lab 7 - Vehicle Control & Trajectory Tracking]]

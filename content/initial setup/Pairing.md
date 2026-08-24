@@ -41,6 +41,7 @@ rosdep install --from-paths src --ignore-src -r -y || true
 sudo apt install -y ros-jazzy-asio-cmake-module ros-jazzy-io-context ros-jazzy-serial-driver  
 ```
 
-If you wish to run some of the examples you can find them here:
-- [[arcpro waypointer example run| Waypointing example]]
-- [[arcpro run commands |Basic sensor and drive commands]] 
+Next steps:
+- [[Getting started with ARCPro software|Getting Started with ARCPro Software]]
+- [[Tuning Guide|ARCPro Tuning Guide]]
+- [[arcpro run commands|Basic Drive and Sensor Commands]] 

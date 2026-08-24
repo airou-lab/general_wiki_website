@@ -4,40 +4,36 @@ Type:
 Labs:
   - AIROU
 ---
-> [!NOTE] Looking to run the example?
-> Check out [[arcpro waypointer example run]]
 
-# arc_pro issues
-> [!Warning] Not turning
-> I ran into this weird issue where the robot would turn when I first started teleop, but fail later to have any turn commands. It turns out I just need to manually adjust the wheels, or have the back wheels against a wall, and have them jam up. This seems to have fixed the issue, but not sure what the real cause was
+# Basic ARCPro Run Commands
 
-The following commands assume you've built either our basic arcpro repo, or our waypointing repo. Keep in mind both repos are built for Jazzy, and as such may need modifcation if not using Jazzy. 
+This reference page provides the standard ROS 2 commands to bring up the motor controller, sensors, teleoperation, and direct Ackermann driving.
+
+> [!tip] Quick Reference
+> Make sure your workspace is built and sourced before running these commands (`source ~/arcpro_system/install/setup.bash`).
 
 ```bash
-# Full demo launch file
-ros2 launch merger full.launch.py
-
-#Bringup lidar
-ros2 launch ydlidar_ros2_driver ydlidar_launch.py   
- sim:=false
-
-#Bringup vesc:
+# 1. Bring up VESC motor controller
 ros2 launch f1tenth_stack no_lidar_bringup_launch.py sim:=false
 
-# Launch teleop
-ros2 launch launches teleop.launch.py joy_dev:=ttyUSB0
+# 2. Bring up 2D LiDAR (YDLIDAR X4 Pro)
+ros2 launch ydlidar_ros2_driver ydlidar_launch.py sim:=false
 
-#Launch SLAM manually
-ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/src/merger/config/slam_toolbox_params.yaml
-# Make sure to update the slam params file accordingly if you've moved it
+# 3. Bring up RealSense Camera (Intel D435i)
+ros2 launch realsense2_camera rs_launch.py
 
-# Send a drive message (ensure that vesc is running beforehand)
-ros2 topic pub /drive_stamped ackermann_msgs/msg/AckermannDriveStamped \  
-'{header: {stamp: {sec: 0, nanosec: 0}, frame_id: "base_link"},  
-  drive: {steering_angle: 0.0, steering_angle_velocity: 0.0, speed:  0.4, acceleration: 0.0, jerk: 0.0}}' \  
--r 10
+# 4. Launch Teleoperation with wireless gamepad
+ros2 launch f1tenth_teleop teleop.launch.py joy_dev:=ttyUSB0
 
+# 5. Send a direct Ackermann drive command (speed: 0.4 m/s, steering: 0.0 rad)
+ros2 topic pub /drive_stamped ackermann_msgs/msg/AckermannDriveStamped \
+'{header: {stamp: {sec: 0, nanosec: 0}, frame_id: "base_link"}, \
+  drive: {steering_angle: 0.0, speed: 0.4}}' -r 10
 ```
 
+---
 
-As per usual please ensure the package is built and sourced properly. 
+## Next Steps
+- [[Getting started with ARCPro software|Getting Started with ARCPro Software]]
+- [[Tuning Guide|ARCPro Tuning Guide (Steering & Speed Calibration)]]
+- [[SP2026-VNAV-CourseContent/labs/index|VNAV Course Labs]]
