@@ -1,4 +1,16 @@
-> [!Warning] Page under construction!
-> We will hopefully have a full calibration guide out soon!
+---
+title: "Calibrating Your Car"
+tags:
+  - arcProDocs
+  - setup
+  - calibration
+---
 
-Currently we are basing our tuning from the f1tenth docs: [Calibrating the Odometry — F1TENTH - Build latest documentation](https://f1tenth.readthedocs.io/en/stable/getting_started/driving/drive_calib_odom.html)
+# Calibrating Your Car
+
+For the complete step-by-step procedure on fine-tuning your ARCPro steering angle offset, steering gain, and speed/odometry scaling using `vesc.yaml`, please refer to the dedicated **[[Tuning Guide|ARCPro Tuning Guide]]**.
+
+> [!tip] Quick Links
+> - **Full Guide:** [[Tuning Guide|ARCPro Tuning Guide]]
+> - **Software Setup:** [[Getting started with ARCPro software|Getting Started with ARCPro Software]]
+> - **Hardware Specs:** [[ARCPro specifications|Vehicle Specifications]]

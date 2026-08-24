@@ -15,14 +15,15 @@ Our robotic car is designed and built to autonomously navigate unknown areas and
 > [!Warning]
 > This site is still under construction, and as such some page links may be missing or hidden
 ## First time Setup guide:
-- [hardware](initial%20setup/hardware.md) (start here)
+- [Hardware Setup](initial%20setup/hardware.md) (start here)
 - [VESC aka FSEC](initial%20setup/VESC%20aka%20FSEC.md)
-### Software:
+### Software Setup:
+- [Getting Started with ARCPro Software](initial%20setup/Getting%20started%20with%20ARCPro%20software.md) (start here)
+- [ARCPro Tuning Guide (Steering & Speed Calibration)](initial%20setup/Tuning%20Guide.md)
 - [YDLidar X4 Pro and 435i realsense](initial%20setup/YDLidar%20X4%20Pro%20and%20435i%20realsense.md) 
-- [Calibrating your car](initial%20setup/Calibrating%20your%20car.md)
+- [Bluetooth Gamepad Pairing](initial%20setup/Pairing.md)
 - [Fusing sensors with robot_localization](waypointer/guides/Fusing%20sensors%20with%20robot_localization.md)
-- [Pairing](initial%20setup/Pairing.md)
-### Runing the example software
+### Running the example software
 - [Sensor and motor drive commands](initial%20setup/arcpro%20run%20commands.md)
 - [Example waypointing run commands](waypointer/arcpro%20waypointer%20example%20run.md)
 ## Repository File layout
