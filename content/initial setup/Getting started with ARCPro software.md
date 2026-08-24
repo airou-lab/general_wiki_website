@@ -17,11 +17,15 @@ Welcome to the ARCPro software stack! This guide walks you through cloning the s
 
 ---
 
-## 1. Cloning the Repository
+## 1. Getting the Codebase
+
+> [!tip] Using an Ansible-Provisioned Robot?
+> If your ARCPro robot was set up using the **[ARCPRO Ansible Image](https://github.com/airou-lab/ARCPRO_Ansible-Images)**, the entire `arcpro_system` repository, ROS 2 environment, and core dependencies are **already pre-installed and pre-built** in `~/arcpro_system`!
+> You can skip the manual cloning and build steps below and jump directly to **[[#3. Testing Teleoperation & Driving|Section 3: Testing Teleoperation]]**.
 
 The primary codebase for ARCPro is hosted at [`airou-lab/arcpro_system`](https://github.com/airou-lab/arcpro_system). 
 
-If the workspace is not already present on your machine or robot, clone it to your home directory:
+If you are setting up on a fresh machine or personal laptop, clone the repository to your home directory:
 
 ```bash
 cd ~
