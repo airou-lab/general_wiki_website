@@ -6,70 +6,68 @@ Labs:
 slug: index
 title: ARCPro Docs Home
 ---
-Our robotic car is designed and built to autonomously navigate unknown areas and create accurate 2D/3D maps. Also, the vehicles are capable of intra-vehicular and vehicle-to-infrastructure communication. In this tutorial, we will go through the hardware design of ARCPro first. Then the instruction to turn on the cars and hardware setup is explained step-by-step. Lastly, we instruct you to use ARCPro software to launch different sensors (e.g., LiDAR, depth camera).
 
-> [!Warning] 
-> Running ROS1?
-> Please see our deprecated ROS 1 Documentation [here](https://airou-lab.github.io/docs/intro.html)
+# AirOU Race Cars Pro (ARCPro)
 
-> [!Warning]
-> This site is still under construction, and as such some page links may be missing or hidden
+Our robotic car platform is designed and built to autonomously navigate unknown environments, map in 2D/3D, and execute real-time state estimation and control. This site contains course materials for VNAV (Visual Navigation for Autonomous Vehicles), platform hardware and software guides, vehicle calibration instructions, and example projects.
 
-## VNAV - Start Here:
-- [VNAV Lab Exercises](SP2026-VNAV-CourseContent/labs/index.md)
-- [VNAV Lectures & Slides](SP2026-VNAV-CourseContent/lectures/index.md)
-- [Getting Started with ARCPro Software](initial%20setup/Getting%20started%20with%20ARCPro%20software.md)
-- [ARCPro Tuning Guide (Calibrating your car)](initial%20setup/Tuning%20Guide.md)
+> [!Warning] Running ROS 1?
+> Please refer to our legacy ROS 1 documentation under [[archived_material/index|Archived Material]] or at the [AirOU Legacy ROS 1 Docs](https://airou-lab.github.io/docs/intro.html).
 
-## First time Setup guide:
-- [hardware](initial%20setup/hardware.md) (start here)
-- [VESC aka FSEC](initial%20setup/VESC%20aka%20FSEC.md)
-### Software:
-- [Getting Started with ARCPro Software](initial%20setup/Getting%20started%20with%20ARCPro%20software.md)
-- [ARCPro Tuning Guide](initial%20setup/Tuning%20Guide.md)
-- [YDLidar X4 Pro and 435i realsense](initial%20setup/YDLidar%20X4%20Pro%20and%20435i%20realsense.md) 
-- [Pairing](initial%20setup/Pairing.md)
-- [Fusing sensors with robot_localization](waypointer/guides/Fusing%20sensors%20with%20robot_localization.md)
-### Running the example software
-- [Sensor and motor drive commands](initial%20setup/arcpro%20run%20commands.md)
-- [Example waypointing run commands](waypointer/arcpro%20waypointer%20example%20run.md)
+---
 
-## Repository File layout
-All folders below are inside the `src` folder:
-- `base` Houses all code esential for driving the robot, running the lidar, and twist command conversion
-	- `YDLidar`: Lidar code
-	- `f1tenth_to_arcpro`: A forked repo of [f1tenth](https://github.com/f1tenth/f1tenth_system/tree/humble-devel#) repo 
-	- `twist_to_ackermann`: A forked repo of the repo's name. Used to convert message types
-- `examples` Houses all example projects completed on this car
-	- `arc_rl_interface`: Reinforcement learning repo [Running the Sim and sim2real](passive%20reinforcement%20learning/Running%20the%20Sim%20and%20sim2real.md)
-	- `waypointer`: - [waypointer](waypointer/arcpro%20waypointer%20example%20run.md) : Example waypointing in sim and irl
+## VNAV - Start Here
 
-# Credits 
-Regarding hardware and software information for the ARC system, most information and tutorials can be found on the [MuSHR website](https://mushr.io/) which is the project ARC is derived from.
+- **[[SP2026-VNAV-CourseContent/labs/index|VNAV Lab Exercises]]** (Labs 1–7)
+- **[[SP2026-VNAV-CourseContent/lectures/index|Lecture Slides & Viewers]]**
+- **[[SP2026-VNAV-CourseContent/notes/index|Course Notes]]**
+- **[[initial setup/Getting started with ARCPro software|Getting Started with ARCPro Software]]**
+- **[[initial setup/Tuning Guide|ARCPro Tuning Guide (Calibrating your car)]]**
 
-For any questions or concerns, feel free to reach out to us at:
+---
 
-**arikak@ou.edu (Software) and dvargas88@ou.edu (Hardware & MiniCity)**.
+## Platform Setup & Documentation
 
-There is also a forum for MuSHR issues located in their [GitHub organization discussions](https://github.com/prl-mushr/mushr/discussions).
+### Hardware
+- [[initial setup/hardware|Hardware Setup & Initial Boot]] (Start here for physical car setup)
+- [[initial setup/ARCPro specifications|Vehicle Specifications & Dimensions]]
+- [[initial setup/Pairing|Bluetooth Gamepad Pairing]]
 
-## Outside Resources
-Regarding the software for the MuSHR/ARC system, most information and tutorials can be found on the [MuSHR](https://mushr.io/) website or [f1tenth](https://roboracer.ai/build) site.
+### Software
+- [[initial setup/Getting started with ARCPro software|Software Bringup & Ansible Setup]]
+- [[initial setup/Tuning Guide|Tuning Guide (Steering Trim & Speed Scaling)]]
+- [[initial setup/YDLidar X4 Pro and 435i realsense|Sensors: YDLIDAR X4 Pro & Intel RealSense D435i]]
+- [[initial setup/arcpro run commands|Basic Drive & Sensor Commands]]
 
-For any questions or concerns, feel free to reach out to Arika Khor at arikak@ou.edu. There is also a forum for MuSHR issues located in their GitHub organization discussions.
+### Reference Examples
+- [[waypointer/arcpro waypointer example run|Waypointer Example Run]]
+- [[waypointer/guides/Fusing sensors with robot_localization|Sensor Fusion with Robot Localization (EKF)]]
+- [[passive reinforcement learning/Running the Sim and sim2real|Reinforcement Learning Simulation & Sim2Real]]
 
-For the purposes of documentation, we will only go over methods and information relevant to running the base sensors in ARC system, and anything that might be of resource to a new user.
+### Archived Material
+- [[archived_material/index|Legacy ROS 1 ARCPro, LIONN Drone & JetBot Documentation]]
 
-%% Begin Waypoint %%
-- [index](initial%20setup/index.md)
-- [arcpro run commands](initial%20setup/arcpro%20run%20commands.md)
-- [arcpro waypointer example run](waypointer/arcpro%20waypointer%20example%20run.md)
-- [Pairing](initial%20setup/Pairing.md)
-- [original docs](initial%20setup/original%20docs.md)
-- [Fusing sensors with robot_localization](waypointer/guides/Fusing%20sensors%20with%20robot_localization.md)
-- [hardware](initial%20setup/hardware.md)
-- [index](initial%20setup/index.md)
-- [YDLidar X4 Pro and 435i realsense](initial%20setup/YDLidar%20X4%20Pro%20and%20435i%20realsense.md)
-- [Using nav2 with slamtoolbox](waypointer/guides/Using%20nav2%20with%20slamtoolbox.md)
-- [VESC aka FSEC](initial%20setup/VESC%20aka%20FSEC.md)
-%% End Waypoint %%
+---
+
+## Repository Layout
+
+All packages live inside the `src` directory of [`airou-lab/arcpro_system`](https://github.com/airou-lab/arcpro_system):
+
+- **`base/`**: Core packages for robot bringup, sensor drivers, and Ackermann conversion:
+  - `f1tenth_to_arcpro`: Hardware stack (`f1tenth_stack`, `vesc`, `f1tenth_teleop`, `ackermann_mux`).
+  - `YDLidar`: YDLidar X4 Pro ROS 2 driver.
+  - `twist_to_ackermann`: Twist to Ackermann drive message converter.
+- **`examples/`**: Reference navigation and reinforcement learning projects:
+  - `waypointer`: Waypoint following and navigation examples.
+  - `arc_rl_interface`: Reinforcement learning sim2real interface.
+
+---
+
+## Credits & Outside Resources
+
+ARCPro hardware and software architecture is derived from the [MuSHR Project](https://mushr.io/) and [F1TENTH](https://roboracer.ai/build).
+
+For questions or assistance:
+- **Software & Systems**: Arika Khor (`arikak@ou.edu`)
+- **Hardware & MiniCity**: Daniel Vargas (`dvargas88@ou.edu`)
+- **MuSHR Discussions**: [MuSHR GitHub Discussions](https://github.com/prl-mushr/mushr/discussions)
