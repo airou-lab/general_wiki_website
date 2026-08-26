@@ -21,6 +21,7 @@ Our robotic car platform is designed and built to autonomously navigate unknown 
 - **[[SP2026-VNAV-CourseContent/labs/index|VNAV Lab Exercises]]** (Labs 1–7)
 - **[[SP2026-VNAV-CourseContent/lectures/index|Lecture Slides & Viewers]]**
 - **[[SP2026-VNAV-CourseContent/notes/index|Course Notes]]**
+- **[[initial setup/Remote Connection|Connecting Remotely to Your Robot (Hotspot, SSH, Windows RDP)]]**
 - **[[initial setup/Getting started with ARCPro software|Getting Started with ARCPro Software]]**
 - **[[initial setup/Tuning Guide|ARCPro Tuning Guide (Calibrating your car)]]**
 
@@ -33,7 +34,8 @@ Our robotic car platform is designed and built to autonomously navigate unknown 
 - [[initial setup/ARCPro specifications|Vehicle Specifications & Dimensions]]
 - [[initial setup/Pairing|Bluetooth Gamepad Pairing]]
 
-### Software
+### Software & Remote Access
+- [[initial setup/Remote Connection|Connecting Remotely (Wi-Fi Hotspot, Direct Ethernet, Windows RDP)]]
 - [[initial setup/Getting started with ARCPro software|Software Bringup & Ansible Setup]]
 - [[initial setup/Tuning Guide|Tuning Guide (Steering Trim & Speed Scaling)]]
 - [[initial setup/YDLidar X4 Pro and 435i realsense|Sensors: YDLIDAR X4 Pro & Intel RealSense D435i]]

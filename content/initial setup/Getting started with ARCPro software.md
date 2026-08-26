@@ -11,16 +11,29 @@ tags:
 Welcome to the ARCPro software stack! This guide walks you through cloning the system repository, building the ROS 2 workspace, testing manual driving (teleoperation), verifying onboard sensors (LiDAR & RealSense cameras), and moving forward to vehicle calibration and tuning.
 
 > [!info] Prerequisites
-> - Ensure your robot's onboard Intel NUC is powered on and connected to the network.
-> - Ensure hardware batteries and USB cables for the VESC, YDLidar, and RealSense camera are connected (see [[hardware|Hardware Setup]]).
+> - Ensure your robot's onboard Intel NUC is powered on (see [[hardware|Hardware Setup]]).
+> - Connect your laptop to the robot via **Wi-Fi Hotspot** (`ARCPRO_XX`) or **Direct Ethernet** (see [[Remote Connection|Connecting Remotely to Your Robot]]).
+> - Ensure hardware batteries and USB cables for the VESC, YDLidar, and RealSense camera are connected.
 > - Ensure your gamepad is paired (see [[Pairing|Bluetooth Gamepad Pairing]]).
+
+---
+
+## 0. Connecting Remotely (SSH & Windows Remote Desktop)
+
+ARC Pro robots support two plug-and-play remote connection options without requiring Tailscale:
+1. **Wireless Hotspot**: Connect your laptop Wi-Fi to your robot's SSID (`ARCPRO_02`, `ARCPRO_05`, etc. with password `arcpro1234`) and connect to **`192.168.4.1`**.
+2. **Direct Ethernet**: Plug an Ethernet cable into the NUC and connect to **`192.168.2.1`**.
+
+You can connect via **SSH Terminal** (`ssh arc@192.168.4.1`) or via **Windows Remote Desktop** (`mstsc.exe` to `192.168.4.1`) to access the full graphical Ubuntu desktop (with **Zen Browser** and ROS 2 GUI tools).
+
+👉 **For the complete step-by-step connection guide, see [[Remote Connection|Connecting Remotely to Your Robot]]**.
 
 ---
 
 ## 1. Getting the Codebase
 
 > [!tip] Using an Ansible-Provisioned Robot?
-> If your ARCPro robot was set up using the **[ARCPRO Ansible Image](https://github.com/airou-lab/ARCPRO_Ansible-Images)**, the entire `arcpro_system` repository, ROS 2 environment, and core dependencies are **already pre-installed and pre-built** in `~/arcpro_system`!
+> If your ARCPro robot was set up using the **[ARCPRO Ansible Image](https://github.com/airou-lab/ARCPRO_Ansible-Images)**, the entire `arcpro_system` repository, ROS 2 environment, core dependencies, and turnkey test scripts (`./straight.sh`, `./mockodom.sh`, `./killall.sh`) are **already pre-installed and pre-built** in `~/arcpro_system`!
 > You can skip the manual cloning and build steps below and jump directly to **[[#3. Testing Teleoperation & Driving|Section 3: Testing Teleoperation]]**.
 
 The primary codebase for ARCPro is hosted at [`airou-lab/arcpro_system`](https://github.com/airou-lab/arcpro_system). 

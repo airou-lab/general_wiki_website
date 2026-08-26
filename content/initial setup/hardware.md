@@ -22,9 +22,11 @@ ARCPro Main Components:
 - The connector to connect the VESC battery
 - The connector for connecting NUC battery
 - After you connect the batteries:
-## Connecting to the Nuc:
-- Directly: You may use a monitor/keyboard/mouse in the lab to connect to the nuc
-- Remotely:You can connect to the car through wifi either using Remote Desktop or by ssh. People have used the built in windows remote desktop, or direct ip connection from https://rustdesk.com/. 
+## Connecting to the NUC:
+- **Remotely (Wi-Fi Hotspot or Direct Ethernet)**: See the complete guide at **[[Remote Connection|Connecting Remotely to Your Robot (Hotspot, SSH & Windows RDP)]]**.
+  - **Wi-Fi Hotspot**: Connect to `ARCPRO_XX` (Password: `arcpro1234`) and connect to `192.168.4.1` via SSH or Windows Remote Desktop.
+  - **Direct Ethernet**: Plug an Ethernet cable into the NUC and connect to `192.168.2.1`.
+- **Directly (Physical Monitor)**: You may connect a monitor (HDMI), keyboard, and mouse directly to the NUC in the lab.
 ## How to shut down the race car: 
 1. To shut down the system, press the power button in NUC. Please do not hold it! Otherwise, it damages the NUC over the time 
 2.  Unplug the NUC cable

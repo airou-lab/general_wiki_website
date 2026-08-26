@@ -9,7 +9,8 @@ slug: setup
 - [[ARCPro specifications|Vehicle Specifications & Dimensions]]
 - [[Pairing|Bluetooth Gamepad Pairing]]
 
-## Software Setup
+## Software Setup & Remote Access
+- [[Remote Connection|Connecting Remotely to Your Robot (Wi-Fi Hotspot, SSH & Windows RDP)]]
 - [[Getting started with ARCPro software|Getting Started with ARCPro Software]] (Start Here)
 - [[Tuning Guide|ARCPro Tuning Guide (Steering & Speed Calibration)]]
 - [[YDLidar X4 Pro and 435i realsense|Sensors: YDLidar X4 Pro & Intel RealSense]]
