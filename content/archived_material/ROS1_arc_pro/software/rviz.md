@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # Using RVIZ
 ## Introduction
 RVIZ is a tool in ROS that can be used to visualize the information coming from the output of your ROS topics. In many cases, this can be a very useful tool for ensuring that the robot's components are working properly. 

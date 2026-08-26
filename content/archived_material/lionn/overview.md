@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # LIONN (Panther Derivation)
 
 ![[drone_rough.jpg]]

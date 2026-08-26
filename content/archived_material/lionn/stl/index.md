@@ -1,5 +1,7 @@
 ---
 title: "3D Printable STL Files"
+tags:
+  - archive
 ---
 
 # 3D Printable STL Files

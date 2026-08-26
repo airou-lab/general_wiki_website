@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # Hardware Info
 ![[arc-specs.jpg]]
 

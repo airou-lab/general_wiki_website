@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # WSL2 Installation
 
 ## Introduction:

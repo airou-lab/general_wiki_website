@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # Hardware
 ## Table of Contents
 1. [[initial | Initial Bootup]]

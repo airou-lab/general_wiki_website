@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # Hardware
 
 The hardware is based on the MIT Aerospace Control Lab's [nx Platform](https://gitlab.com/mit-acl/fsw/vehicle-builds/nx). Also see [their list of parts](https://docs.google.com/spreadsheets/d/1Wlv0AggwJEXu4AvRRExc7lY3p_MQ_X4-Evwyve9mzvk/edit#gid=0).

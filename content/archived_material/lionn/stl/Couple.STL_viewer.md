@@ -1,5 +1,7 @@
 ---
 title: "Couple"
+tags:
+  - archive
 ---
 
 # Couple

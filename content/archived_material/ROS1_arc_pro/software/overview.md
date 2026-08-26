@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # System Overview
 
 ![[overview.png]]

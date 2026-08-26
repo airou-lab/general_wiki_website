@@ -16,6 +16,34 @@ Fine-tuning car-specific control parameters for steering trim, steering gain, an
 
 ---
 
+## Quickstart Reference
+
+If you need to quickly calibrate your robot, here are the exact file paths and parameters to adjust:
+
+### 1. File Location
+Open the VESC configuration file on your robot:
+```bash
+nano ~/arcpro_system/src/base/f1tenth_to_arcpro/f1tenth_stack/config/vesc.yaml
+```
+
+### 2. Parameters Cheat Sheet
+
+| Parameter | Default Value | What It Controls | When & How to Adjust |
+| :--- | :--- | :--- | :--- |
+| `steering_angle_to_servo_offset` | `0.4705` | Steering center trim | • **Drifts Right**: Increase value (e.g. `0.485`)<br>• **Drifts Left**: Decrease value (e.g. `0.455`) |
+| `steering_angle_to_servo_gain` | `-1.2135` | Steering angle ratio / turn sharpness | • **Turns Too Wide**: Increase magnitude (e.g. `-1.35`)<br>• **Turns Too Sharp**: Decrease magnitude (e.g. `-1.10`) |
+| `speed_to_erpm_gain` | `4571.5` | Linear speed & Odometry scaling | Update to: `Current_Gain * (Measured_Distance / Odom_Distance)` |
+
+### 3. Apply Changes
+Re-build the package to apply your modified parameters:
+```bash
+cd ~/arcpro_system
+colcon build --symlink-install --packages-select f1tenth_stack
+source install/setup.bash
+```
+
+---
+
 ## 1. Introduction
 
 The VESC electronic speed controller maps high-level commanded velocities ($v$ in $\text{m/s}$) and steering angles ($\delta$ in radians) to electrical RPM (ERPM) and servo PWM values. Due to small physical variations in linkage geometry, tire diameter, and motor characteristics between individual robots, these conversion parameters must be tuned specifically for each car.

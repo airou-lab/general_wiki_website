@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # Machine Learning
 
 The AIROU Lab has constructed a miniature city which will be used as our training and testing ground for the Final Project.

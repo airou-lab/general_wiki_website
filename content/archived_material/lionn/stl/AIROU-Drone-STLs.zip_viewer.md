@@ -1,5 +1,7 @@
 ---
 title: "All Drone STLs (ZIP Package)"
+tags:
+  - archive
 ---
 
 # All Drone STLs (ZIP Package)

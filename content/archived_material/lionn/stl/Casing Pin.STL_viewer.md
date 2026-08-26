@@ -1,5 +1,7 @@
 ---
 title: "Casing Pin"
+tags:
+  - archive
 ---
 
 # Casing Pin

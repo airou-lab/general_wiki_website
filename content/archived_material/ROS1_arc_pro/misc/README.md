@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # Misc
 ## Table of Contents
 1. [[wslInstall | WSL2 Installation]]

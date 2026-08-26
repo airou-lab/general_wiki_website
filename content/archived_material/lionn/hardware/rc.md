@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # Remote Control
 
 The VOXL Flight will take a variety of inputs to its `J1004` RC connector.

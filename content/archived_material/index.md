@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # Summary
 
 # Projects

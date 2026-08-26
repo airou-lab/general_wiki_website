@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # Accessing the Drone
 
 ## Connecting to the VOXL

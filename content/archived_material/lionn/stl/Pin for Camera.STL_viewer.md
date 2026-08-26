@@ -1,5 +1,7 @@
 ---
 title: "Pin for Camera"
+tags:
+  - archive
 ---
 
 # Pin for Camera

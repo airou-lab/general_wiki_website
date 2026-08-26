@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # Initial Boot-up
 ## Introduction
 In this tutorial, we will show how to run the robot in teleoperation mode.

@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # Software
 ## Table of Contents
 1. [[initial | Initial Setup and Simulation]]

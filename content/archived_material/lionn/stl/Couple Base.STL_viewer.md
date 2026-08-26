@@ -1,5 +1,7 @@
 ---
 title: "Couple Base"
+tags:
+  - archive
 ---
 
 # Couple Base

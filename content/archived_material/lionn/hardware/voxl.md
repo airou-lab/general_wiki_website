@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # VOXL Flight Deck
 
 We use an all-in-one dev kit provided by ModalAI called the [VOXL Flight Deck](https://docs.modalai.com/flight-deck/).

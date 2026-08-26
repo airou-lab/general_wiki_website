@@ -1,5 +1,7 @@
 ---
 title: "Platform for Camera Pin"
+tags:
+  - archive
 ---
 
 # Platform for Camera Pin

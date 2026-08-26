@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # Pairing Bluetooth Controller
 
 ## Introduction 

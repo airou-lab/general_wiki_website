@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # JetBot Setup
 
 Your JetBot is starting with (roughly) the [base JetBot image available](https://jetbot.org/master/software_setup/sd_card.html).

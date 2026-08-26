@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # Running The Sensors
 ## Introduction
 The sensor launch file used in teleoperation can be found in mushr_hardware. 

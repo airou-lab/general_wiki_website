@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # Setup ROS
 
 Once the drone's networking infrastructure is established, we can set up ROS.

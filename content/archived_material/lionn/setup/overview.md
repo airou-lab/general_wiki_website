@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # Setup Guide
 This document details the steps to implement the setup for the LIONN platform once the hardware is finished and the software is installed.
 

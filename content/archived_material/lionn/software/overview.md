@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # Software
 
 In short, the software stack consists of two devices, the VOXL and the NUC, connected via Ethernet so that ROS can communicate between devices.

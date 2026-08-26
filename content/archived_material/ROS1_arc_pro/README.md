@@ -1,3 +1,8 @@
+---
+tags:
+  - archive
+---
+
 # AirOU Race Cars Pro (ARCPro)
 
 ## ARCPro Overview:
