@@ -13,4 +13,4 @@ title: "Lectures 4-5 - 2-View Geometry II"
 **Related Lab**: [[Lab 4 - Exercises|Lab 4: Relative Pose Estimation]]
 
 
-**Previous**: [[CS4733_CS5733_F25_lecture3_and_4_3DGeometry.pdf_viewer|⬅ Lectures 3-4 - 3D Geometry]] | **Next Lecture**: [[CS4733_5733_F25__lecture5_Image_Formation_Feature_Detection.pdf_viewer|Lecture 5 - Image Formation & Feature Detection ➔]]
+**Previous**: [[CS4733_CS5733_F25_lecture3_and_4_3DGeometry.pdf_viewer|Lectures 3-4 - 3D Geometry]] | **Next Lecture**: [[CS4733_5733_F25__lecture5_Image_Formation_Feature_Detection.pdf_viewer|Lecture 5 - Image Formation & Feature Detection]]

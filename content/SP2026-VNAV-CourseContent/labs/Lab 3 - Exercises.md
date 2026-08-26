@@ -443,4 +443,4 @@ Describe how you managed to work together. Share the task assignment within your
 
 ---
 
-**Previous**: [[Lab 2 - Exercises|⬅ Lab 2: ROS 2 Basics & TF]] | **Next**: [[Lab 4 - Exercises|Lab 4: Relative Pose & 5-Point Algorithm ➔]]
+**Previous**: [[Lab 2 - Exercises|Lab 2: ROS 2 Basics & TF]] | **Next**: [[Lab 4 - Exercises|Lab 4: Relative Pose & 5-Point Algorithm]]

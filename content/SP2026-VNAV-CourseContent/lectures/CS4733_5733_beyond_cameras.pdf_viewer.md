@@ -13,4 +13,4 @@ title: "Beyond Cameras"
 **Related Lab**: [[Lab 6 - Exercises|Lab 6: Object Detection & YOLO]]
 
 
-**Previous**: [[CS4733_5733_Object_detection_3D_construction.pdf_viewer|⬅ Object Detection & 3D Reconstruction]] | **Next Lecture**: [[CS4733_5733_F2025_3D_reconstruction_and_review.pdf_viewer|3D Reconstruction and Review ➔]]
+**Previous**: [[CS4733_5733_Object_detection_3D_construction.pdf_viewer|Object Detection & 3D Reconstruction]] | **Next Lecture**: [[CS4733_5733_F2025_3D_reconstruction_and_review.pdf_viewer|3D Reconstruction and Review]]

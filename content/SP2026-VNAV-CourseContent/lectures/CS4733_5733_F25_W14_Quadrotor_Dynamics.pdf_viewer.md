@@ -13,4 +13,4 @@ title: "Lecture 14 - Quadrotor Dynamics"
 **Related Lab**: [[Lab 7 - Exercises|Lab 7: Quadrotor Control & Trajectory Tracking]]
 
 
-**Previous**: [[CS4733_5733_F2025_3D_reconstruction_and_review.pdf_viewer|⬅ 3D Reconstruction and Review]] | **Next Lecture**: [[CS4733_5733_F25_Quadrotor_Control_Planning.pdf_viewer|Quadrotor Control & Planning ➔]]
+**Previous**: [[CS4733_5733_F2025_3D_reconstruction_and_review.pdf_viewer|3D Reconstruction and Review]] | **Next Lecture**: [[CS4733_5733_F25_Quadrotor_Control_Planning.pdf_viewer|Quadrotor Control & Planning]]

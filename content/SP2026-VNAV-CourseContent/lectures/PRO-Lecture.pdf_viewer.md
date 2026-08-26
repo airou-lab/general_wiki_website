@@ -10,4 +10,4 @@ title: "PRO Lecture"
 
 ---
 
-**Previous**: [[Geometric_controller_steps.pdf_viewer|⬅ Geometric Controller Steps]] | **Next Lecture**: [[CS4733_5733_F2025_conclusion.pdf_viewer|Conclusion ➔]]
+**Previous**: [[Geometric_controller_steps.pdf_viewer|Geometric Controller Steps]] | **Next Lecture**: [[CS4733_5733_F2025_conclusion.pdf_viewer|Conclusion]]

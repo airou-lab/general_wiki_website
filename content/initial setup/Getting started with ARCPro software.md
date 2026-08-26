@@ -12,7 +12,7 @@ Welcome to the ARCPro software stack! This guide walks you through cloning the s
 
 > [!info] Prerequisites
 > - Ensure your robot's onboard Intel NUC is powered on (see [[hardware|Hardware Setup]]).
-> - Connect your laptop to the robot via **Wi-Fi Hotspot** (`ARCPRO_XX`) or **Direct Ethernet** (see [[Remote Connection|Connecting Remotely to Your Robot]]).
+> - Connect your laptop to the robot via **Wi-Fi Hotspot** or **Tailscale** (see [[Remote Connection|Connecting Remotely to Your Robot]]).
 > - Ensure hardware batteries and USB cables for the VESC, YDLidar, and RealSense camera are connected.
 > - Ensure your gamepad is paired (see [[Pairing|Bluetooth Gamepad Pairing]]).
 
@@ -20,13 +20,13 @@ Welcome to the ARCPro software stack! This guide walks you through cloning the s
 
 ## 0. Connecting Remotely (SSH & Windows Remote Desktop)
 
-ARC Pro robots support two plug-and-play remote connection options without requiring Tailscale:
+ARC Pro robots support flexible remote connection methods:
 1. **Wireless Hotspot**: Connect your laptop Wi-Fi to your robot's SSID (`ARCPRO_02`, `ARCPRO_05`, etc. with password `arcpro1234`) and connect to **`192.168.4.1`**.
-2. **Direct Ethernet**: Plug an Ethernet cable into the NUC and connect to **`192.168.2.1`**.
+2. **Remote Access via Tailscale / Mesh VPN**: Secure remote connection across networks using Tailscale.
 
 You can connect via **SSH Terminal** (`ssh arc@192.168.4.1`) or via **Windows Remote Desktop** (`mstsc.exe` to `192.168.4.1`) to access the full graphical Ubuntu desktop (with **Zen Browser** and ROS 2 GUI tools).
 
-👉 **For the complete step-by-step connection guide, see [[Remote Connection|Connecting Remotely to Your Robot]]**.
+**For the complete step-by-step connection guide, see [[Remote Connection|Connecting Remotely to Your Robot]]**.
 
 ---
 
@@ -177,5 +177,5 @@ ros2 topic pub /drive_stamped ackermann_msgs/msg/AckermannDriveStamped \
 
 Now that your software stack and sensors are operational, proceed to tune your car's physical steering trim, speed multiplier, and odometry, then proceed with the course lab exercises:
 
-- 🏎️ **Next Step**: [[Tuning Guide|ARCPro Tuning Guide (Steering & Speed Calibration)]]
-- 📚 **Course Curriculum**: [[SP2026-VNAV-CourseContent/labs/index|VNAV Lab Exercises (Labs 1–7)]]
+- **Next Step**: [[Tuning Guide|ARCPro Tuning Guide (Steering & Speed Calibration)]]
+- **Course Curriculum**: [[SP2026-VNAV-CourseContent/labs/index|VNAV Lab Exercises (Labs 1–7)]]

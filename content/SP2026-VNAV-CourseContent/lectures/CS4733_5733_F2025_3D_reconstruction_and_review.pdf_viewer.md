@@ -13,4 +13,4 @@ title: "3D Reconstruction and Review"
 **Related Lab**: [[Lab 5 - Exercises|Lab 5: Bundle Adjustment]]
 
 
-**Previous**: [[CS4733_5733_beyond_cameras.pdf_viewer|⬅ Beyond Cameras]] | **Next Lecture**: [[CS4733_5733_F25_W14_Quadrotor_Dynamics.pdf_viewer|Lecture 14 - Quadrotor Dynamics ➔]]
+**Previous**: [[CS4733_5733_beyond_cameras.pdf_viewer|Beyond Cameras]] | **Next Lecture**: [[CS4733_5733_F25_W14_Quadrotor_Dynamics.pdf_viewer|Lecture 14 - Quadrotor Dynamics]]

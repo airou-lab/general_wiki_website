@@ -13,4 +13,4 @@ title: "Lecture 5 - Image Formation & Feature Detection"
 **Related Lab**: [[Lab 3 - Exercises|Lab 3: Perspective Projection & Features]]
 
 
-**Previous**: [[CS4733_5733_F25_W4_5_2view_GeometryII.pdf_viewer|⬅ Lectures 4-5 - 2-View Geometry II]] | **Next Lecture**: [[CS4733_5733_F25_W6_7_Ransac_correspondance.pdf_viewer|Lectures 6-7 - RANSAC Correspondence ➔]]
+**Previous**: [[CS4733_5733_F25_W4_5_2view_GeometryII.pdf_viewer|Lectures 4-5 - 2-View Geometry II]] | **Next Lecture**: [[CS4733_5733_F25_W6_7_Ransac_correspondance.pdf_viewer|Lectures 6-7 - RANSAC Correspondence]]

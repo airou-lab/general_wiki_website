@@ -374,4 +374,4 @@ the Frobenius Norm Factor.
 
 ---
 
-**Previous**: [[Lab 4 - Exercises|⬅ Lab 4: Relative Pose Estimation]] | **Next**: [[Lab 6 - Exercises|Lab 6: Object Detection & YOLO ➔]]
+**Previous**: [[Lab 4 - Exercises|Lab 4: Relative Pose Estimation]] | **Next**: [[Lab 6 - Exercises|Lab 6: Object Detection & YOLO]]

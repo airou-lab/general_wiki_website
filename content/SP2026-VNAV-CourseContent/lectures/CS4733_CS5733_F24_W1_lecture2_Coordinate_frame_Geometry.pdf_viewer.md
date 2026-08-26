@@ -13,4 +13,4 @@ title: "Lecture 2 - Coordinate Frame Geometry"
 **Related Lab**: [[Lab 2 - Exercises|Lab 2: ROS 2 Basics & TF]]
 
 
-**Previous**: [[CS4733_5733_F25_lecture1_Introduction.pdf_viewer|⬅ Lecture 1 - Introduction]] | **Next Lecture**: [[CS4733_CS5733_F25_lecture3_3DGeometry.pdf_viewer|Lecture 3 - 3D Geometry ➔]]
+**Previous**: [[CS4733_5733_F25_lecture1_Introduction.pdf_viewer|Lecture 1 - Introduction]] | **Next Lecture**: [[CS4733_CS5733_F25_lecture3_3DGeometry.pdf_viewer|Lecture 3 - 3D Geometry]]

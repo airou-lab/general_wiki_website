@@ -13,4 +13,4 @@ title: "Eight-Point Algorithm Explanation"
 **Related Lab**: [[Lab 4 - Exercises|Lab 4: Relative Pose & 5-Point]]
 
 
-**Previous**: [[CS4733_5733_F25_W6_7_Ransac_correspondance.pdf_viewer|⬅ Lectures 6-7 - RANSAC Correspondence]] | **Next Lecture**: [[CS4733_5733_F25_W8_9_Estimation.pdf_viewer|Lectures 8-9 - Estimation ➔]]
+**Previous**: [[CS4733_5733_F25_W6_7_Ransac_correspondance.pdf_viewer|Lectures 6-7 - RANSAC Correspondence]] | **Next Lecture**: [[CS4733_5733_F25_W8_9_Estimation.pdf_viewer|Lectures 8-9 - Estimation]]

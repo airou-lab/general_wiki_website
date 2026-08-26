@@ -13,4 +13,4 @@ title: "Estimation"
 **Related Lab**: [[Lab 5 - Exercises|Lab 5: Bundle Adjustment & Factor Graphs]]
 
 
-**Previous**: [[CS4733_5733_F25_W8_9_Estimation.pdf_viewer|⬅ Lectures 8-9 - Estimation]] | **Next Lecture**: [[CS4733_5733_F25_W10_loop_closure_place_recognition.pdf_viewer|Lecture 10 - Loop Closure & Place Recognition ➔]]
+**Previous**: [[CS4733_5733_F25_W8_9_Estimation.pdf_viewer|Lectures 8-9 - Estimation]] | **Next Lecture**: [[CS4733_5733_F25_W10_loop_closure_place_recognition.pdf_viewer|Lecture 10 - Loop Closure & Place Recognition]]

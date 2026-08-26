@@ -252,4 +252,4 @@ If you created the repository in your personal account instead of OU*VNAV2025*yo
 
 ---
 
-**Next**: [[Lab 2 - Exercises|Lab 2: ROS 2 Basics, Coordinate Frames & TF ➔]]
+**Next**: [[Lab 2 - Exercises|Lab 2: ROS 2 Basics, Coordinate Frames & TF]]

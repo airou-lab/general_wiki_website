@@ -10,7 +10,10 @@ async function mouseEnterHandler(
   { clientX, clientY }: { clientX: number; clientY: number },
 ) {
   const link = (activeAnchor = this)
-  if (link.dataset.noPopover === "true") {
+  if (
+    link.dataset.noPopover === "true" ||
+    link.pathname.match(/\.(pdf|pptx|ppt|zip|tar|gz|mp4|webm|avi|mov|docx|xlsx)$/i)
+  ) {
     return
   }
 
@@ -63,7 +66,7 @@ async function mouseEnterHandler(
   const rawContentType = response.headers.get("Content-Type")
   if (!rawContentType) return
   const [contentType] = rawContentType.split(";")
-  const [contentTypeCategory, typeInfo] = contentType.split("/")
+  const [contentTypeCategory] = contentType.split("/")
 
   const popoverElement = document.createElement("div")
   popoverElement.id = popoverId
@@ -81,21 +84,20 @@ async function mouseEnterHandler(
 
       popoverInner.appendChild(img)
       break
-    case "application":
-      switch (typeInfo) {
-        case "pdf":
-          const pdf = document.createElement("iframe")
-          pdf.src = targetUrl.toString()
-          popoverInner.appendChild(pdf)
-          break
-        default:
-          break
-      }
+    case "application": {
+      const docPreview = document.createElement("div")
+      docPreview.className = "popover-doc-card"
+      docPreview.style.padding = "1rem"
+      docPreview.textContent = `Document: ${targetUrl.pathname.split("/").pop()}`
+      popoverInner.appendChild(docPreview)
       break
-    default:
+    }
+    default: {
       const contents = await response.text()
       const html = p.parseFromString(contents, "text/html")
       normalizeRelativeURLs(html, targetUrl)
+      // Strip all iframe, embed, and object tags to prevent auto-downloads on hover
+      html.querySelectorAll("iframe, embed, object").forEach((el) => el.remove())
       // prepend all IDs inside popovers to prevent duplicates
       html.querySelectorAll("[id]").forEach((el) => {
         const targetID = `popover-internal-${el.id}`
@@ -105,6 +107,7 @@ async function mouseEnterHandler(
       if (elts.length === 0) return
 
       elts.forEach((elt) => popoverInner.appendChild(elt))
+    }
   }
 
   if (!!document.getElementById(popoverId)) {

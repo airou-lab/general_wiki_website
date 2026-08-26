@@ -13,4 +13,4 @@ title: "Object Detection & 3D Reconstruction"
 **Related Lab**: [[Lab 6 - Exercises|Lab 6: Object Detection & YOLO]]
 
 
-**Previous**: [[CS4733_5733_W11_12_13_Pose_Graph_Optimization.pdf_viewer|⬅ Lectures 11-13 - Pose Graph Optimization]] | **Next Lecture**: [[CS4733_5733_beyond_cameras.pdf_viewer|Beyond Cameras ➔]]
+**Previous**: [[CS4733_5733_W11_12_13_Pose_Graph_Optimization.pdf_viewer|Lectures 11-13 - Pose Graph Optimization]] | **Next Lecture**: [[CS4733_5733_beyond_cameras.pdf_viewer|Beyond Cameras]]

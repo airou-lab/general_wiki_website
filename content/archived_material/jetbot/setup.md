@@ -6,7 +6,7 @@ Your JetBot is starting with (roughly) the [base JetBot image available](https:/
 
 The JetBot can be turned on by using the button on the rear left corner, through the hole in the frame. This will turn on the external power bank, supplying power to the single-board computer (Jetson Nano) and the motor power supply board.
 
-Other hardware includes a wide-angle camera (with a lens cap 😛), two wheel/motor assemblies and a roller ball. The single-board computer has a wifi card for connectivity, a small display for debug/configuration info, and an SD card holding the storage for the device.
+Other hardware includes a wide-angle camera (with a lens cap), two wheel/motor assemblies and a roller ball. The single-board computer has a wifi card for connectivity, a small display for debug/configuration info, and an SD card holding the storage for the device.
 
 ## Network Setup
 

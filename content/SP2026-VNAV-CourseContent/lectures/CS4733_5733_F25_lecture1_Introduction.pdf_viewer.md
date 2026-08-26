@@ -13,4 +13,4 @@ title: "Lecture 1 - Introduction"
 **Related Lab**: [[Lab 1 - Exercises|Lab 1: Git & Environment Setup]]
 
 
-**Next Lecture**: [[CS4733_CS5733_F24_W1_lecture2_Coordinate_frame_Geometry.pdf_viewer|Lecture 2 - Coordinate Frame Geometry ➔]]
+**Next Lecture**: [[CS4733_CS5733_F24_W1_lecture2_Coordinate_frame_Geometry.pdf_viewer|Lecture 2 - Coordinate Frame Geometry]]

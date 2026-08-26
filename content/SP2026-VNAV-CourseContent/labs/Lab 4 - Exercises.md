@@ -448,4 +448,4 @@ minicity, plot the trajectory of the car/camera in 3D. overlay the
 
 ---
 
-**Previous**: [[Lab 3 - Exercises|⬅ Lab 3: Perspective Projection & Features]] | **Next**: [[Lab 5 - Exercises|Lab 5: Bundle Adjustment & Factor Graphs ➔]]
+**Previous**: [[Lab 3 - Exercises|Lab 3: Perspective Projection & Features]] | **Next**: [[Lab 5 - Exercises|Lab 5: Bundle Adjustment & Factor Graphs]]

@@ -10,4 +10,4 @@ title: "Conclusion"
 
 ---
 
-**Previous**: [[PRO-Lecture.pdf_viewer|⬅ PRO Lecture]] | **Next**: [[Final Project + exam/index|Final Project & Exam ➔]]
+**Previous**: [[PRO-Lecture.pdf_viewer|PRO Lecture]] | **Next**: [[Final Project + exam/index|Final Project & Exam]]

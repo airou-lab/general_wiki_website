@@ -341,4 +341,4 @@ All together this writeup should be at least 250 words.
 
 ---
 
-**Previous**: [[Lab 5 - Exercises|⬅ Lab 5: Bundle Adjustment]] | **Next**: [[Lab 7 - Exercises|Lab 7: Quadrotor Control & Trajectory Tracking ➔]]
+**Previous**: [[Lab 5 - Exercises|Lab 5: Bundle Adjustment]] | **Next**: [[Lab 7 - Exercises|Lab 7: Quadrotor Control & Trajectory Tracking]]

@@ -10,4 +10,4 @@ title: "Lecture 10 - Loop Closure & Place Recognition"
 
 ---
 
-**Previous**: [[CS4733_5733_F25_Estimation.pdf_viewer|⬅ Estimation]] | **Next Lecture**: [[CS4733_5733_W11_12_13_Pose_Graph_Optimization.pdf_viewer|Lectures 11-13 - Pose Graph Optimization ➔]]
+**Previous**: [[CS4733_5733_F25_Estimation.pdf_viewer|Estimation]] | **Next Lecture**: [[CS4733_5733_W11_12_13_Pose_Graph_Optimization.pdf_viewer|Lectures 11-13 - Pose Graph Optimization]]

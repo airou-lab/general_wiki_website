@@ -9,12 +9,11 @@ tags:
 
 # Connecting Remotely to Your ARC Pro Robot
 
-This guide covers how students can connect to their ARC Pro robot from a laptop (Windows, macOS, or Linux). ARC Pro robots support both **terminal SSH** and **graphical Windows Remote Desktop (RDP)** without requiring Tailscale or complex campus network configurations.
+This guide covers how to connect to an ARC Pro robot from a laptop (Windows, macOS, or Linux). ARC Pro robots support both **terminal SSH** and **graphical Windows Remote Desktop (RDP)**.
 
-> [!important] Default Student Credentials
-> - **Username**: `arc`
+> [!important] Default Robot Credentials
+> - **Username**: `arc` (or your configured administrative user)
 > - **Default Robot Hotspot IP**: `192.168.4.1`
-> - **Default Direct Ethernet IP**: `192.168.2.1`
 
 ---
 
@@ -23,24 +22,23 @@ This guide covers how students can connect to their ARC Pro robot from a laptop 
 | Method | Best For | Connection Target | Configuration Needed |
 | :--- | :--- | :--- | :--- |
 | **[[#Option 1: Direct Wi-Fi Hotspot (Wireless)]]** | In-lab wireless testing & driving | `192.168.4.1` | Connect laptop to `ARCPRO_XX` Wi-Fi |
-| **[[#Option 2: Plug-and-Play Direct Ethernet]]** | Cable connection / high bandwidth | `192.168.2.1` | Plug Ethernet cable into NUC |
-| **[[#Option 3: Campus Network & Tailscale]]** | Off-campus / Remote access | `arcproX.husky-bangus.ts.net` | Requires Tailscale |
+| **[[#Option 2: Remote Access via Tailscale / Mesh VPN]]** | Off-campus / Remote access across networks | Robot Tailscale hostname or IP | Requires Tailscale installed on client & robot |
 
 ---
 
 ## Option 1: Direct Wi-Fi Hotspot (Wireless)
 
-Every ARC Pro robot automatically broadcasts its own dedicated high-speed Wi-Fi hotspot in the lab.
+Every ARC Pro robot automatically broadcasts its own dedicated high-speed Wi-Fi hotspot for direct, zero-configuration local wireless control.
 
 ### Step 1: Connect Your Laptop to the Robot's Wi-Fi
 1. Open Wi-Fi settings on your laptop.
 2. Select your robot's SSID:
-   - **SSID Format**: `ARCPRO_02`, `ARCPRO_05`, `ARCPRO_06`, `ARCPRO_07`, `ARCPRO_08`, `ARCPRO_09`, `ARCPRO_11`
+   - **SSID Format**: `ARCPRO_02`, `ARCPRO_05`, `ARCPRO_06`, `ARCPRO_07`, `ARCPRO_08`, `ARCPRO_09`, `ARCPRO_11` (or your configured hotspot name)
 3. Enter the Wi-Fi Password:
    ```text
    arcpro1234
    ```
-4. Your laptop will automatically receive an IP address (e.g., `192.168.4.100`).
+4. Your laptop will automatically receive an IP address on the `192.168.4.x` subnet.
 
 ---
 
@@ -76,27 +74,42 @@ To access the full Ubuntu graphical desktop (including **Zen Browser**, visual t
 
 ---
 
-## Option 2: Plug-and-Play Direct Ethernet (Cable)
+## Option 2: Remote Access via Tailscale / Mesh VPN
 
-If you prefer a physical cable connection for maximum speed and zero wireless latency:
+For remote access over campus networks, off-campus locations, or across different Wi-Fi subnets without port forwarding or firewall hassles, ARC Pro robots can be accessed using **Tailscale** (a zero-config WireGuard-based mesh VPN).
 
-1. Connect a standard Ethernet cable (RJ-45) from your laptop to the Intel NUC's Ethernet port (`enp89s0`).
-2. The robot's built-in DHCP server will automatically assign your laptop an IP on the `192.168.2.x` subnet.
-3. Connect using:
-   - **SSH**: `ssh arc@192.168.2.1`
-   - **Remote Desktop (RDP)**: `192.168.2.1`
+### General Setup for Replicating the System
 
-> [!info] Internet Passthrough
-> The robot automatically bridges internet from its campus Wi-Fi (`WIFI@OU`) to your laptop over the direct Ethernet and Hotspot connections.
+If you are setting up or replicating this robotics platform on your own machine or fleet:
 
----
+1. **Install Tailscale on the Robot**:
+   ```bash
+   curl -fsSL https://tailscale.com/install.sh | sh
+   sudo tailscale up
+   ```
+2. **Install Tailscale on Your Laptop/Client**:
+   - Download and install Tailscale from [tailscale.com/download](https://tailscale.com/download) for your OS (Windows, macOS, Linux, iOS, Android).
+   - Sign in to the same Tailscale account.
+3. **Obtain Robot Tailscale IP / Hostname**:
+   - Run `tailscale ip -4` or `tailscale status` on the robot, or check your Tailscale admin console.
+   - Tailscale assigns a stable 100.x.y.z IP address and a MagicDNS name (e.g., `robot-name.your-tailnet.ts.net`).
 
-## Option 3: Campus Network & Tailscale (Advanced)
+### Connecting via Tailscale
 
-For instructors or remote access outside the lab:
-- **Tailscale Address**: `arcproX.husky-bangus.ts.net`
-- **Port 22**: SSH Terminal
-- **Port 3389**: Windows Remote Desktop (RDP)
+Once both your laptop and robot are connected to your Tailscale network:
+
+- **SSH Terminal Access**:
+  ```bash
+  ssh <username>@<tailscale-ip-or-magicdns>
+  ```
+- **Remote Desktop (RDP / XRDP)**:
+  Enter the robot's Tailscale IP or MagicDNS domain into Remote Desktop Connection (`mstsc.exe` or macOS Microsoft Remote Desktop).
+
+> [!note] AIROU Lab Fleet Example
+> For students and lab members using the pre-configured lab fleet:
+> - **Tailscale Address Format**: `arcproX.husky-bangus.ts.net` (where `X` is your robot number, e.g., `arcpro2.husky-bangus.ts.net`)
+> - **SSH**: `ssh arc@arcproX.husky-bangus.ts.net`
+> - **RDP Target**: `arcproX.husky-bangus.ts.net`
 
 ---
 
@@ -118,6 +131,6 @@ Once connected as the `arc` user, you can run convenience scripts located direct
 ---
 
 ## Next Steps
-- 🏎️ **Vehicle Calibration**: [[Tuning Guide|ARCPro Tuning Guide (Steering & Speed Calibration)]]
-- 📡 **Sensors**: [[YDLidar X4 Pro and 435i realsense|Testing YDLidar & RealSense Cameras]]
-- 📚 **Course Labs**: [[SP2026-VNAV-CourseContent/labs/index|VNAV Lab Exercises]]
+- **Vehicle Calibration**: [[Tuning Guide|ARCPro Tuning Guide (Steering & Speed Calibration)]]
+- **Sensors**: [[YDLidar X4 Pro and 435i realsense|Testing YDLidar & RealSense Cameras]]
+- **Course Labs**: [[SP2026-VNAV-CourseContent/labs/index|VNAV Lab Exercises]]

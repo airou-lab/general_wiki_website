@@ -300,4 +300,4 @@ Could you prove this formally?
 
 ---
 
-**Previous**: [[Lab 1 - Exercises|⬅ Lab 1: Git & Environment Setup]] | **Next**: [[Lab 3 - Exercises|Lab 3: Perspective Projection & Harris Corners ➔]]
+**Previous**: [[Lab 1 - Exercises|Lab 1: Git & Environment Setup]] | **Next**: [[Lab 3 - Exercises|Lab 3: Perspective Projection & Harris Corners]]

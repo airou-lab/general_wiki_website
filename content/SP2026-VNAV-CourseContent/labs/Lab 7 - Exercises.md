@@ -368,4 +368,4 @@ tracking control of a quadrotor UAV on SE (3).” Decision and Control
 
 ---
 
-**Previous**: [[Lab 6 - Exercises|⬅ Lab 6: Object Detection]] | **Next**: [[Final Project + exam/index|Final Project & Exam ➔]]
+**Previous**: [[Lab 6 - Exercises|Lab 6: Object Detection]] | **Next**: [[Final Project + exam/index|Final Project & Exam]]

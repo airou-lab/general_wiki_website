@@ -13,4 +13,4 @@ title: "Lectures 6-7 - RANSAC Correspondence"
 **Related Lab**: [[Lab 4 - Exercises|Lab 4: Relative Pose & 5-Point]]
 
 
-**Previous**: [[CS4733_5733_F25__lecture5_Image_Formation_Feature_Detection.pdf_viewer|⬅ Lecture 5 - Image Formation & Feature Detection]] | **Next Lecture**: [[Eight_Point_Algorithm_Explanation.pdf_viewer|Eight-Point Algorithm Explanation ➔]]
+**Previous**: [[CS4733_5733_F25__lecture5_Image_Formation_Feature_Detection.pdf_viewer|Lecture 5 - Image Formation & Feature Detection]] | **Next Lecture**: [[Eight_Point_Algorithm_Explanation.pdf_viewer|Eight-Point Algorithm Explanation]]

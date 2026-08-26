@@ -13,4 +13,4 @@ title: "Geometric Controller Steps"
 **Related Lab**: [[Lab 7 - Exercises|Lab 7: Quadrotor Control & Trajectory Tracking]]
 
 
-**Previous**: [[CS4733_5733_F25_Quadrotor_Control_Planning.pdf_viewer|⬅ Quadrotor Control & Planning]] | **Next Lecture**: [[PRO-Lecture.pdf_viewer|PRO Lecture ➔]]
+**Previous**: [[CS4733_5733_F25_Quadrotor_Control_Planning.pdf_viewer|Quadrotor Control & Planning]] | **Next Lecture**: [[PRO-Lecture.pdf_viewer|PRO Lecture]]
