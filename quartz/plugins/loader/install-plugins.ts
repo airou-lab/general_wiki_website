@@ -3,6 +3,7 @@ import fs from "fs"
 import path from "path"
 import YAML from "yaml"
 import { installPlugins, parsePluginSource, regeneratePluginIndex } from "./gitLoader.js"
+import { patchPlugins } from "./patch-plugins.js"
 import type { PluginSource, QuartzPluginsJson } from "./types.js"
 
 function resolveConfigPath(): string {
@@ -82,6 +83,8 @@ async function main() {
     console.log(`Found ${npmSpecs.length} npm plugin(s), regenerating plugin index...`)
     await regeneratePluginIndex({ verbose: true, npmPackages: npmSpecs.map((s) => s.name) })
   }
+
+  patchPlugins()
 }
 
 main().catch((err) => {
