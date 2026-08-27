@@ -14,117 +14,129 @@ This guide covers how to connect to an ARC Pro robot from a laptop (Windows, mac
 > [!important] Default Robot Credentials
 > - **Username**: `arc`
 > - **Password**: `arcpro1234`
+> - **Campus Network**: `WIFI@OU`
 > - **Direct Plug-and-Play Ethernet IP**: `192.168.2.1`
 > - **Default Robot Hotspot IP**: `192.168.4.1`
 
 ---
 
-## Connection Methods Overview
+## Fleet Static IP Directory (Campus Wi-Fi)
 
-| Method | Best For | Target Address | Requirements |
-| :--- | :--- | :--- | :--- |
-| **[[#Option 1: Campus Wi-Fi & Live Fleet Board (Recommended)]]** | In-lab classwork with full internet | Live Campus IP (e.g. `10.204.x.x`) via Fleet Board | Connect laptop to `WIFI@OU` |
-| **[[#Option 2: Direct Plug-and-Play Ethernet Cable]]** | Instant zero-setup wired link | `192.168.2.1` | RJ45 Ethernet cable plugged into robot |
-| **[[#Option 3: Direct Wi-Fi Hotspot (Wireless)]]** | Field testing & isolated driving | `192.168.4.1` | Connect laptop to `ARCPRO_XX` Wi-Fi |
-| **[[#Option 4: Remote Access via Tailscale Mesh VPN]]** | Off-campus / remote lab work | `arcproX.husky-bangus.ts.net` | Tailscale client installed on laptop |
+All fleet robots authenticate to **`WIFI@OU`** with dedicated static IP assignments. Both your laptop and the robot connect to `WIFI@OU`, providing full high-speed internet access simultaneously.
+
+| Car | Hostname | Campus Static IP | SSH Command | Remote Desktop Target |
+| :--- | :--- | :--- | :--- | :--- |
+| **Car 02** | `arcpro2` | `10.204.163.194` | `ssh arc@10.204.163.194` | `10.204.163.194` |
+| **Car 05** | `arcpro5` | `10.204.162.140` | `ssh arc@10.204.162.140` | `10.204.162.140` |
+| **Car 06** | `arcpro6` | `10.204.75.103` | `ssh arc@10.204.75.103` | `10.204.75.103` |
+| **Car 07** | `arcpro7` | `10.204.88.141` | `ssh arc@10.204.88.141` | `10.204.88.141` |
+| **Car 08** | `arcpro8` | `10.204.79.237` | `ssh arc@10.204.79.237` | `10.204.79.237` |
+| **Car 09** | `arcpro9` | `10.204.77.17` | `ssh arc@10.204.77.17` | `10.204.77.17` |
+| **Car 11** | `arcpro11` | `10.204.18.35` | `ssh arc@10.204.18.35` | `10.204.18.35` |
+| **Bench** | `airou` | `10.204.11.145` | `ssh arc@10.204.11.145` | `10.204.11.145` |
+
+*(You can also check real-time online status and latency at the lab dashboard: `http://10.204.190.207:8080`)*
 
 ---
 
-## Option 1: Campus Wi-Fi & Live Fleet Board (Recommended for Students)
+## Method 1: Graphical Desktop via Windows Remote Desktop (RDP)
 
-When working in the robotics lab, both your laptop and the robots connect directly to campus Wi-Fi (**`WIFI@OU`**). This provides full high-speed internet access to both your laptop and the robot simultaneously.
+Windows Remote Desktop provides the full Ubuntu desktop GUI, pre-installed with **Zen Browser**, ROS visualizers (RViz), and terminal tools.
 
-### Step 1: Open the Live Fleet Status Board
-1. Connect your laptop to **`WIFI@OU`**.
-2. Open your web browser and navigate to the lab status board:
-   - **Lab Board**: `http://fleet.yourdomain.fyi` *(or `http://10.204.190.207:8080`)*
-3. The board displays real-time status, live campus IP addresses, and ping latency for all fleet robots.
+### Step 1: Open Remote Desktop
+- **Windows**: Press `Win + R`, type `mstsc.exe`, and press Enter.
+- **macOS**: Install and open **Microsoft Remote Desktop** from the Mac App Store.
+- **Linux**: Use Remmina (`sudo apt install remmina remmina-plugin-rdp`).
 
-### Step 2: Connect via Terminal (SSH)
-Find your assigned car on the dashboard and click **Copy SSH**, or run in your terminal:
+### Step 2: Enter Connection Details
+1. In the **Computer** field, enter your car's campus IP (e.g. `10.204.88.141` for Car 07).
+2. Click **Connect**.
+
+### Step 3: Accept Certificate Warning
+If prompted with a certificate verification warning ("The identity of the remote computer cannot be verified"), check the box for **"Don't ask me again for connections to this computer"** and click **Yes / Connect**.
+
+### Step 4: Login at the XRDP Prompt
+When the green/blue XRDP login screen appears:
+- **Session**: `Xorg`
+- **Username**: `arc`
+- **Password**: `arcpro1234`
+- Click **OK**.
+
+The full graphical desktop environment will open on your screen.
+
+---
+
+## Method 2: Command Line Terminal (SSH)
+
+### Standard Terminal Connection
+Open PowerShell, Command Prompt, or terminal (macOS/Linux) and connect:
 
 ```bash
-ssh arc@<car-campus-ip>
-# Example: ssh arc@10.204.88.141
+# Replace with your car's static IP
+ssh arc@10.204.88.141
 ```
 
-When prompted, enter the password: `arcpro1234`.
+When prompted:
+1. If connecting for the first time, type `yes` to accept the SSH host fingerprint.
+2. Enter the password: `arcpro1234`.
 
-### Step 3: Connect via Windows Remote Desktop (GUI Desktop)
-To access the full Ubuntu graphical desktop (including **Zen Browser**, visualizer tools, and GUI terminals):
-
-1. On Windows, open **Remote Desktop Connection** (`mstsc.exe`).
-   *(On macOS, open Microsoft Remote Desktop).*
-2. In the **Computer** field, enter your car's campus IP:
+### VS Code Remote - SSH Setup
+To edit code directly on the robot inside VS Code on your laptop:
+1. Install the **Remote - SSH** extension in VS Code.
+2. Press `Ctrl + Shift + P` (or `Cmd + Shift + P` on macOS) and select **Remote-SSH: Add New SSH Host...**.
+3. Enter:
    ```text
-   <car-campus-ip>
+   ssh arc@10.204.88.141
    ```
-3. Click **Connect**.
-4. When prompted by XRDP:
-   - **Session**: `Xorg`
-   - **Username**: `arc`
-   - **Password**: `arcpro1234`
+4. Click **Connect**. VS Code will open a remote workspace with file tree, terminal, and debugging tools running on the car.
 
 ---
 
-## Option 2: Direct Plug-and-Play Ethernet Cable
+## Method 3: Direct Plug-and-Play Ethernet Cable
 
-Every ARC Pro robot includes an auto-DHCP shared network server on its Ethernet port (`enp89s0`).
+For zero-network environments or direct wired debugging:
 
-1. Connect an Ethernet cable directly between your laptop and the robot's Ethernet port.
-2. Your laptop automatically receives an IP address on the `192.168.2.x` subnet.
-3. Connect immediately to static IP **`192.168.2.1`**:
+1. Connect an Ethernet cable directly between your laptop and the robot's Ethernet port (`enp89s0`).
+2. The robot acts as an auto-DHCP server and assigns your laptop an IP in the `192.168.2.x` range.
+3. Connect directly to static IP **`192.168.2.1`**:
    - **SSH**: `ssh arc@192.168.2.1`
    - **Remote Desktop**: Connect to `192.168.2.1` in your RDP client.
 
-> [!tip] Simultaneous Internet Access
-> When using direct Ethernet, your laptop can remain connected to `WIFI@OU` for internet while maintaining a dedicated high-bandwidth wired link to the robot.
+> [!tip] Simultaneous Internet
+> When connected via direct Ethernet, your laptop remains connected to Wi-Fi for internet while maintaining a dedicated high-speed wired link to the robot.
 
 ---
 
-## Option 3: Direct Wi-Fi Hotspot (Wireless Standalone)
+## Method 4: Direct Wi-Fi Hotspot (Standalone / Field Mode)
 
-For field testing, outdoor racing, or standalone use where campus Wi-Fi is unavailable:
+For outdoor driving or standalone field testing where campus Wi-Fi is unavailable:
 
-### Step 1: Connect to Robot Wi-Fi
-1. Open Wi-Fi settings on your laptop.
-2. Select your robot's SSID:
-   - **SSID Format**: `ARCPRO_02`, `ARCPRO_05`, `ARCPRO_06`, `ARCPRO_07`, `ARCPRO_08`, `ARCPRO_09`, `ARCPRO_11`
-3. Enter the Wi-Fi Password:
-   ```text
-   arcpro1234
-   ```
-4. Your laptop receives an IP address on the `192.168.4.x` subnet.
-
-### Step 2: Remote In
-- **SSH**: `ssh arc@192.168.4.1`
-- **Remote Desktop**: Connect to `192.168.4.1` in your RDP client.
+1. Open Wi-Fi settings on your laptop and select the car's network:
+   - **SSID**: `ARCPRO_XX` (e.g. `ARCPRO_07`)
+   - **Password**: `arcpro1234`
+2. Connect to static IP **`192.168.4.1`**:
+   - **SSH**: `ssh arc@192.168.4.1`
+   - **Remote Desktop**: Connect to `192.168.4.1` in your RDP client.
 
 ---
 
-## Option 4: Remote Access via Tailscale Mesh VPN
+## Method 5: Remote Access via Tailscale Mesh VPN
 
-For remote access over external networks or across campus subnets:
+For remote access from off-campus locations:
 
-### Connecting via Tailscale
-Once both your laptop and robot are logged into the Tailscale network:
-
-- **SSH Terminal Access**:
-  ```bash
-  ssh arc@arcproX.husky-bangus.ts.net
-  # Example: ssh arc@arcpro7.husky-bangus.ts.net
-  ```
-- **Remote Desktop (RDP)**:
-  Enter `arcproX.husky-bangus.ts.net` into Remote Desktop Connection.
+1. Ensure Tailscale is active on your laptop and logged into the lab network.
+2. Connect using the MagicDNS hostname:
+   - **SSH**: `ssh arc@arcproX.husky-bangus.ts.net`
+   - **RDP Target**: `arcproX.husky-bangus.ts.net`
 
 ---
 
-## Out-of-the-Box Robot Verification Scripts
+## Turnkey Robot Verification Scripts
 
-Once connected as the `arc` user, you can run convenience scripts located directly in `~`:
+Once connected as the `arc` user, you can run convenience test scripts located in your home directory:
 
 ```bash
-# 1. Test Drivetrain (Drives forward at 0.4 m/s for verification; Ctrl+C cleanly stops)
+# 1. Test Drivetrain (Drives forward at 0.4 m/s for verification; Ctrl+C stops cleanly)
 ./straight.sh
 
 # 2. Test Odometry / Drive Command Publishing
