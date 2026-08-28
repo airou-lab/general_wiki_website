@@ -131,19 +131,22 @@ For remote access from off-campus locations:
 
 ---
 
-## Turnkey Robot Verification Scripts
+## Turnkey Robot Verification & Driving Commands
 
-Once connected as the `arc` user, you can run convenience test scripts located in your home directory:
+Once connected as the `arc` user, you can run convenience commands directly from any terminal:
 
 ```bash
-# 1. Test Drivetrain (Drives forward at 0.4 m/s for verification; Ctrl+C stops cleanly)
-./straight.sh
+# 1. Teleoperation & Driving
+teleop         # Gamepad teleop (Hold L1/LB + left stick throttle, right stick steer)
+teleop_key     # Interactive keyboard teleop in terminal
+straight       # Drivetrain forward test at 0.4 m/s (auto-stops on Ctrl+C)
 
-# 2. Test Odometry / Drive Command Publishing
-./mockodom.sh
+# 2. SLAM & Telemetry
+slam           # Real-time SLAM Toolbox 2D mapping (/scan + VESC odom -> /map)
+telemetry      # Foxglove Bridge (:8765), LiDAR, and RealSense camera streaming
 
 # 3. Clean up and terminate all running ROS processes and shared memory
-./killall.sh
+killall_nodes
 ```
 
 ---

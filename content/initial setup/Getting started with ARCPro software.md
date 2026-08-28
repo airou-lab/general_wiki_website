@@ -33,7 +33,7 @@ You can connect via **SSH Terminal** (`ssh arc@192.168.4.1`) or via **Windows Re
 ## 1. Getting the Codebase
 
 > [!tip] Using an Ansible-Provisioned Robot?
-> If your ARCPro robot was set up using the **[ARCPRO Ansible Image](https://github.com/airou-lab/ARCPRO_Ansible-Images)**, the entire `arcpro_system` repository, ROS 2 environment, core dependencies, and turnkey test scripts (`./straight.sh`, `./mockodom.sh`, `./killall.sh`) are **already pre-installed and pre-built** in `~/arcpro_system`!
+> If your ARCPro robot was set up using the **[ARCPRO Ansible Image](https://github.com/airou-lab/ARCPRO_Ansible-Images)**, the entire `arcpro_system` repository, ROS 2 Jazzy desktop environment, SLAM Toolbox, Nav2, and turnkey test scripts are **already pre-installed and pre-built** in `~/arcpro_system`!
 > You can skip the manual cloning and build steps below and jump directly to **[[#3. Testing Teleoperation & Driving|Section 3: Testing Teleoperation]]**.
 
 The primary codebase for ARCPro is hosted at [`airou-lab/arcpro_system`](https://github.com/airou-lab/arcpro_system). 
@@ -94,38 +94,41 @@ source ~/arcpro_system/install/setup.bash
 
 Before running autonomous stacks, verify that the VESC motor controller and servo respond properly to manual control.
 
-### Option A: Using Helper Scripts
-`arcpro_system` provides convenience launch scripts:
+### Option A: Using Turnkey Terminal Aliases
+On ARC Pro robots, turnkey scripts are available directly in your shell:
 
 ```bash
-# Terminal 1: Launch VESC hardware driver
-./hardware_scripts/vesc.sh
+# 1. Gamepad Teleop (Hold L1/LB + Left Stick throttle + Right Stick steer)
+teleop
 
-# Terminal 2: Launch Teleoperation node
-./movement_scripts/teleop.sh
+# 2. Interactive Keyboard Teleop (drive using i/j/k/l keys in terminal)
+teleop_key
+
+# 3. Quick Drivetrain Verification (drives forward at 0.4 m/s, Ctrl+C stops)
+straight
 ```
 
 ### Option B: Using Direct ROS 2 Launch Commands
 
-1. **Launch the VESC Stack**:
+1. **Launch the VESC Stack & Odometry**:
    ```bash
-   ros2 launch f1tenth_stack no_lidar_bringup_launch.py sim:=false
+   ros2 launch launches vesc.launch.py
    ```
 
 2. **Launch Teleop**:
    ```bash
-   ros2 launch f1tenth_teleop teleop.launch.py joy_dev:=ttyUSB0
+   ros2 launch launches teleop.launch.py joy_dev:=/dev/input/js0
    ```
 
 3. **Drive Test**:
-   - Hold the deadman button on your wireless controller (typically `L1` or `R1`).
+   - Hold the deadman button on your wireless controller (button 9 / `L1` or `LB`).
    - Gently move the left thumbstick for throttle and right thumbstick for steering.
 
 ### Testing Direct Drive Messages (Without Gamepad)
 You can also send a test Ackermann drive command directly from the command line:
 
 ```bash
-ros2 topic pub /drive_stamped ackermann_msgs/msg/AckermannDriveStamped \
+ros2 topic pub /ackermann_cmd ackermann_msgs/msg/AckermannDriveStamped \
 '{header: {stamp: {sec: 0, nanosec: 0}, frame_id: "base_link"}, \
   drive: {steering_angle: 0.0, speed: 0.4}}' -r 10
 ```

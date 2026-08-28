@@ -10,27 +10,34 @@ Each in a seperate terminal run the following:
 
 Lidar currently cant be brought up due to race condition (i think). Check nav2.yaml for the current map being used, they should be stored in the /res folder.
 
-## Run SLAM
-We bringup in isolation, to build the lidar map we have the following all in the `hardware` folder:
-- `vesc`
-- `lidar`
-- `joy`
+## Real-Time SLAM (Online Mapping)
+
+### Option A: Using Turnkey Command
 ```bash
-ros2 bag record -o name --topics /scan /tf /tf_static /odom
+# Terminal 1: Launch SLAM stack (LiDAR + VESC Odometry + Foxglove Bridge + SLAM Toolbox)
+slam
+
+# Terminal 2: Drive the car to map the area
+teleop        # Gamepad
+# OR
+teleop_key    # Keyboard
 ```
 
-To replay and make the slam:
+### Option B: Using Direct ROS 2 Commands
 ```bash
-ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/merger/config/slam_toolbox_params.yaml
+# 1. Bring up VESC driver & odometry
+ros2 launch launches vesc.launch.py
 
-# in another terminal
+# 2. Bring up YDLidar
+ros2 launch ydlidar_ros2_driver ydlidar_launch.py
 
-ros2 bag play name --clock
+# 3. Launch SLAM Toolbox (Online Async)
+ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/home/arc/arcpro_system/scripts/config/slam_toolbox_params.yaml
 ```
 
-when finished run
+### Saving Your Map
+When finished driving and the map in RViz2 / Foxglove is complete:
 ```bash
-
 ros2 run nav2_map_server map_saver_cli -f ~/my_new_map
 ```
 
