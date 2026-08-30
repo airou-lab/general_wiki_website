@@ -137,16 +137,18 @@ Once connected as the `arc` user, you can run convenience commands directly from
 
 ```bash
 # 1. Teleoperation & Driving
+move_forward   # Drivetrain forward test at 0.4 m/s (auto-stops on Ctrl+C)
 teleop         # Gamepad teleop (Hold L1/LB + left stick throttle, right stick steer)
 teleop_key     # Interactive keyboard teleop in terminal
-straight       # Drivetrain forward test at 0.4 m/s (auto-stops on Ctrl+C)
 
-# 2. SLAM & Telemetry
+# 2. Sensors, SLAM & Telemetry
+lidar          # Standalone YDLidar X4 Pro (/scan)
+camera         # Standalone Intel RealSense D435i
 slam           # Real-time SLAM Toolbox 2D mapping (/scan + VESC odom -> /map)
 telemetry      # Foxglove Bridge (:8765), LiDAR, and RealSense camera streaming
 
 # 3. Clean up and terminate all running ROS processes and shared memory
-killall_nodes
+killall        # (or: killall_nodes)
 ```
 
 ---

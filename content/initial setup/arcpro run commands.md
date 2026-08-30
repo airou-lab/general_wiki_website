@@ -11,12 +11,14 @@ This reference page provides the standard commands to bring up motor control, te
 
 > [!tip] Turnkey Aliases (Pre-Configured in Zsh)
 > If you are connected to an ARC Pro robot as user `arc`, the following turnkey command aliases are available in any terminal:
-> - **`teleop`**: Gamepad teleop (Hold `L1/LB` deadman + left stick throttle, right stick steer)
+> - **`move_forward`** (or **`straight`**): Test drivetrain forward at 0.4 m/s (auto-stops on `Ctrl+C`)
+> - **`teleop`** (or **`teleop_joy`**): Gamepad teleop (Hold `L1/LB` deadman + left stick throttle, right stick steer)
 > - **`teleop_key`**: Interactive keyboard driving in terminal
-> - **`slam`**: Real-time 2D SLAM Toolbox mapping (`/scan` + VESC odom &rarr; `/map`)
+> - **`lidar`**: Standalone 2D LiDAR bringup (`/scan`)
+> - **`camera`**: Standalone Intel RealSense camera bringup
 > - **`telemetry`**: Foxglove Bridge (`:8765`), LiDAR, and RealSense camera streaming
-> - **`straight`**: Test drivetrain forward at 0.4 m/s (auto-stops on `Ctrl+C`)
-> - **`killall_nodes`**: Cleanly terminate all robot ROS processes and clear shared memory
+> - **`slam`**: Real-time 2D SLAM Toolbox mapping (`/scan` + VESC odom &rarr; `/map`)
+> - **`killall`** (or **`killall_nodes`**): Cleanly terminate all robot ROS processes and clear shared memory
 
 ---
 
