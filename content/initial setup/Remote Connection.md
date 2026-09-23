@@ -9,6 +9,9 @@ tags:
 
 # Connecting Remotely to Your ARC Pro Robot
 
+> [!info] ARC Pro Student Onboarding: Step 1 of 5
+> This is **Step 1** in the student setup sequence. After connecting, proceed to [[Pairing|Step 2: Gamepad Controller Pairing]].
+
 This guide covers how to connect to an ARC Pro robot from a laptop (Windows, macOS, or Linux). ARC Pro robots support both **terminal SSH** and **graphical Windows Remote Desktop (RDP)** across campus Wi-Fi, direct Ethernet, local robot hotspots, and Tailscale VPN.
 
 > [!important] Default Robot Credentials
@@ -129,6 +132,13 @@ For remote access from off-campus locations:
    - **SSH**: `ssh arc@arcproX.husky-bangus.ts.net`
    - **RDP Target**: `arcproX.husky-bangus.ts.net`
 
+> [!note] Network Routing & ROS 2 Discovery over VPN
+> Tailscale uses point-to-point WireGuard tunnels and does not route UDP multicast packets. Standard ROS 2 topic discovery (e.g. running `ros2 topic list` or native RViz on your laptop) does not bridge over Tailscale.
+> When connecting over Tailscale, interact with the robot using:
+> 1. Graphical Remote Desktop (XRDP) on the robot, running RViz locally inside the remote desktop session.
+> 2. Foxglove Studio connected via the WebSocket bridge (`ws://arcproX.husky-bangus.ts.net:8765`).
+> Native peer-to-peer ROS 2 topic sharing from your laptop is supported when both devices are directly on `WIFI@OU` or direct Ethernet.
+
 ---
 
 ## Turnkey Robot Verification & Driving Commands
@@ -153,7 +163,9 @@ killall        # (or: killall_nodes)
 
 ---
 
-## Next Steps
-- **Vehicle Calibration**: [[Tuning Guide|ARCPro Tuning Guide (Steering & Speed Calibration)]]
-- **Sensors**: [[YDLidar X4 Pro and 435i realsense|Testing YDLidar & RealSense Cameras]]
-- **Course Labs**: [[SP2026-VNAV-CourseContent/labs/index|VNAV Lab Exercises]]
+---
+
+## Navigation
+| Previous Step | Current Step | Next Step |
+| :--- | :--- | :--- |
+| *(Start of Onboarding)* | **Step 1: Connecting Remotely** | **[[Pairing|Step 2: Controller Pairing &rarr;]]** |

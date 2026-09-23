@@ -9,6 +9,9 @@ tags:
 
 # ARCPro Tuning Guide
 
+> [!info] ARC Pro Student Onboarding: Step 5 of 5
+> Previous: [[YDLidar X4 Pro and 435i realsense|Step 4: Sensor Verification]]. Next: [[SP2026-VNAV-CourseContent/labs/Lab 1 - Exercises|Start VNAV Lab 1: First Exercises]]. This is the final onboarding step before starting course lab assignments.
+
 Fine-tuning car-specific control parameters for steering trim, steering gain, and speed/odometry scaling.
 
 > [!info] Based on MuSHR & F1TENTH Calibration
@@ -179,3 +182,12 @@ Once tuning is complete:
 3. Test your tuned vehicle in teleoperation and proceed with your lab deliverables:
    - [[SP2026-VNAV-CourseContent/labs/index|VNAV Lab Exercises]]
    - [[SP2026-VNAV-CourseContent/labs/Lab 7 - Exercises|Lab 7 - Vehicle Control & Trajectory Tracking]]
+
+---
+
+## Navigation
+
+| Previous Step | Current Step | Next Step |
+| :--- | :--- | :--- |
+| **[[YDLidar X4 Pro and 435i realsense|&larr; Step 4: Sensor Verification]]** | **Step 5: Vehicle Calibration & Tuning** | **[[SP2026-VNAV-CourseContent/labs/Lab 1 - Exercises|Start VNAV Lab 1: First Exercises &rarr;]]** |
+

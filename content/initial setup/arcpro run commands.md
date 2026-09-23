@@ -26,16 +26,16 @@ This reference page provides the standard commands to bring up motor control, te
 
 ```bash
 # 1. Bring up VESC motor controller & odometry
-ros2 launch launches vesc.launch.py
+ros2 launch f1tenth_teleop vesc.launch.py
 
 # 2. Bring up 2D LiDAR (YDLIDAR X4 Pro)
 ros2 launch ydlidar_ros2_driver ydlidar_launch.py
 
-# 3. Bring up RealSense Camera (Intel D435i)
-ros2 launch realsense2_camera rs_launch.py
+# 3. Bring up RealSense Camera (Intel D435i, color + depth + 3D pointcloud)
+ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true
 
 # 4. Launch Gamepad Teleoperation
-ros2 launch launches teleop.launch.py joy_dev:=/dev/input/js0
+ros2 launch f1tenth_teleop teleop.launch.py joy_dev:=/dev/input/js0
 
 # 5. Launch SLAM Toolbox (Online Async Mapping)
 ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/home/arc/arcpro_system/scripts/config/slam_toolbox_params.yaml

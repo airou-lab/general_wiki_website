@@ -4,44 +4,80 @@ Type:
 Labs:
   - AIROU
 ---
-> [!Warning] repository Issue
-    > Due to the current repo not being finished, please use deprcated repo to launch teleop found [here](https://github.com/louis6962/Vnavros2setup). We will hopefully have the new repo updated to include the teleop nodes.
-# bluetooth controller pairing arcpro
- 1) Enter `bluetoothctl` in terminal  
- 2) Press the center bottom button and the share button at same time for around 5 seconds until lighbar rapidly flashes  
- 3) Enter "scan on" in bluetoothctl and find the wireless controller. Example:     (Note that there may be multiple wireless controllers in room you may need to trial and error and unpair), Additionally may need to repeat step 2 if pairing mode on controller stops early  
 
+# Bluetooth Controller Pairing (ARC Pro)
+
+> [!info] ARC Pro Student Onboarding: Step 2 of 5
+> Previous: [[Remote Connection|Step 1: Connecting Remotely]]. Next: [[Getting started with ARCPro software|Step 3: Software Bringup & First Drive]].
+
+This guide covers pairing a Sony DualShock or compatible Bluetooth wireless gamepad controller with the ARC Pro robot onboard Intel NUC.
+
+---
+
+## 1. Bluetooth Pairing Procedure
+
+1. Open a terminal session on the robot and start `bluetoothctl`:
+   ```bash
+   bluetoothctl
+   ```
+
+2. Put your controller into pairing mode:
+   - Press and hold the **Share** button and the **Center PS** button simultaneously for approximately 5 seconds until the lightbar rapidly blinks.
+
+3. Start scanning for Bluetooth devices:
+   ```text
+   [bluetooth]# agent on
+   [bluetooth]# default-agent
+   [bluetooth]# scan on
+   ```
+
+4. Locate your controller MAC address in the scan output (named "Wireless Controller"):
+   ```text
+   [CHG] Device BB:8E:41:F5:5D:C7 Name: Wireless Controller  
+   [CHG] Device BB:8E:41:F5:5D:C7 Alias: Wireless Controller  
+   ```
+
+5. Pair, trust, and connect to the controller:
+   ```text
+   [bluetooth]# pair BB:8E:41:F5:5D:C7
+   [bluetooth]# trust BB:8E:41:F5:5D:C7
+   [bluetooth]# connect BB:8E:41:F5:5D:C7
+   [bluetooth]# scan off
+   [bluetooth]# exit
+   ```
+
+6. Verify that the Linux joystick device is recognized:
+   ```bash
+   ls -l /dev/input/js*
+   ```
+   The device node `/dev/input/js0` should now be present.
+
+---
+
+## 2. Running Teleoperation
+
+Once your controller is paired and connected:
+
+### Option A: Using the Turnkey Shell Alias
 ```bash
-[bluetooth]# [CHG] Device BB:8E:41:F5:5D:C7 Name: Wireless Controller  
-[bluetooth]# [CHG] Device BB:8E:41:F5:5D:C7 Alias: Wireless Controller  
+teleop
+```
+Hold `L1` or `LB` (deadman switch) while moving the left stick (throttle) and right stick (steering).
+
+### Option B: Using Direct ROS 2 Launch Commands
+```bash
+# Terminal 1: Bring up the VESC motor driver
+ros2 launch f1tenth_teleop vesc.launch.py
+
+# Terminal 2: Launch teleop node pointing to the joystick interface
+ros2 launch f1tenth_teleop teleop.launch.py joy_dev:=/dev/input/js0
 ```
 
-  
-## Pair/trust/&connect with wireless controller. Example:  
-```bash
-[bluetooth]# pair BB:8E:41:F5:5D:C7  
-[bluetooth]# trust BB:8E:41:F5:5D:C7  
-[bluetooth]# connect BB:8E:41:F5:5D:C7  
-```
+---
 
-# Running teleop
-```bash
-#Bringup vesc:
-ros2 launch f1tenth_stack no_lidar_bringup_launch.py sim:=false
+---
 
-# Launch teleop
-ros2 launch launches teleop.launch.py joy_dev:=ttyUSB0
-```
-
-Note note you may need to install several missing dependencies, if so follow the command below
-```bash
-source /opt/ros/jazzy/setup.bash  
-rosdep update  
-rosdep install --from-paths src --ignore-src -r -y || true  
-sudo apt install -y ros-jazzy-asio-cmake-module ros-jazzy-io-context ros-jazzy-serial-driver  
-```
-
-Next steps:
-- [[Getting started with ARCPro software|Getting Started with ARCPro Software]]
-- [[Tuning Guide|ARCPro Tuning Guide]]
-- [[arcpro run commands|Basic Drive and Sensor Commands]] 
+## Navigation
+| Previous Step | Current Step | Next Step |
+| :--- | :--- | :--- |
+| **[[Remote Connection|&larr; Step 1: Connecting Remotely]]** | **Step 2: Controller Pairing** | **[[Getting started with ARCPro software|Step 3: First Drive &rarr;]]** |

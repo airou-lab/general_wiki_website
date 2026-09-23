@@ -1,4 +1,7 @@
-# Install command for Vesc + firmware (temp):   
+> [!warning] Archived Historical Documentation
+> This document is retained for historical reference only. For the active ARC Pro setup, use [[Getting started with ARCPro software|Getting Started with ARCPro Software]].
+
+# Install command for Vesc + firmware (legacy archive):   
   
 ### 1) Go to the repo  
 ```cd ~/Vnavros2setup```  
@@ -102,7 +105,7 @@ ls -l /dev/input/js*
 ### 4) Run the driver + bridge (defaults: VESC at /dev/ttyACM0)   
 ```  
 export VESC_DEV=/dev/ttyACM0  
-ros2 launch launches vesc.launch.py vesc_port:=$VESC_DEV  
+ros2 launch f1tenth_teleop vesc.launch.py vesc_port:=$VESC_DEV  
 ```  
   
 ### 5) In a second terminal (build env again) run teleop (defaults: Joy at /dev/input/js0)   
@@ -111,7 +114,7 @@ source /opt/ros/jazzy/setup.bash
 cd ~/Vnavros2setup/workspaces/f1tenth_ws  
 source install/setup.bash  
 export JOY_DEV=/dev/input/js0  
-ros2 launch launches teleop.launch.py joy_dev:=ttyUSB0
+ros2 launch f1tenth_teleop teleop.launch.py joy_dev:=/dev/input/js0
 ```  
   
 # Install command for 435i (temp):   

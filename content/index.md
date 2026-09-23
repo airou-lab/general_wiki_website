@@ -16,30 +16,34 @@ Our robotic car platform is designed and built to autonomously navigate unknown 
 
 ---
 
-## VNAV - Start Here
+## Student Onboarding Track (Linear Steps 1 to 5)
 
-- **[[SP2026-VNAV-CourseContent/labs/index|VNAV Lab Exercises]]** (Labs 1–7)
-- **[[SP2026-VNAV-CourseContent/lectures/index|Lecture Slides & Viewers]]**
-- **[[SP2026-VNAV-CourseContent/notes/index|Course Notes]]**
-- **[[initial setup/Remote Connection|Connecting Remotely to Your Robot (Hotspot, SSH, Windows RDP)]]**
-- **[[initial setup/Getting started with ARCPro software|Getting Started with ARCPro Software]]**
-- **[[initial setup/Tuning Guide|ARCPro Tuning Guide (Calibrating your car)]]**
+Follow these steps sequentially before starting course labs:
+
+1. **[[initial setup/Remote Connection|Step 1: Connecting Remotely to Your Robot]]** (Wi-Fi, Direct Ethernet, Hotspot, Tailscale, SSH & RDP)
+2. **[[initial setup/Pairing|Step 2: Bluetooth Gamepad Pairing]]** (DualShock pairing and joystick input verification)
+3. **[[initial setup/Getting started with ARCPro software|Step 3: Software Bringup & First Drive]]** (ROS 2 workspace build, teleop, and troubleshooting)
+4. **[[initial setup/YDLidar X4 Pro and 435i realsense|Step 4: Sensor Verification]]** (LiDAR 2D scan and RealSense RGB-D point clouds)
+5. **[[initial setup/Tuning Guide|Step 5: Vehicle Calibration & Tuning]]** (Steering trim, servo gain, and speed scaling)
+   - **Proceed to Lab 1:** **[[SP2026-VNAV-CourseContent/labs/Lab 1 - Exercises|VNAV Lab 1: First Exercises]]**
 
 ---
 
-## Platform Setup & Documentation
+## VNAV Course Curriculum
 
-### Hardware
-- [[initial setup/hardware|Hardware Setup & Initial Boot]] (Start here for physical car setup)
-- [[initial setup/ARCPro specifications|Vehicle Specifications & Dimensions]]
-- [[initial setup/Pairing|Bluetooth Gamepad Pairing]]
+- **[[SP2026-VNAV-CourseContent/labs/index|VNAV Lab Exercises]]** (Labs 1 to 7)
+- **[[SP2026-VNAV-CourseContent/lectures/index|Lecture Slides & Viewers]]**
+- **[[SP2026-VNAV-CourseContent/notes/index|Course Notes & Readings]]**
 
-### Software & Remote Access
-- [[initial setup/Remote Connection|Connecting Remotely (Wi-Fi Hotspot, Direct Ethernet, Windows RDP)]]
-- [[initial setup/Getting started with ARCPro software|Software Bringup & Ansible Setup]]
-- [[initial setup/Tuning Guide|Tuning Guide (Steering Trim & Speed Scaling)]]
-- [[initial setup/YDLidar X4 Pro and 435i realsense|Sensors: YDLIDAR X4 Pro & Intel RealSense D435i]]
-- [[initial setup/arcpro run commands|Basic Drive & Sensor Commands]]
+---
+
+## Hardware Assembly & Maintenance Track (Builders & Staff)
+
+- **[[initial setup/hardware|Hardware Setup & Initial Powerup]]**: Component layout, battery connection, and power board.
+- **[[initial setup/building the bot/index|Chassis Assembly & 3D Print Platforms (STL)]]**: Top plates, camera hinges, and mechanical drawings.
+- **[[initial setup/VESC aka FSEC|VESC Motor Controller Setup & Recovery]]**: VESC Tool configuration and ST-Link unbricking.
+- **[[initial setup/ARCPro specifications|Vehicle Specifications & Dimensions]]**: Physical dimensions, wheelbase, track width, and payload limits.
+- **[[initial setup/arcpro run commands|Turnkey Robot Commands Reference]]**: Alias scripts (`teleop`, `teleop_key`, `lidar`, `camera`, `slam`, `telemetry`, `killall`).
 
 ### Reference Examples
 - [[waypointer/arcpro waypointer example run|Waypointer Example Run]]

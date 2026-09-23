@@ -364,7 +364,11 @@ git pull
 
 ```bash
 source /opt/ros/jazzy/setup.bash
-cd ~/Vnavros2setup/workspaces/f1tenth_ws
+source ~/arcpro_system/install/setup.bash
+# Drive the vehicle using turnkey teleop or keyboard teleop
+teleop
+# OR for keyboard:
+teleop_key
 ```
 
 3. Launch camera by running the following command. This ensures you have all the topics you need be published:

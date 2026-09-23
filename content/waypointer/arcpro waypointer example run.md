@@ -26,7 +26,7 @@ teleop_key    # Keyboard
 ### Option B: Using Direct ROS 2 Commands
 ```bash
 # 1. Bring up VESC driver & odometry
-ros2 launch launches vesc.launch.py
+ros2 launch f1tenth_teleop vesc.launch.py
 
 # 2. Bring up YDLidar
 ros2 launch ydlidar_ros2_driver ydlidar_launch.py
