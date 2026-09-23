@@ -11,167 +11,50 @@ tags:
 > [!info] ARC Pro Student Onboarding: Step 3 of 5
 > Previous: [[Pairing|Step 2: Gamepad Controller Pairing]]. Next: [[YDLidar X4 Pro and 435i realsense|Step 4: Sensor Verification]].
 
-Welcome to the ARCPro software stack. This guide covers cloning the system repository, pairing your controller, compiling the ROS 2 workspace, testing manual driving (teleoperation), verifying onboard sensors (LiDAR and RealSense camera), and troubleshooting common setup issues.
-
-> [!info] Prerequisites
-> - Ensure the onboard Intel NUC is powered on (see [[hardware|Hardware Setup]]).
-> - Connect your laptop to the robot via **Robot Hostname / Wi-Fi** (`arcproX.local`), **Wi-Fi Hotspot** (`ARCPRO_XX`), or direct Ethernet (see [[Remote Connection|Connecting Remotely to Your Robot]]).
-> - Ensure hardware batteries and USB cables for the VESC, YDLidar, and RealSense camera are connected.
+> [!important] ARC Pro Fleet Robots Come Pre-Configured
+> If you are working on an ARC Pro lab car (e.g. Car 2 through Car 11), the entire `~/arcpro_system` software stack is **already cloned, configured, and built** on the robot.
+>
+> You **do not** need to re-clone the repository or compile from scratch. Ensure your controller was paired in [[Pairing|Step 2: Controller Pairing]], then proceed directly to **[[#1. First Drive & Teleoperation|Section 1: First Drive & Teleoperation]]**!
 
 ---
 
-## 0. Gamepad Controller Pairing (Bluetooth)
-
-Before running teleoperation, pair your Bluetooth gamepad controller with the onboard NUC.
-
-### Step 1: Put the Controller in Pairing Mode
-Press and hold the **Share** button and the **Center PS** button simultaneously for approximately 5 seconds until the lightbar begins rapidly blinking.
-
-### Step 2: Pair Using bluetoothctl
-Open a terminal on the robot (via SSH or Remote Desktop) and execute:
-
-```bash
-bluetoothctl
-```
-
-Inside the `bluetoothctl` prompt:
-
-```text
-[bluetooth]# agent on
-[bluetooth]# default-agent
-[bluetooth]# scan on
-```
-
-Watch the terminal for your controller MAC address (named "Wireless Controller"):
-
-```text
-[CHG] Device BB:8E:41:F5:5D:C7 Name: Wireless Controller
-[CHG] Device BB:8E:41:F5:5D:C7 Alias: Wireless Controller
-```
-
-Run the following commands using your controller's MAC address:
-
-```text
-[bluetooth]# pair BB:8E:41:F5:5D:C7
-[bluetooth]# trust BB:8E:41:F5:5D:C7
-[bluetooth]# connect BB:8E:41:F5:5D:C7
-[bluetooth]# scan off
-[bluetooth]# exit
-```
-
-### Step 3: Verify Controller Device Node
-Verify that Linux has registered the joystick interface:
-
-```bash
-ls -l /dev/input/js*
-```
-
-You should see `/dev/input/js0`. If not found, repeat the pairing steps above.
-
----
-
-## 1. Getting the Codebase
-
-> [!tip] Using an Ansible-Provisioned Robot?
-> If your ARCPro robot was set up using the **ARCPRO Ansible Image**, the entire `arcpro_system` repository, ROS 2 Jazzy desktop environment, SLAM Toolbox, Nav2, and turnkey test scripts are already pre-installed and pre-built in `~/arcpro_system`.
-> You can proceed directly to **[[#3. Testing Teleoperation & Driving|Section 3: Testing Teleoperation]]**.
-
-The primary codebase for ARCPro is hosted at `https://github.com/airou-lab/arcpro_system.git`.
-
-If setting up on a fresh machine or student laptop, clone the repository using HTTPS:
-
-```bash
-cd ~
-git clone -j8 --recurse-submodules=':!src/examples' https://github.com/airou-lab/arcpro_system.git
-```
-
-> [!note] Submodule Flag
-> The flag `--recurse-submodules=':!src/examples'` clones all core robotics packages (VESC drivers, teleop, YDLidar SDK, Ackermann mux) while omitting large optional simulation assets.
-
-If submodules fail to clone due to SSH authentication errors, tell Git to resolve GitHub SSH URLs over HTTPS:
-
-```bash
-git config --global url."https://github.com/".insteadOf "git@github.com:"
-cd ~/arcpro_system
-git submodule update --init --recursive
-```
-
----
-
-## 2. Resolving Dependencies & Building
-
-Navigate to the workspace, ensure the required YDLidar-SDK directory structure is in place, and install all ROS 2 dependencies:
-
-```bash
-cd ~/arcpro_system
-
-# Ensure YDLidar-SDK doc directory exists for CMake install target
-mkdir -p src/base/YDLidar-SDK/doc
-
-# Resolve ROS package dependencies
-rosdep update
-rosdep install --from-paths src -y --ignore-src
-```
-
-Now compile the workspace using `colcon`:
-
-```bash
-colcon build --symlink-install
-```
-
-### Source the Environment
-To use the newly built packages, source both the ROS 2 base installation and your local overlay:
-
-```bash
-source /opt/ros/jazzy/setup.bash
-source ~/arcpro_system/install/setup.bash
-```
-
-To automatically configure every new terminal session, add them to `~/.bashrc`:
-
-```bash
-echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
-echo "source ~/arcpro_system/install/setup.bash" >> ~/.bashrc
-```
-
----
-
-## 3. Testing Teleoperation & Driving
+## 1. First Drive & Teleoperation
 
 Verify that the VESC motor controller and steering servo respond properly to manual inputs before running autonomous code.
 
-### Option A: Using Turnkey Terminal Aliases
-On ARC Pro robots, the following convenience aliases are available:
+### Option A: Using Turnkey Terminal Aliases (Recommended)
+On ARC Pro robots, turnkey convenience aliases are pre-configured in your shell:
 
 ```bash
-# 1. Gamepad Teleop (Hold L1/LB deadman + Left Stick throttle + Right Stick steer)
+# 1. Gamepad Teleoperation (Hold L1/LB deadman + Left Stick throttle + Right Stick steer)
 teleop
 
-# 2. Interactive Keyboard Teleop (drive using i/j/k/l keys in terminal)
+# 2. Interactive Keyboard Teleoperation (drive using i/j/k/l keys in terminal)
 teleop_key
 
-# 3. Quick Drivetrain Verification (drives forward at 0.4 m/s, Ctrl+C stops)
-straight
+# 3. Quick Drivetrain Verification (drives forward at 0.4 m/s, Ctrl+C stops safely)
+move_forward   # (or: straight)
 ```
+
+> [!tip] Driving Controls
+> - **Deadman Switch**: Hold down `L1` or `LB` on your gamepad while moving the sticks. If released, the robot stops immediately.
+> - **Left Thumbstick**: Forward / Reverse throttle.
+> - **Right Thumbstick**: Left / Right steering angle.
+> - **Emergency Stop**: Press `Ctrl + C` in the terminal at any time.
 
 ### Option B: Using Direct ROS 2 Launch Commands
 
-1. **Launch the VESC Hardware Driver & Odometry**:
-   ```bash
-   ros2 launch f1tenth_teleop vesc.launch.py
-   ```
+If you prefer launching individual ROS 2 nodes manually across terminals:
 
-2. **Launch Teleop & Translator**:
-   ```bash
-   # In terminal 2:
-   ros2 launch f1tenth_teleop teleop.launch.py joy_dev:=/dev/input/js0
-   ```
+```bash
+# Terminal 1: Launch the VESC hardware driver & odometry publisher
+ros2 launch f1tenth_teleop vesc.launch.py
 
-3. **Drive Test**:
-   - Hold the deadman button on your controller (button `L1` or `LB`).
-   - Gently move the left thumbstick for throttle and right thumbstick for steering.
+# Terminal 2: Launch teleop node and joystick interface
+ros2 launch f1tenth_teleop teleop.launch.py joy_dev:=/dev/input/js0
+```
 
-### Testing Direct Drive Messages (Without Gamepad)
+### Option C: Testing Direct Drive Messages (Without Gamepad)
 You can test the drivetrain directly from the command line by publishing an `AckermannDriveStamped` message:
 
 ```bash
@@ -182,79 +65,83 @@ ros2 topic pub /ackermann_cmd ackermann_msgs/msg/AckermannDriveStamped \
 
 ---
 
+## 2. Verifying Your Robot Workspace
+
+On fleet cars, the workspace resides in `/home/arc/arcpro_system`. Both ROS 2 Jazzy and the workspace overlay are automatically sourced in `~/.bashrc`.
+
+To verify your workspace is ready:
+
+```bash
+cd ~/arcpro_system
+ls -la install/
+```
+
+You should see build overlays for `f1tenth_stack`, `vesc`, `f1tenth_teleop`, `twist_to_ackermann`, and `ydlidar_ros2_driver`.
+
+If opening a non-standard terminal or subshell, source the environment manually:
+```bash
+source /opt/ros/jazzy/setup.bash
+source ~/arcpro_system/install/setup.bash
+```
+
+---
+
+## 3. Rebuilding Code (When Making Modifications)
+
+You only need to rebuild the workspace if you edit source code (e.g. implementing custom controllers) or modify configuration files (such as vehicle calibration parameters in [[Tuning Guide|Step 5: Tuning Guide]]):
+
+```bash
+cd ~/arcpro_system
+
+# Rebuild all packages
+colcon build --symlink-install
+
+# Or rebuild a specific package
+colcon build --symlink-install --packages-select f1tenth_stack
+source install/setup.bash
+```
+
+---
+
 ## 4. Testing Onboard Sensors & Cameras
 
+Before heading to the track, run a quick check on the primary sensors. Step 4 covers in-depth sensor configuration:
+
 ### Intel RealSense D435i Camera
+```bash
+# Launch camera node with 3D point cloud enabled
+ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true
 
-1. Launch the RealSense ROS 2 node (with pointcloud enabled):
-   ```bash
-   ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true
-   ```
-
-2. Verify image and depth cloud topics:
-   ```bash
-   ros2 topic list | grep camera
-   ```
-   You should see:
-   - `/camera/camera/color/image_raw`
-   - `/camera/camera/depth/image_rect_raw`
-   - `/camera/camera/depth/color/points` (3D Point Cloud)
-   - `/camera/camera/imu`
-
-3. Visualize image feeds in `rqt_image_view`:
-   ```bash
-   ros2 run rqt_image_view rqt_image_view
-   ```
+# In a separate terminal, verify camera topics:
+ros2 topic list | grep camera
+```
+You should see `/camera/camera/color/image_raw` and `/camera/camera/depth/color/points`.
 
 ### YDLidar X4 Pro (2D LiDAR)
+```bash
+# Launch LiDAR driver
+ros2 launch ydlidar_ros2_driver ydlidar_launch.py sim:=false
 
-1. Launch the LiDAR driver:
-   ```bash
-   ros2 launch ydlidar_ros2_driver ydlidar_launch.py sim:=false
-   ```
-
-2. Verify that the laser scan is publishing on `/scan`:
-   ```bash
-   ros2 topic echo /scan --once
-   ```
+# In a separate terminal, verify laser scan:
+ros2 topic echo /scan --once
+```
 
 ---
 
 ## 5. Troubleshooting Common Setup Issues
 
-### Issue 1: colcon build fails on YDLidar-SDK with missing doc directory
-- **Symptom**: `CMake Error at CMakeLists.txt:... (install): install DIRECTORY given no DESTINATION or DIRECTORY "doc" does not exist.`
-- **Cause**: The YDLidar-SDK CMake script attempts to install documentation files that are not included in the git repository.
-- **Fix**: Create the empty directory manually before building:
-  ```bash
-  mkdir -p ~/arcpro_system/src/base/YDLidar-SDK/doc
-  cd ~/arcpro_system && colcon build --symlink-install
-  ```
-
-### Issue 2: Git submodule clone asks for SSH key or gives Permission Denied
-- **Symptom**: `git@github.com: Permission denied (publickey). fatal: Could not read from remote repository.`
-- **Cause**: Submodule definitions point to SSH URLs while your machine does not have an SSH key configured with GitHub.
-- **Fix**: Rewrite SSH URLs to HTTPS:
-  ```bash
-  git config --global url."https://github.com/".insteadOf "git@github.com:"
-  cd ~/arcpro_system && git submodule update --init --recursive
-  ```
-
-### Issue 3: Gamepad connected but vehicle does not move
-- **Symptom**: Teleop runs without errors, but the motor and steering servo do not move when using joysticks.
-- **Cause**: Deadman switch button is not held down, or `/dev/input/js0` device node is wrong.
+### Issue 1: Gamepad connected but vehicle does not move
+- **Symptom**: `teleop` runs without errors, but the motor and steering servo do not move when moving the sticks.
+- **Cause**: Deadman switch button is not held down, or `/dev/input/js0` device node is missing.
 - **Fix**:
-  1. Ensure you are holding down `L1` or `LB` while moving the sticks.
+  1. Ensure you are firmly holding down `L1` or `LB` while moving the sticks.
   2. Verify your joystick is registered at `/dev/input/js0`:
      ```bash
      ls -l /dev/input/js*
      ```
-  3. Echo the joy topic to confirm stick and button events:
-     ```bash
-     ros2 topic echo /joy --once
-     ```
+  3. If missing, revisit [[Pairing|Step 2: Gamepad Controller Pairing]] to reconnect via `bluetoothctl`.
 
-### Issue 4: VESC Desync / Motor twitching / Topic crosstalk across computers
+### Issue 2: VESC Desync / Motor twitching / Topic crosstalk across computers
 - **Symptom**: Odometry values jump randomly, motor twitches, or terminal reports timestamp desync errors.
 - **Cause**: Multiple computers or robots on the same network are communicating on the default ROS domain (`ROS_DOMAIN_ID=0`). Nodes from another team are publishing conflicting messages.
 - **Fix**: Assign your robot a unique domain ID matching your vehicle number (e.g. car 2 uses domain 2, car 7 uses domain 7):
@@ -268,7 +155,7 @@ ros2 topic pub /ackermann_cmd ackermann_msgs/msg/AckermannDriveStamped \
   export ROS_LOCALHOST_ONLY=1
   ```
 
-### Issue 5: RViz2 opens with a black or blank window over Remote Desktop (RDP)
+### Issue 3: RViz2 opens with a black or blank window over Remote Desktop (RDP)
 - **Symptom**: RViz2 starts, but the 3D viewport remains completely black or transparent.
 - **Cause**: XRDP does not pass hardware OpenGL acceleration to remote sessions.
 - **Fix**: Enable software OpenGL rendering before starting RViz2:
@@ -277,7 +164,7 @@ ros2 topic pub /ackermann_cmd ackermann_msgs/msg/AckermannDriveStamped \
   rviz2
   ```
 
-### Issue 6: RealSense depth point cloud topic missing
+### Issue 4: RealSense depth point cloud topic missing
 - **Symptom**: Camera publishes color and depth images, but `/camera/camera/depth/color/points` does not exist.
 - **Cause**: Point cloud generation is disabled by default in `realsense2_camera` to conserve CPU.
 - **Fix**: Explicitly enable pointcloud in the launch command:
@@ -285,9 +172,44 @@ ros2 topic pub /ackermann_cmd ackermann_msgs/msg/AckermannDriveStamped \
   ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true
   ```
 
+### Issue 5: colcon build fails on YDLidar-SDK with missing doc directory
+- **Symptom**: `CMake Error at CMakeLists.txt:... (install): install DIRECTORY given no DESTINATION or DIRECTORY "doc" does not exist.`
+- **Cause**: The YDLidar-SDK CMake script attempts to install documentation files that are not included in the git repository.
+- **Fix**: Create the empty directory manually before building:
+  ```bash
+  mkdir -p ~/arcpro_system/src/base/YDLidar-SDK/doc
+  cd ~/arcpro_system && colcon build --symlink-install
+  ```
+
 ---
 
-## 6. Navigation
+## 6. (Optional) Setting Up on a Personal Laptop or Fresh Machine
+
+If you are setting up your own personal Linux computer or virtual machine rather than using a pre-configured fleet car:
+
+1. Clone the repository with HTTPS submodules:
+   ```bash
+   cd ~
+   git clone -j8 --recurse-submodules=':!src/examples' https://github.com/airou-lab/arcpro_system.git
+   ```
+2. Resolve ROS 2 dependencies:
+   ```bash
+   cd ~/arcpro_system
+   rosdep update
+   rosdep install --from-paths src -y --ignore-src
+   ```
+3. Build the workspace:
+   ```bash
+   colcon build --symlink-install
+   ```
+4. Source the install environment:
+   ```bash
+   source ~/arcpro_system/install/setup.bash
+   ```
+
+---
+
+## 7. Navigation
 
 | Previous Step | Current Step | Next Step |
 | :--- | :--- | :--- |
