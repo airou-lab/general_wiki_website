@@ -15,7 +15,7 @@ Welcome to the ARCPro software stack. This guide covers cloning the system repos
 
 > [!info] Prerequisites
 > - Ensure the onboard Intel NUC is powered on (see [[hardware|Hardware Setup]]).
-> - Connect your laptop to the robot via **Wi-Fi Hotspot** (`ARCPRO_XX` on `192.168.4.1`) or **Campus Static IP** (`10.204.x.x`) or **Tailscale** (see [[Remote Connection|Connecting Remotely to Your Robot]]).
+> - Connect your laptop to the robot via **Robot Hostname / Wi-Fi** (`arcproX.local`), **Wi-Fi Hotspot** (`ARCPRO_XX`), or direct Ethernet (see [[Remote Connection|Connecting Remotely to Your Robot]]).
 > - Ensure hardware batteries and USB cables for the VESC, YDLidar, and RealSense camera are connected.
 
 ---

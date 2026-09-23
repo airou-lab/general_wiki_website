@@ -12,7 +12,7 @@ tags:
 > [!info] ARC Pro Student Onboarding: Step 1 of 5
 > This is **Step 1** in the student setup sequence. After connecting, proceed to [[Pairing|Step 2: Gamepad Controller Pairing]].
 
-This guide covers how to connect to an ARC Pro robot from a laptop (Windows, macOS, or Linux). ARC Pro robots support both **terminal SSH** and **graphical Windows Remote Desktop (RDP)** across campus Wi-Fi, direct Ethernet, local robot hotspots, and Tailscale VPN.
+This guide covers how to connect to an ARC Pro robot from a laptop (Windows, macOS, or Linux). ARC Pro robots support both **terminal SSH** and **graphical Windows Remote Desktop (RDP)** across campus Wi-Fi, direct Ethernet, and local robot hotspots.
 
 > [!important] Default Robot Credentials
 > - **Username**: `arc`
@@ -23,20 +23,20 @@ This guide covers how to connect to an ARC Pro robot from a laptop (Windows, mac
 
 ---
 
-## Fleet Static IP Directory (Campus Wi-Fi)
+## Fleet Hostname & Connection Directory
 
-All fleet robots authenticate to **`WIFI@OU`** with dedicated static IP assignments. Both your laptop and the robot connect to `WIFI@OU`, providing full high-speed internet access simultaneously.
+You do not need to type or memorize numeric IP addresses. ARC Pro robots broadcast their hostname across the network. You can connect directly using the robot's name (`arcproX.local` or `arcproX`). The campus static IP is provided as an optional fallback.
 
-| Car | Hostname | Campus Static IP | SSH Command | Remote Desktop Target |
+| Car | Hostname (Primary Target) | SSH Command | Remote Desktop Target | Campus Static IP (Fallback) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Car 02** | `arcpro2` | `10.204.163.194` | `ssh arc@10.204.163.194` | `10.204.163.194` |
-| **Car 05** | `arcpro5` | `10.204.162.140` | `ssh arc@10.204.162.140` | `10.204.162.140` |
-| **Car 06** | `arcpro6` | `10.204.75.103` | `ssh arc@10.204.75.103` | `10.204.75.103` |
-| **Car 07** | `arcpro7` | `10.204.88.141` | `ssh arc@10.204.88.141` | `10.204.88.141` |
-| **Car 08** | `arcpro8` | `10.204.79.237` | `ssh arc@10.204.79.237` | `10.204.79.237` |
-| **Car 09** | `arcpro9` | `10.204.77.17` | `ssh arc@10.204.77.17` | `10.204.77.17` |
-| **Car 11** | `arcpro11` | `10.204.18.35` | `ssh arc@10.204.18.35` | `10.204.18.35` |
-| **Bench** | `airou` | `10.204.11.145` | `ssh arc@10.204.11.145` | `10.204.11.145` |
+| **Car 02** | `arcpro2.local` *(or `arcpro2`)* | `ssh arc@arcpro2.local` | `arcpro2.local` | `10.204.163.194` |
+| **Car 05** | `arcpro5.local` *(or `arcpro5`)* | `ssh arc@arcpro5.local` | `arcpro5.local` | `10.204.162.140` |
+| **Car 06** | `arcpro6.local` *(or `arcpro6`)* | `ssh arc@arcpro6.local` | `arcpro6.local` | `10.204.75.103` |
+| **Car 07** | `arcpro7.local` *(or `arcpro7`)* | `ssh arc@arcpro7.local` | `arcpro7.local` | `10.204.88.141` |
+| **Car 08** | `arcpro8.local` *(or `arcpro8`)* | `ssh arc@arcpro8.local` | `arcpro8.local` | `10.204.79.237` |
+| **Car 09** | `arcpro9.local` *(or `arcpro9`)* | `ssh arc@arcpro9.local` | `arcpro9.local` | `10.204.77.17` |
+| **Car 11** | `arcpro11.local` *(or `arcpro11`)* | `ssh arc@arcpro11.local` | `arcpro11.local` | `10.204.18.35` |
+| **Bench** | `airou.local` *(or `airou`)* | `ssh arc@airou.local` | `airou.local` | `10.204.11.145` |
 
 *(You can also check real-time online status and latency at the lab dashboard: `http://10.204.190.207:8080`)*
 
@@ -52,7 +52,8 @@ Windows Remote Desktop provides the full Ubuntu desktop GUI, pre-installed with 
 - **Linux**: Use Remmina (`sudo apt install remmina remmina-plugin-rdp`).
 
 ### Step 2: Enter Connection Details
-1. In the **Computer** field, enter your car's campus IP (e.g. `10.204.88.141` for Car 07).
+1. In the **Computer** field, enter your car's hostname (e.g. `arcpro7.local` or `arcpro7`).
+   *(If your network does not resolve mDNS names, you can alternatively enter your car's campus static IP, e.g. `10.204.88.141`).*
 2. Click **Connect**.
 
 ### Step 3: Accept Certificate Warning
@@ -75,7 +76,13 @@ The full graphical desktop environment will open on your screen.
 Open PowerShell, Command Prompt, or terminal (macOS/Linux) and connect:
 
 ```bash
-# Replace with your car's static IP
+# Connect directly using the robot hostname:
+ssh arc@arcpro7.local
+
+# Or if your OS resolves short names:
+ssh arc@arcpro7
+
+# (Fallback if hostname resolution is unavailable on campus Wi-Fi)
 ssh arc@10.204.88.141
 ```
 
@@ -89,7 +96,7 @@ To edit code directly on the robot inside VS Code on your laptop:
 2. Press `Ctrl + Shift + P` (or `Cmd + Shift + P` on macOS) and select **Remote-SSH: Add New SSH Host...**.
 3. Enter:
    ```text
-   ssh arc@10.204.88.141
+   ssh arc@arcpro7.local
    ```
 4. Click **Connect**. VS Code will open a remote workspace with file tree, terminal, and debugging tools running on the car.
 
@@ -101,9 +108,9 @@ For zero-network environments or direct wired debugging:
 
 1. Connect an Ethernet cable directly between your laptop and the robot's Ethernet port (`enp89s0`).
 2. The robot acts as an auto-DHCP server and assigns your laptop an IP in the `192.168.2.x` range.
-3. Connect directly to static IP **`192.168.2.1`**:
-   - **SSH**: `ssh arc@192.168.2.1`
-   - **Remote Desktop**: Connect to `192.168.2.1` in your RDP client.
+3. Connect directly:
+   - **SSH**: `ssh arc@arcproX.local` *(or `ssh arc@192.168.2.1`)*
+   - **Remote Desktop**: Connect to `arcproX.local` *(or `192.168.2.1`)* in your RDP client.
 
 > [!tip] Simultaneous Internet
 > When connected via direct Ethernet, your laptop remains connected to Wi-Fi for internet while maintaining a dedicated high-speed wired link to the robot.
@@ -117,27 +124,9 @@ For outdoor driving or standalone field testing where campus Wi-Fi is unavailabl
 1. Open Wi-Fi settings on your laptop and select the car's network:
    - **SSID**: `ARCPRO_XX` (e.g. `ARCPRO_07`)
    - **Password**: `arcpro1234`
-2. Connect to static IP **`192.168.4.1`**:
-   - **SSH**: `ssh arc@192.168.4.1`
-   - **Remote Desktop**: Connect to `192.168.4.1` in your RDP client.
-
----
-
-## Method 5: Remote Access via Tailscale Mesh VPN
-
-For remote access from off-campus locations:
-
-1. Ensure Tailscale is active on your laptop and logged into the lab network.
-2. Connect using the MagicDNS hostname:
-   - **SSH**: `ssh arc@arcproX.husky-bangus.ts.net`
-   - **RDP Target**: `arcproX.husky-bangus.ts.net`
-
-> [!note] Network Routing & ROS 2 Discovery over VPN
-> Tailscale uses point-to-point WireGuard tunnels and does not route UDP multicast packets. Standard ROS 2 topic discovery (e.g. running `ros2 topic list` or native RViz on your laptop) does not bridge over Tailscale.
-> When connecting over Tailscale, interact with the robot using:
-> 1. Graphical Remote Desktop (XRDP) on the robot, running RViz locally inside the remote desktop session.
-> 2. Foxglove Studio connected via the WebSocket bridge (`ws://arcproX.husky-bangus.ts.net:8765`).
-> Native peer-to-peer ROS 2 topic sharing from your laptop is supported when both devices are directly on `WIFI@OU` or direct Ethernet.
+2. Connect directly:
+   - **SSH**: `ssh arc@arcproX.local` *(or `ssh arc@192.168.4.1`)*
+   - **Remote Desktop**: Connect to `arcproX.local` *(or `192.168.4.1`)* in your RDP client.
 
 ---
 
