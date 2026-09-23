@@ -78,4 +78,4 @@ ros2 launch ydlidar_ros2_driver ydlidar_launch.py sim:=false
 
 | Previous Step | Current Step | Next Step |
 | :--- | :--- | :--- |
-| **[[Getting started with ARCPro software|&larr; Step 3: Software Bringup & First Drive]]** | **Step 4: Sensor Verification** | **[[Tuning Guide|Step 5: Vehicle Calibration & Tuning &rarr;]]** |
+| [[Getting started with ARCPro software\|&larr; Step 3: Software Bringup & First Drive]] | **Step 4: Sensor Verification** | [[Tuning Guide\|Step 5: Vehicle Calibration & Tuning &rarr;]] |

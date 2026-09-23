@@ -165,9 +165,9 @@ killall        # (or: killall_nodes)
 
 ---
 
----
-
 ## Navigation
+
 | Previous Step | Current Step | Next Step |
 | :--- | :--- | :--- |
-| *(Start of Onboarding)* | **Step 1: Connecting Remotely** | **[[Pairing|Step 2: Controller Pairing &rarr;]]** |
+| *(Start of Onboarding)* | **Step 1: Connecting Remotely** | [[Pairing\|Step 2: Controller Pairing &rarr;]] |
+

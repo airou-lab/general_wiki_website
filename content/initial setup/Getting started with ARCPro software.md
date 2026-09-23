@@ -217,4 +217,5 @@ If you are setting up your own personal Linux computer or virtual machine rather
 
 | Previous Step | Current Step | Next Step |
 | :--- | :--- | :--- |
-| **[[Pairing|&larr; Step 2: Controller Pairing]]** | **Step 3: Software Bringup & First Drive** | **[[YDLidar X4 Pro and 435i realsense|Step 4: Sensor Check &rarr;]]** |
+| [[Pairing\|&larr; Step 2: Controller Pairing]] | **Step 3: Software Bringup & First Drive** | [[YDLidar X4 Pro and 435i realsense\|Step 4: Sensor Check &rarr;]] |
+

@@ -189,5 +189,6 @@ Once tuning is complete:
 
 | Previous Step | Current Step | Next Step |
 | :--- | :--- | :--- |
-| **[[YDLidar X4 Pro and 435i realsense|&larr; Step 4: Sensor Verification]]** | **Step 5: Vehicle Calibration & Tuning** | **[[SP2026-VNAV-CourseContent/labs/Lab 1 - Exercises|Start VNAV Lab 1: First Exercises &rarr;]]** |
+| [[YDLidar X4 Pro and 435i realsense\|&larr; Step 4: Sensor Verification]] | **Step 5: Vehicle Calibration & Tuning** | [[SP2026-VNAV-CourseContent/labs/Lab 1 - Exercises\|Start VNAV Lab 1: First Exercises &rarr;]] |
+
 

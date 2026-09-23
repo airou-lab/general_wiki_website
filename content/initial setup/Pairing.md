@@ -80,9 +80,8 @@ ros2 launch f1tenth_teleop teleop.launch.py joy_dev:=/dev/input/js0
 
 ---
 
----
-
 ## Navigation
+
 | Previous Step | Current Step | Next Step |
 | :--- | :--- | :--- |
-| **[[Remote Connection|&larr; Step 1: Connecting Remotely]]** | **Step 2: Controller Pairing** | **[[Getting started with ARCPro software|Step 3: First Drive &rarr;]]** |
+| [[Remote Connection\|&larr; Step 1: Connecting Remotely]] | **Step 2: Controller Pairing** | [[Getting started with ARCPro software\|Step 3: First Drive &rarr;]] |
