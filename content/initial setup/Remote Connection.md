@@ -12,13 +12,12 @@ tags:
 > [!info] ARC Pro Student Onboarding: Step 1 of 5
 > This is **Step 1** in the student setup sequence. After connecting, proceed to [[Pairing|Step 2: Gamepad Controller Pairing]].
 
-This guide covers how to connect to an ARC Pro robot from a laptop (Windows, macOS, or Linux). ARC Pro robots support both **terminal SSH** and **graphical Windows Remote Desktop (RDP)** across campus Wi-Fi, direct Ethernet, and local robot hotspots.
+This guide covers how to connect to an ARC Pro robot from a laptop (Windows, macOS, or Linux). ARC Pro robots support both **terminal SSH** and **graphical Windows Remote Desktop (RDP)** across campus Wi-Fi and local robot hotspots.
 
 > [!important] Default Robot Credentials
 > - **Username**: `arc`
 > - **Password**: `arcpro1234`
 > - **Campus Network**: `WIFI@OU`
-> - **Direct Plug-and-Play Ethernet IP**: `192.168.2.1`
 > - **Default Robot Hotspot IP**: `192.168.4.1`
 
 ---
@@ -66,8 +65,6 @@ You do not need to type or memorize numeric IP addresses. ARC Pro robots broadca
 | **Car 09** | `arcpro9.local` *(or `arcpro9`)* | `ssh arc@arcpro9.local` | `arcpro9.local` | `10.204.77.17` |
 | **Car 11** | `arcpro11.local` *(or `arcpro11`)* | `ssh arc@arcpro11.local` | `arcpro11.local` | `10.204.18.35` |
 | **Bench** | `airou.local` *(or `airou`)* | `ssh arc@airou.local` | `airou.local` | `10.204.11.145` |
-
-*(You can also check real-time online status and latency at the lab dashboard: `http://10.204.190.207:8080`)*
 
 ---
 
@@ -131,22 +128,9 @@ To edit code directly on the robot inside VS Code on your laptop:
 
 ---
 
-## Method 3: Direct Plug-and-Play Ethernet Cable
-
-For zero-network environments or direct wired debugging:
-
-1. Connect an Ethernet cable directly between your laptop and the robot's Ethernet port (`enp89s0`).
-2. The robot acts as an auto-DHCP server and assigns your laptop an IP in the `192.168.2.x` range.
-3. Connect directly:
-   - **SSH**: `ssh arc@arcproX.local` *(or `ssh arc@192.168.2.1`)*
-   - **Remote Desktop**: Connect to `arcproX.local` *(or `192.168.2.1`)* in your RDP client.
-
-> [!tip] Simultaneous Internet
-> When connected via direct Ethernet, your laptop remains connected to Wi-Fi for internet while maintaining a dedicated high-speed wired link to the robot.
-
 ---
 
-## Method 4: Direct Wi-Fi Hotspot (Standalone / Field Mode)
+## Method 3: Direct Wi-Fi Hotspot (Standalone / Field Mode)
 
 For outdoor driving or standalone field testing where campus Wi-Fi is unavailable:
 

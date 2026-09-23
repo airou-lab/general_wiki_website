@@ -14,7 +14,7 @@ Welcome to the ARC Pro setup documentation. Follow the tracks below based on you
 Students taking VNAV or working with fleet cars should follow these steps in sequential order before starting Lab 1:
 
 1. **[[Remote Connection|Step 1: Connecting Remotely to Your Robot]]**
-   - Connect via robot hostname (`arcproX.local` / `arcproX`), campus Wi-Fi, direct Ethernet, or robot hotspot.
+   - Connect via robot hostname (`arcproX.local` / `arcproX`), campus Wi-Fi, or robot hotspot.
    - Access via SSH or Windows Remote Desktop (XRDP).
 2. **[[Pairing|Step 2: Bluetooth Gamepad Pairing]]**
    - Pair Sony DualShock or Bluetooth wireless controller using `bluetoothctl`.

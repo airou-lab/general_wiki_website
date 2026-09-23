@@ -20,7 +20,7 @@ Our robotic car platform is designed and built to autonomously navigate unknown 
 
 Follow these steps sequentially before starting course labs:
 
-1. **[[initial setup/Remote Connection|Step 1: Connecting Remotely to Your Robot]]** (Robot Hostname, Wi-Fi, Direct Ethernet, Hotspot, SSH & RDP)
+1. **[[initial setup/Remote Connection|Step 1: Connecting Remotely to Your Robot]]** (Robot Hostname, Wi-Fi, Hotspot, SSH & RDP)
 2. **[[initial setup/Pairing|Step 2: Bluetooth Gamepad Pairing]]** (DualShock pairing and joystick input verification)
 3. **[[initial setup/Getting started with ARCPro software|Step 3: Software Bringup & First Drive]]** (ROS 2 workspace build, teleop, and troubleshooting)
 4. **[[initial setup/YDLidar X4 Pro and 435i realsense|Step 4: Sensor Verification]]** (LiDAR 2D scan and RealSense RGB-D point clouds)
