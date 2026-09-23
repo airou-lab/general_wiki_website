@@ -14,7 +14,11 @@ tags:
 > [!important] ARC Pro Fleet Robots Come Pre-Configured
 > If you are working on an ARC Pro lab car (e.g. Car 2 through Car 11), the entire `~/arcpro_system` software stack is **already cloned, configured, and built** on the robot.
 >
-> You **do not** need to re-clone the repository or compile from scratch. Ensure your controller was paired in [[Pairing|Step 2: Controller Pairing]], then proceed directly to **[[#1. First Drive & Teleoperation|Section 1: First Drive & Teleoperation]]**!
+> **Prerequisites Checklist**:
+> 1. You must be remoted into your robot (completed in [[Remote Connection|Step 1: Connecting Remotely]]). All commands in this guide must be typed **inside the robot's remote terminal**, not on your personal laptop.
+> 2. Ensure your controller was paired (completed in [[Pairing|Step 2: Controller Pairing]]).
+>
+> You **do not** need to re-clone the repository or compile from scratch. Proceed directly to **[[#1. First Drive & Teleoperation|Section 1: First Drive & Teleoperation]]**!
 
 ---
 

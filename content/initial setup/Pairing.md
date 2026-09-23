@@ -10,6 +10,11 @@ Labs:
 > [!info] ARC Pro Student Onboarding: Step 2 of 5
 > Previous: [[Remote Connection|Step 1: Connecting Remotely]]. Next: [[Getting started with ARCPro software|Step 3: Software Bringup & First Drive]].
 
+> [!important] Prerequisite: Remote Session Active
+> Ensure you have remoted into your robot via [[Remote Connection|Step 1: Connecting Remotely]] before running these commands.
+>
+> You must run `bluetoothctl` **inside the robot's terminal** (via SSH or within Windows Remote Desktop), not on your personal laptop.
+
 This guide covers pairing a Sony DualShock or compatible Bluetooth wireless gamepad controller with the ARC Pro robot onboard Intel NUC.
 
 ---

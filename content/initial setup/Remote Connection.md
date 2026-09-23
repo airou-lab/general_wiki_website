@@ -23,6 +23,35 @@ This guide covers how to connect to an ARC Pro robot from a laptop (Windows, mac
 
 ---
 
+## Quickstart: Remoting In (In 30 Seconds)
+
+Most students connect from their laptops using **Windows Remote Desktop** (graphical desktop) or **Terminal SSH**:
+
+### Option 1: Graphical Desktop (Recommended)
+1. **Power On**: Ensure the robot battery is connected and the Intel NUC power LED is lit. Ensure your laptop is connected to **`WIFI@OU`**.
+2. **Launch Remote Desktop**:
+   - **Windows**: Press `Win + R`, type `mstsc.exe`, and press Enter.
+   - **macOS**: Open **Microsoft Remote Desktop**.
+3. **Connect**:
+   - In the **Computer** field, enter your car's hostname:
+     ```text
+     arcpro7.local
+     ```
+     *(Replace `7` with your vehicle number, e.g. `arcpro2.local` for Car 2).*
+4. **Log In**:
+   - **Username**: `arc`
+   - **Password**: `arcpro1234`
+5. The full Ubuntu desktop opens in a window on your screen. You are now inside the robot! Proceed to [[Pairing|Step 2: Gamepad Controller Pairing]].
+
+### Option 2: Terminal SSH (Fast & Lightweight)
+Open PowerShell, Command Prompt, or terminal and run:
+```bash
+ssh arc@arcpro7.local
+```
+When prompted, enter password `arcpro1234`. You are now inside the robot's command line!
+
+---
+
 ## Fleet Hostname & Connection Directory
 
 You do not need to type or memorize numeric IP addresses. ARC Pro robots broadcast their hostname across the network. You can connect directly using the robot's name (`arcproX.local` or `arcproX`). The campus static IP is provided as an optional fallback.
