@@ -53,6 +53,10 @@ When prompted, enter password `arcpro1234`. You are now inside the robot's comma
 
 ## Fleet Hostname & Connection Directory
 
+> [!warning] Do NOT Use `arc#.cs.nor.ou.edu`
+> Older lab manuals or syllabus notes may mention addresses like `arc9.cs.nor.ou.edu` or `arc#.cs.nor.ou.edu`. **Do NOT use these addresses.** The robot fleet does not use `arc#.cs.nor.ou.edu`.
+> Always connect using the robot hostname (`arcproX.local` or `arcproX`) or the campus static IP from the directory below.
+
 You do not need to type or memorize numeric IP addresses. ARC Pro robots broadcast their hostname across the network. You can connect directly using the robot's name (`arcproX.local` or `arcproX`). The campus static IP is provided as an optional fallback.
 
 | Car | Hostname (Primary Target) | SSH Command | Remote Desktop Target | Campus Static IP (Fallback) |
@@ -62,7 +66,7 @@ You do not need to type or memorize numeric IP addresses. ARC Pro robots broadca
 | **Car 06** | `arcpro6.local` *(or `arcpro6`)* | `ssh arc@arcpro6.local` | `arcpro6.local` | `10.204.75.103` |
 | **Car 07** | `arcpro7.local` *(or `arcpro7`)* | `ssh arc@arcpro7.local` | `arcpro7.local` | `10.204.88.141` |
 | **Car 08** | `arcpro8.local` *(or `arcpro8`)* | `ssh arc@arcpro8.local` | `arcpro8.local` | `10.204.79.237` |
-| **Car 09** | `arcpro9.local` *(or `arcpro9`)* | `ssh arc@arcpro9.local` | `arcpro9.local` | `10.204.77.17` |
+| **Car 09** | `arcpro9.local` *(or `arcpro9`)* | `ssh arc@arcpro9.local` | `arcpro9.local` | `10.194.16.56` |
 | **Car 11** | `arcpro11.local` *(or `arcpro11`)* | `ssh arc@arcpro11.local` | `arcpro11.local` | `10.204.18.35` |
 | **Bench** | `airou.local` *(or `airou`)* | `ssh arc@airou.local` | `airou.local` | `10.204.11.145` |
 
