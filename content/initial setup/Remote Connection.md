@@ -150,6 +150,38 @@ For outdoor driving or standalone field testing where campus Wi-Fi is unavailabl
 
 ---
 
+## Remote Connection Troubleshooting
+
+### Issue 1: `WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!`
+- **Symptom**: When connecting via SSH, OpenSSH prints a warning banner and aborts with `Host key verification failed`.
+- **Cause**: The robot was reflashed or updated, generating a new ED25519 host key. Your laptop has the older key cached in `~/.ssh/known_hosts`.
+- **Fix**: Clear the cached host key on your personal laptop (run in PowerShell, Command Prompt, or Terminal):
+  ```bash
+  ssh-keygen -R arc7.cs.nor.ou.edu
+  ssh-keygen -R 10.194.16.54
+  ```
+  *(Replace `7` / `10.194.16.54` with your vehicle number and IP).*
+
+### Issue 2: `Could not resolve hostname` or `NXDOMAIN`
+- **Symptom**: Running `ssh arc@arc7.cs.nor.ou.edu` returns `Name or service not known` or `Temporary failure in name resolution`.
+- **Cause**: 
+  1. Your laptop is configured with third-party public DNS (such as Google `8.8.8.8`, Cloudflare `1.1.1.1`, or NextDNS) or a personal VPN (NordVPN, Mullvad, etc.). Public DNS resolvers do not know internal university `.ou.edu` records.
+  2. You are connected to `OU-Guest` rather than `WIFI@OU`.
+- **Fix**:
+  1. Connect directly using the robot's **Campus Static IP** (bypasses DNS entirely):
+     ```bash
+     ssh arc@10.194.16.54
+     ```
+  2. Ensure your laptop is connected to **`WIFI@OU`**, and disconnect any personal third-party VPN clients.
+
+### Issue 3: Connection Timed Out
+- **Symptom**: `ssh` or Windows Remote Desktop hangs and prints `connect to host ... port 22: Connection timed out`.
+- **Cause**:
+  1. The vehicle is powered off or its battery has depleted. Verify the Intel NUC power LED is lit blue.
+  2. Your laptop is connected to an isolated guest network (`OU-Guest`), which firewalls off campus robot subnets. Connect to `WIFI@OU`.
+
+---
+
 ## Turnkey Robot Verification & Driving Commands
 
 Once connected as the `arc` user, you can run convenience commands directly from any terminal:
