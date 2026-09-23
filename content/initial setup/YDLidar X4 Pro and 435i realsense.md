@@ -17,19 +17,43 @@ Labs:
 
 ## Intel RealSense D435i
 
-Install the RealSense ROS 2 packages and set up udev permissions:
+### 1. Installation & Permissions
+On ARC Pro robots, the RealSense driver and udev rules are installed automatically. If setting up manually:
 
 ```bash
 sudo apt update
 sudo apt install -y v4l-utils ros-jazzy-librealsense2 ros-jazzy-realsense2-camera ros-jazzy-realsense2-camera-msgs
 
-# Ensure permissions for the camera
+# Install official RealSense udev rules (required for USB buffer allocation & IMU access)
+sudo curl -sL https://raw.githubusercontent.com/realsenseai/librealsense/master/config/99-realsense-libusb.rules \
+    -o /etc/udev/rules.d/99-realsense-libusb.rules
 sudo udevadm control --reload-rules && sudo udevadm trigger
-sudo usermod -aG video $USER
+sudo usermod -aG video,plugdev $USER
 ```
 
-To launch the camera with RGB, depth frames, and 3D depth point cloud enabled:
+> [!important] Firmware Compatibility Requirement (5.17.0.9+ for ROS 2 Jazzy)
+> ROS 2 Jazzy's `librealsense2` package (v2.56.4+) strictly requires camera firmware **`5.17.0.9 or later`**.
+> If your camera holds older firmware (such as `5.12.x`), the node will crash on startup with `xioctl(VIDIOC_QBUF) failed: No such device` and USB protocol errors (`-EPROTO -71`).
+>
+> To check your camera firmware version:
+> ```bash
+> bash -c '. /opt/ros/jazzy/setup.bash && /opt/ros/jazzy/bin/rs-fw-update -l'
+> ```
+> To update outdated firmware using the official binary:
+> ```bash
+> bash -c '. /opt/ros/jazzy/setup.bash && /opt/ros/jazzy/bin/rs-fw-update -f /path/to/D4XX_FW_Image-5.17.0.9.bin'
+> ```
 
+### 2. Launching the Camera
+
+#### Option A: Turnkey Command (Recommended)
+On fleet robots, run the turnkey command in any terminal:
+```bash
+camera
+# or: bash ~/example_scripts/camera.sh
+```
+
+#### Option B: Direct ROS 2 Launch
 ```bash
 ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true
 ```
@@ -66,11 +90,28 @@ cd ~/arcpro_system
 colcon build --symlink-install --packages-select ydlidar_ros2_driver
 ```
 
-To launch the 2D LiDAR driver:
-
-```bash
-ros2 launch ydlidar_ros2_driver ydlidar_launch.py sim:=false
+### 3. Persistent Port Configuration (`/dev/ydlidar`)
+ARC Pro robots use udev rule `99-ydlidar.rules` mapping vendor `10c4:ea60` to `/dev/ydlidar`.
+Ensure `~/arcpro_system/src/base/ydlidar_ros2_driver/params/ydlidar.yaml` specifies:
+```yaml
+port: /dev/ydlidar
 ```
+
+### 4. Launching the LiDAR
+
+#### Option A: Turnkey Command (Recommended)
+```bash
+lidar
+# or: bash ~/example_scripts/lidar.sh
+```
+
+#### Option B: Direct ROS 2 Launch
+```bash
+ros2 launch ydlidar_ros2_driver ydlidar_launch.py
+```
+
+Topics published:
+- `/scan`: `sensor_msgs/msg/LaserScan` (360-degree laser scan at ~11.6 Hz)
 
 ---
 

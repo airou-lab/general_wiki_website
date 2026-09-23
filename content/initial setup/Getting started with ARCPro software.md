@@ -124,7 +124,7 @@ You should see `/camera/camera/color/image_raw` and `/camera/camera/depth/color/
 ### YDLidar X4 Pro (2D LiDAR)
 ```bash
 # Launch LiDAR driver
-ros2 launch ydlidar_ros2_driver ydlidar_launch.py sim:=false
+ros2 launch ydlidar_ros2_driver ydlidar_launch.py
 
 # In a separate terminal, verify laser scan:
 ros2 topic echo /scan --once
@@ -154,12 +154,23 @@ ros2 topic echo /scan --once
   export ROS_DOMAIN_ID=2
   ```
   If students run ROS 2 tools on their personal laptops, they must set the matching `ROS_DOMAIN_ID` on their laptop.
-  If running entirely on the vehicle NUC, you can also restrict traffic to localhost:
-  ```bash
-  export ROS_LOCALHOST_ONLY=1
-  ```
 
-### Issue 3: RViz2 opens with a black or blank window over Remote Desktop (RDP)
+> [!warning] Do NOT use `ROS_LOCALHOST_ONLY=1`
+> Avoid setting `export ROS_LOCALHOST_ONLY=1`. This completely blocks topic discovery between different processes under XRDP remote desktop sessions and prevents Foxglove Studio or external laptops from receiving telemetry.
+
+### Issue 3: Teleop crashes with `Failed to create subscription: invalid allocator`
+- **Symptom**: Running `teleop` or `teleop_gamepad.sh` crashes immediately with `RCLError: Failed to create subscription: invalid allocator, at ./src/rcl/subscription.c:261`.
+- **Cause**: In older script versions, both `Twist` and `TwistStamped` subscribed to the same topic name (`/cmd_vel`) on the same node, causing a ROS 2 DDS type conflict.
+- **Fix**: Update `~/arcpro_system/scripts/twist_to_ackermann.py` to separate `twist_topic: /cmd_vel` from `twist_stamped_topic: /cmd_vel_stamped`. On fleet robots, pull the latest code or run `clean-reset.yml`.
+
+### Issue 4: RealSense camera crashes with segmentation fault or `xioctl(VIDIOC_QBUF) failed`
+- **Symptom**: Running `camera` or `camera.sh` spams `backend-v4l2.cpp:3213: xioctl(VIDIOC_QBUF) failed: No such device` and terminates with a segmentation fault.
+- **Cause**: 
+  1. The camera hardware has outdated firmware (e.g. `5.12.x`), whereas ROS 2 Jazzy's `librealsense2` v2.56.4 strictly requires **firmware 5.17.0.9 or later**.
+  2. Missing `/etc/udev/rules.d/99-realsense-libusb.rules`.
+- **Fix**: Install `99-realsense-libusb.rules` and update the camera firmware using `/opt/ros/jazzy/bin/rs-fw-update -f D4XX_FW_Image-5.17.0.9.bin` (see [[YDLidar X4 Pro and 435i realsense|Step 4: Sensor Verification]]).
+
+### Issue 5: RViz2 opens with a black or blank window over Remote Desktop (RDP)
 - **Symptom**: RViz2 starts, but the 3D viewport remains completely black or transparent.
 - **Cause**: XRDP does not pass hardware OpenGL acceleration to remote sessions.
 - **Fix**: Enable software OpenGL rendering before starting RViz2:
@@ -168,7 +179,7 @@ ros2 topic echo /scan --once
   rviz2
   ```
 
-### Issue 4: RealSense depth point cloud topic missing
+### Issue 6: RealSense depth point cloud topic missing
 - **Symptom**: Camera publishes color and depth images, but `/camera/camera/depth/color/points` does not exist.
 - **Cause**: Point cloud generation is disabled by default in `realsense2_camera` to conserve CPU.
 - **Fix**: Explicitly enable pointcloud in the launch command:
@@ -176,7 +187,7 @@ ros2 topic echo /scan --once
   ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true
   ```
 
-### Issue 5: colcon build fails on YDLidar-SDK with missing doc directory
+### Issue 7: colcon build fails on YDLidar-SDK with missing doc directory
 - **Symptom**: `CMake Error at CMakeLists.txt:... (install): install DIRECTORY given no DESTINATION or DIRECTORY "doc" does not exist.`
 - **Cause**: The YDLidar-SDK CMake script attempts to install documentation files that are not included in the git repository.
 - **Fix**: Create the empty directory manually before building:

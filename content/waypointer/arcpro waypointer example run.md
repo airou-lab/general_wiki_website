@@ -3,12 +3,11 @@ Run commands per sensor (and full examples) are located in 2 folders from conten
 - `drive_scripts`: 
 - `hardware_launch_scripts`:
 
-## Run with map
-Each in a seperate terminal run the following:
-- `colcon build` and sorce 
-- `./lidar.sh` (in the hardware folder)
-
-Lidar currently cant be brought up due to race condition (i think). Check nav2.yaml for the current map being used, they should be stored in the /res folder.
+## Sensor and Hardware Bringup
+Each in a separate terminal run the following:
+- Source your workspace: `source ~/arcpro_system/install/setup.bash`
+- Bring up LiDAR: `lidar` (or `bash ~/example_scripts/lidar.sh`)
+- Check `nav2.yaml` for the current map configuration (stored in `res/` folder).
 
 ## Real-Time SLAM (Online Mapping)
 

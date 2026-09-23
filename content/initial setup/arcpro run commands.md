@@ -14,6 +14,7 @@ This reference page provides the standard commands to bring up motor control, te
 > - **`move_forward`** (or **`straight`**): Test drivetrain forward at 0.4 m/s (auto-stops on `Ctrl+C`)
 > - **`teleop`** (or **`teleop_joy`**): Gamepad teleop (Hold `L1/LB` deadman + left stick throttle, right stick steer)
 > - **`teleop_key`**: Interactive keyboard driving in terminal
+> - **`pair_controller`**: Interactive Bluetooth pairing wizard for gamepad
 > - **`lidar`**: Standalone 2D LiDAR bringup (`/scan`)
 > - **`camera`**: Standalone Intel RealSense camera bringup
 > - **`telemetry`**: Foxglove Bridge (`:8765`), LiDAR, and RealSense camera streaming

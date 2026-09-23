@@ -82,7 +82,7 @@ All tuning parameters are located in the [`f1tenth_to_arcpro`](https://github.co
 
     # Physical parameters
     wheelbase: 0.2413 # 24.13 cm
-    port: /dev/ttyACM0
+    port: /dev/vesc
 ```
 
 ---
@@ -106,7 +106,7 @@ The goal of this step is to find the servo center position where the car drives 
 2. **Align the Robot**: Position the car with its center aligned along the tape line.
 3. **Command Straight Drive**: Send a slow, forward command with zero steering:
    ```bash
-   ros2 topic pub /drive_stamped ackermann_msgs/msg/AckermannDriveStamped \
+   ros2 topic pub /ackermann_cmd ackermann_msgs/msg/AckermannDriveStamped \
    '{header: {stamp: {sec: 0, nanosec: 0}, frame_id: "base_link"}, \
      drive: {steering_angle: 0.0, speed: 0.5}}' -r 10
    ```
@@ -133,7 +133,7 @@ For ARCPro with wheelbase $L \approx 0.2413\text{ m}$:
 
 1. Command a constant turning angle:
    ```bash
-   ros2 topic pub /drive_stamped ackermann_msgs/msg/AckermannDriveStamped \
+   ros2 topic pub /ackermann_cmd ackermann_msgs/msg/AckermannDriveStamped \
    '{header: {stamp: {sec: 0, nanosec: 0}, frame_id: "base_link"}, \
      drive: {steering_angle: 0.30, speed: 0.4}}' -r 10
    ```

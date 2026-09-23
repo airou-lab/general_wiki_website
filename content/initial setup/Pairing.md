@@ -21,6 +21,20 @@ This guide covers pairing a Sony DualShock or compatible Bluetooth wireless game
 
 ## 1. Bluetooth Pairing Procedure
 
+### Option A: Turnkey Pairing Wizard (Recommended)
+
+On fleet robots, run the turnkey pairing script in your robot terminal:
+```bash
+pair_controller
+# or: bash ~/example_scripts/pair_controller.sh
+```
+Follow the interactive prompts:
+1. Put your controller into pairing mode: Press and hold the **Share** button and the **Center PS** button simultaneously for ~5 seconds until the lightbar blinks rapidly.
+2. The script will automatically scan, pair, trust, and connect your controller.
+3. Once connected, it verifies `/dev/input/js0`.
+
+### Option B: Manual Pairing via `bluetoothctl`
+
 1. Open a terminal session on the robot and start `bluetoothctl`:
    ```bash
    bluetoothctl

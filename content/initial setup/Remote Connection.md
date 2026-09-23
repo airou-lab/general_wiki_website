@@ -32,11 +32,11 @@ Most students connect from their laptops using **Windows Remote Desktop** (graph
    - **Windows**: Press `Win + R`, type `mstsc.exe`, and press Enter.
    - **macOS**: Open **Microsoft Remote Desktop**.
 3. **Connect**:
-   - In the **Computer** field, enter your car's hostname:
+   - In the **Computer** field, enter your car's campus DNS hostname or static IP:
      ```text
-     arcpro7.local
+     arc7.cs.nor.ou.edu
      ```
-     *(Replace `7` with your vehicle number, e.g. `arcpro2.local` for Car 2).*
+     *(Replace `7` with your vehicle number, e.g. `arc9.cs.nor.ou.edu` for Car 9, or enter `10.194.16.54`).*
 4. **Log In**:
    - **Username**: `arc`
    - **Password**: `arcpro1234`
@@ -45,30 +45,33 @@ Most students connect from their laptops using **Windows Remote Desktop** (graph
 ### Option 2: Terminal SSH (Fast & Lightweight)
 Open PowerShell, Command Prompt, or terminal and run:
 ```bash
-ssh arc@arcpro7.local
+ssh arc@arc7.cs.nor.ou.edu
 ```
+*(Or directly using the IP: `ssh arc@10.194.16.54`).*
+
 When prompted, enter password `arcpro1234`. You are now inside the robot's command line!
 
 ---
 
 ## Fleet Hostname & Connection Directory
 
-> [!warning] Do NOT Use `arc#.cs.nor.ou.edu`
-> Older lab manuals or syllabus notes may mention addresses like `arc9.cs.nor.ou.edu` or `arc#.cs.nor.ou.edu`. **Do NOT use these addresses.** The robot fleet does not use `arc#.cs.nor.ou.edu`.
-> Always connect using the robot hostname (`arcproX.local` or `arcproX`) or the campus static IP from the directory below.
+> [!important] Campus Network vs Robot Hotspot
+> - **On Campus Wi-Fi (`WIFI@OU`)**: Always connect using the official campus DNS hostname (**`arcX.cs.nor.ou.edu`**) or the vehicle's **Campus Static IP** (`10.194.16.XX`). Enterprise Wi-Fi filters multicast DNS (`.local`), so `arcproX.local` will not resolve across campus access points.
+> - **On Robot Hotspot (`ARCPRO_XX`)**: When connected directly to the car's standalone Wi-Fi hotspot in the field or outdoor track, connect via `arcproX.local` or `192.168.4.1`.
 
-You do not need to type or memorize numeric IP addresses. ARC Pro robots broadcast their hostname across the network. You can connect directly using the robot's name (`arcproX.local` or `arcproX`). The campus static IP is provided as an optional fallback.
-
-| Car | Hostname (Primary Target) | SSH Command | Remote Desktop Target | Campus Static IP (Fallback) |
+| Car | Campus Hostname (Primary) | SSH Command | Remote Desktop Target | Campus Static IP |
 | :--- | :--- | :--- | :--- | :--- |
-| **Car 02** | `arcpro2.local` *(or `arcpro2`)* | `ssh arc@arcpro2.local` | `arcpro2.local` | `10.204.163.194` |
-| **Car 05** | `arcpro5.local` *(or `arcpro5`)* | `ssh arc@arcpro5.local` | `arcpro5.local` | `10.204.162.140` |
-| **Car 06** | `arcpro6.local` *(or `arcpro6`)* | `ssh arc@arcpro6.local` | `arcpro6.local` | `10.204.75.103` |
-| **Car 07** | `arcpro7.local` *(or `arcpro7`)* | `ssh arc@arcpro7.local` | `arcpro7.local` | `10.204.88.141` |
-| **Car 08** | `arcpro8.local` *(or `arcpro8`)* | `ssh arc@arcpro8.local` | `arcpro8.local` | `10.204.79.237` |
-| **Car 09** | `arcpro9.local` *(or `arcpro9`)* | `ssh arc@arcpro9.local` | `arcpro9.local` | `10.194.16.56` |
-| **Car 11** | `arcpro11.local` *(or `arcpro11`)* | `ssh arc@arcpro11.local` | `arcpro11.local` | `10.204.18.35` |
-| **Bench** | `airou.local` *(or `airou`)* | `ssh arc@airou.local` | `airou.local` | `10.204.11.145` |
+| **Car 01** | `arc1.cs.nor.ou.edu` | `ssh arc@arc1.cs.nor.ou.edu` | `arc1.cs.nor.ou.edu` | `10.194.16.48` |
+| **Car 02** | `arc2.cs.nor.ou.edu` | `ssh arc@arc2.cs.nor.ou.edu` | `arc2.cs.nor.ou.edu` | `10.194.16.49` |
+| **Car 03** | `arc3.cs.nor.ou.edu` | `ssh arc@arc3.cs.nor.ou.edu` | `arc3.cs.nor.ou.edu` | `10.194.16.50` |
+| **Car 04** | `arc4.cs.nor.ou.edu` | `ssh arc@arc4.cs.nor.ou.edu` | `arc4.cs.nor.ou.edu` | `10.194.16.51` |
+| **Car 05** | `arc5.cs.nor.ou.edu` | `ssh arc@arc5.cs.nor.ou.edu` | `arc5.cs.nor.ou.edu` | `10.194.16.52` |
+| **Car 06** | `arc6.cs.nor.ou.edu` | `ssh arc@arc6.cs.nor.ou.edu` | `arc6.cs.nor.ou.edu` | `10.194.16.53` |
+| **Car 07** | `arc7.cs.nor.ou.edu` | `ssh arc@arc7.cs.nor.ou.edu` | `arc7.cs.nor.ou.edu` | `10.194.16.54` |
+| **Car 08** | `arc8.cs.nor.ou.edu` | `ssh arc@arc8.cs.nor.ou.edu` | `arc8.cs.nor.ou.edu` | `10.194.16.55` |
+| **Car 09** | `arc9.cs.nor.ou.edu` | `ssh arc@arc9.cs.nor.ou.edu` | `arc9.cs.nor.ou.edu` | `10.194.16.56` |
+| **Car 10** | `arc10.cs.nor.ou.edu` | `ssh arc@arc10.cs.nor.ou.edu` | `arc10.cs.nor.ou.edu` | `10.194.16.57` |
+| **Car 11** | `arc11.cs.nor.ou.edu` | `ssh arc@arc11.cs.nor.ou.edu` | `arc11.cs.nor.ou.edu` | `10.194.16.58` |
 
 ---
 
@@ -82,8 +85,11 @@ Windows Remote Desktop provides the full Ubuntu desktop GUI, pre-installed with 
 - **Linux**: Use Remmina (`sudo apt install remmina remmina-plugin-rdp`).
 
 ### Step 2: Enter Connection Details
-1. In the **Computer** field, enter your car's hostname (e.g. `arcpro7.local` or `arcpro7`).
-   *(If your network does not resolve mDNS names, you can alternatively enter your car's campus static IP, e.g. `10.204.88.141`).*
+1. In the **Computer** field, enter your car's campus DNS hostname:
+   ```text
+   arc7.cs.nor.ou.edu
+   ```
+   *(Or enter the campus static IP, e.g. `10.194.16.54`).*
 2. Click **Connect**.
 
 ### Step 3: Accept Certificate Warning
@@ -106,14 +112,11 @@ The full graphical desktop environment will open on your screen.
 Open PowerShell, Command Prompt, or terminal (macOS/Linux) and connect:
 
 ```bash
-# Connect directly using the robot hostname:
-ssh arc@arcpro7.local
+# Connect using the campus DNS hostname:
+ssh arc@arc7.cs.nor.ou.edu
 
-# Or if your OS resolves short names:
-ssh arc@arcpro7
-
-# (Fallback if hostname resolution is unavailable on campus Wi-Fi)
-ssh arc@10.204.88.141
+# Or connect directly via the campus static IP:
+ssh arc@10.194.16.54
 ```
 
 When prompted:
@@ -126,7 +129,7 @@ To edit code directly on the robot inside VS Code on your laptop:
 2. Press `Ctrl + Shift + P` (or `Cmd + Shift + P` on macOS) and select **Remote-SSH: Add New SSH Host...**.
 3. Enter:
    ```text
-   ssh arc@arcpro7.local
+   ssh arc@arc7.cs.nor.ou.edu
    ```
 4. Click **Connect**. VS Code will open a remote workspace with file tree, terminal, and debugging tools running on the car.
 
