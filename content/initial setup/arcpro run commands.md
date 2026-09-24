@@ -35,7 +35,7 @@ ros2 launch ydlidar_ros2_driver ydlidar_launch.py
 # 3. Bring up RealSense Camera (Intel D435i, color + depth + 3D pointcloud)
 ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true
 
-# 4. Launch Gamepad Teleoperation
+# 4. Launch Gamepad Teleoperation (joystick + velocity mapper + twist-to-ackermann translator)
 ros2 launch f1tenth_teleop teleop.launch.py joy_dev:=/dev/input/js0
 
 # 5. Launch SLAM Toolbox (Online Async Mapping)

@@ -54,9 +54,15 @@ If you prefer launching individual ROS 2 nodes manually across terminals:
 # Terminal 1: Launch the VESC hardware driver & odometry publisher
 ros2 launch f1tenth_teleop vesc.launch.py
 
-# Terminal 2: Launch teleop node and joystick interface
+# Terminal 2: Launch teleop stack (joystick driver, velocity mapper, and twist-to-ackermann translator)
 ros2 launch f1tenth_teleop teleop.launch.py joy_dev:=/dev/input/js0
 ```
+
+> [!note] How Option B Operates Under the Hood
+> - **Terminal 1 (`vesc.launch.py`)**: Connects to the VESC over USB (`/dev/vesc`), broadcasts odometry, and subscribes to `/ackermann_cmd`.
+> - **Terminal 2 (`teleop.launch.py`)**: Launches `joy_node` (reads `/dev/input/js0`), `teleop_twist_joy` (maps analog sticks to `/cmd_vel`), and the `twist_to_ack` node (translates `/cmd_vel` into `ackermann_msgs/msg/AckermannDriveStamped` on `/ackermann_cmd` with an integrated watchdog failsafe).
+>
+> **Controls**: Hold **L1** (or **LB**) deadman switch while steering with the right stick and throttling with the left stick.
 
 ### Option C: Testing Direct Drive Messages (Without Gamepad)
 You can test the drivetrain directly from the command line by publishing an `AckermannDriveStamped` message:

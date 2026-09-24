@@ -88,7 +88,7 @@ Hold `L1` or `LB` (deadman switch) while moving the left stick (throttle) and ri
 # Terminal 1: Bring up the VESC motor driver
 ros2 launch f1tenth_teleop vesc.launch.py
 
-# Terminal 2: Launch teleop node pointing to the joystick interface
+# Terminal 2: Launch teleop stack (joystick interface + twist-to-ackermann translator)
 ros2 launch f1tenth_teleop teleop.launch.py joy_dev:=/dev/input/js0
 ```
 
