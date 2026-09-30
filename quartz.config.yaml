@@ -214,7 +214,7 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/jackyzha0/quartz
+        GitHub: https://github.com/airou-lab/general_wiki_website
         Discord Community: https://discord.gg/cRFFHYye7t
     layout:
       position: footer
