@@ -28,11 +28,15 @@ export function patchPlugins(): void {
         )
       }
 
-      // Update Ve() in bundled JS to use de (--darkgray) idempotently
-      code = code.replace(
-        /function Ve\(\)\{[\s\S]*?function qe\(\)/,
-        "function Ve(){for(var i=0;i<z.length;i++){var l=z[i];if(_u!==null){l.active?(l.alpha=1,l.width=2.5,l.color=Ie):(l.alpha=.1,l.width=1,l.color=de)}else{l.alpha=.55,l.width=1.5,l.color=de}}}function qe()",
-      )
+      // Update Wu(), Ve(), qe(), Ke(), Au() to highlight focal node connections at resting state
+      const replacementWuAu =
+        "function Wu(i){_u=i;var target=i||m;iu=new Set;if(target){iu.add(target);for(var l=0;l<z.length;l++){var F=z[l].simulationData;F.source.id===target||F.target.id===target?(iu.add(F.source.id),iu.add(F.target.id),z[l].active=!0):z[l].active=!1}for(var l=0;l<L.length;l++)L[l].active=iu.has(L[l].simulationData.id)}else{for(var l=0;l<L.length;l++)L[l].active=!1;for(var l=0;l<z.length;l++)z[l].active=!1}}function Ve(){for(var i=0;i<z.length;i++){var l=z[i];if(_u!==null){l.active?(l.alpha=1,l.width=2.5,l.color=Ie):(l.alpha=.15,l.width=1,l.color=de)}else{l.active?(l.alpha=1,l.width=2.5,l.color=Ie):(l.alpha=.65,l.width=1.5,l.color=de)}}}function qe(){for(var i=1/qu,l=i*1.15,F=0;F<L.length;F++){var A=L[F];if(_u!==null){_u===A.simulationData.id?(A.label.alpha=1,A.label.scale.set(l)):A.active?(A.label.alpha=.85,A.label.scale.set(i)):(A.label.alpha=0,A.label.scale.set(i))}else{A.simulationData.id===m?(A.label.alpha=1,A.label.scale.set(l)):A.active?(A.label.alpha=.85,A.label.scale.set(i)):(A.label.alpha=0,A.label.scale.set(i))}}}function Ke(){for(var i=0;i<L.length;i++){var l=L[i],F=1;_u!==null&&Oe&&(F=l.active?1:.25);_u===null&&Oe&&(F=l.active?1:.75);l.gfx.alpha=F}}function Au(){Ke(),Ve(),qe()}"
+
+      code = code.replace(/function Wu\(i\)\{[\s\S]*?function Au\(\)\{[\s\S]*?\}/, replacementWuAu)
+
+      if (!code.includes("Wu(null),Au(),ce()")) {
+        code = code.replace("Au(),ce()", "Wu(null),Au(),ce()")
+      }
 
       // Stroke width and alpha in bundled JS
       code = code.replace(
@@ -45,7 +49,10 @@ export function patchPlugins(): void {
       )
       code = code.replace("color:te,alpha:1,active:!1", "color:de,width:1.5,alpha:.55,active:!1")
       code = code.replace("color:ee,alpha:1,active:!1", "color:de,width:1.5,alpha:.55,active:!1")
-      code = code.replace("color:ee,width:1.5,alpha:.65,active:!1", "color:de,width:1.5,alpha:.55,active:!1")
+      code = code.replace(
+        "color:ee,width:1.5,alpha:.65,active:!1",
+        "color:de,width:1.5,alpha:.55,active:!1",
+      )
 
       // Center current node in local graph (fx=0, fy=0)
       code = code.replace(
