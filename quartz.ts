@@ -2,9 +2,6 @@ import { loadQuartzConfig, loadQuartzLayout } from "./quartz/plugins/loader/conf
 import { Assets } from "./quartz/plugins/emitters/assets"
 import { Static } from "./quartz/plugins/emitters/static"
 import { ComponentResources } from "./quartz/plugins/emitters/componentResources"
-import { patchPlugins } from "./quartz/plugins/loader/patch-plugins"
-
-patchPlugins()
 
 const config = await loadQuartzConfig()
 
